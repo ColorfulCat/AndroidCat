@@ -24,9 +24,7 @@ function toggleNavMenu(){
 }
 
 function clickAndroidCat(){
-	if(isMobile()){
-		navMenu.onclick();//默认打开
-	}
+
 	clickMenu(-1);
 	aboutSection.style.display = "";
 	dataSection.style.display = "none";
