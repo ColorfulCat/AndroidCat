@@ -99,6 +99,7 @@ function getJishushequData(){
 	+ newDataItem("开发者头条", "http://toutiao.io/")
 	+ newDataItem("极客头条", "http://geek.csdn.net/")
 	+ newDataItem("酷粒", "http://coollist.cn/")
+	+ newDataItem("码农网", "http://www.codeceo.com/")
 
 	+"<p style='text-align:center;'>~end~</p>";
 }
@@ -236,6 +237,7 @@ function getQianyanzixunData(){
 	+ newDataItem("ifanr爱范儿", "http://www.ifanr.com/")
 	+ newDataItem("爱搞机", "http://www.igao7.com/")
 	+ newDataItem("推酷", "http://www.tuicool.com/")
+	+ newDataItem("mind", "http://mindstore.io/")
 	
 	+"<p style='text-align:center;'>~end~</p>";
 }
