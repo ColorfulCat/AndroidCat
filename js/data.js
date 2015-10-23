@@ -98,6 +98,7 @@ function getJishushequData(){
 	+ newDataItem("天码营", "http://tianmaying.com/topics")
 	+ newDataItem("开发者头条", "http://toutiao.io/")
 	+ newDataItem("极客头条", "http://geek.csdn.net/")
+	+ newDataItem("程序员客栈","http://www.proginn.com/")
 	+ newDataItem("酷粒", "http://coollist.cn/")
 	+ newDataItem("码农网", "http://www.codeceo.com/")
 
