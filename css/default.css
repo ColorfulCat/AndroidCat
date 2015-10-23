@@ -166,7 +166,7 @@ body, html {
 		text-align: center;
 		border: none;
 		background: white;
-		color: #222;
+		color: rgba(0, 0, 0, 0.8);
 		padding: 0.88em;
 		display: block;
 		width: 100%;
@@ -175,9 +175,11 @@ body, html {
 		margin: 10px 0;
 		font-size: 1.0em;
 
-		-webkit-box-shadow: 0 0 2px #666;  
-		-moz-box-shadow: 0 0 2px #666;  
-		box-shadow: 0 0 2px #666;  
+		border-radius: 2px;
+		-webkit-box-shadow: 2px 2px 5px #d9d9d9;  
+		-moz-box-shadow: 2px 2px 5px #d9d9d9;
+		box-shadow: 2px 2px 5px #d9d9d9;  
+
 
 		transition:background-color 0.3s linear;
 		-moz-transition:background-color 0.3s linear; /* Firefox 4 */
@@ -250,6 +252,7 @@ body, html {
 		text-indent: -8000px;
 		margin-top: 30px;
 		margin-left: 30px;
+
 	}
 
 	#navMenu:after {
