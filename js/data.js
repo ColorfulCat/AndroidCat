@@ -84,7 +84,9 @@ function getJishushequData(){
 	return "<h2 style='text-align:center;'>技术社区</h2>"
 	+ newDataItem("稀土掘金", "http://gold.xitu.io/#/tag/Android")
 	+ newDataItem("V2EX", "http://www.v2ex.com/go/android")
-	+ newDataItem("eoe Android社区", "http://www.eoeandroid.com/")
+	+ newDataItem("开发者头条", "http://toutiao.io/")
+	+ newDataItem("极客头条", "http://geek.csdn.net/")
+	+ newDataItem("程序员客栈","http://www.proginn.com/")
 	+ newDataItem("APKBUS安卓巴士", "http://www.apkbus.com/")
 	+ newDataItem("开源中国社区", "http://www.oschina.net/android/")
 	+ newDataItem("中国谷歌开发者社区", "http://www.chinagdg.com/forum-36-1.html")
@@ -96,9 +98,7 @@ function getJishushequData(){
 	+ newDataItem("SegmentFault", "http://segmentfault.com/")
 	+ newDataItem("A梦软件", "http://www.amsoft.cn/")
 	+ newDataItem("天码营", "http://tianmaying.com/topics")
-	+ newDataItem("开发者头条", "http://toutiao.io/")
-	+ newDataItem("极客头条", "http://geek.csdn.net/")
-	+ newDataItem("程序员客栈","http://www.proginn.com/")
+	+ newDataItem("eoe Android社区", "http://www.eoeandroid.com/")
 	+ newDataItem("酷粒", "http://coollist.cn/")
 	+ newDataItem("码农网", "http://www.codeceo.com/")
 
