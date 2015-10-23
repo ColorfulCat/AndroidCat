@@ -129,6 +129,7 @@ function getXuexijiaochengData(){
 	+ newDataItem("MobDevGroup", "http://www.mobdevgroup.com/")
 	+ newDataItem("LeanCloud Blog", "https://blog.leancloud.cn/3612/")
 	+ newDataItem("android100", "http://www.android100.org/")
+	+ newDataItem("android开发网", "http://www.jizhuomi.com/android/")
 	
 	+"<p style='text-align:center;'>~end~</p>";
 }
@@ -210,7 +211,7 @@ function getKaifakuangjiaData(){
 	+ newDataItem("DroidPlugin（插件化）", "https://github.com/Qihoo360/DroidPlugin")
 	+ newDataItem("Universal-Image-Loader（图片）", "https://github.com/nostra13/Android-Universal-Image-Loader")
 	+ newDataItem("Fresco（图片）", "http://www.fresco-cn.org/")
-	+ newDataItem("okhttp（网络请求）", "http://www.fresco-cn.org/")
+	+ newDataItem("okhttp（网络请求）", "http://square.github.io/okhttp/")
 	+ newDataItem("Volley（网络请求）", "http://blog.csdn.net/guolin_blog/article/details/17482095")
 	+ newDataItem("Netroid（网络请求）", "http://www.open-open.com/lib/view/open1402825446810.html")
 	+ newDataItem("android-async-http（网络请求）", "https://github.com/loopj/android-async-http")
