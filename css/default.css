@@ -208,7 +208,6 @@ body, html {
 
 
 
-	.icon-drop:before, 
 	.icon-arrow-left:before {
 		font-family: 'fontawesome';
 		position: absolute;
@@ -220,28 +219,22 @@ body, html {
 		font-weight: normal;
 		line-height: 2;
 		text-align: center;
-		color: #47a3da;
+		color: white;
 		-webkit-font-smoothing: antialiased;
 		text-indent: 8000px;
 		padding-left: 8px;
 	}
-
-	.container > header nav a:hover:before {
-		color: #fff;
-	}
-
-	.icon-drop:before {
-		content: "\e000";
-	}
-
 	.icon-arrow-left:before {
 		content: "\f060";
+	}
+	.container > header nav a:hover:before {
+		color: #fff;
 	}
 
 	#navMenu {
 		display: block;
 		float: left;
-		position: relative;
+		position: fixed;
 		width: 2.5em;
 		height: 2.5em;
 		background: #009688;
@@ -252,6 +245,7 @@ body, html {
 		text-indent: -8000px;
 		margin-top: 30px;
 		margin-left: 30px;
+		z-index: 1000;
 
 	}
 
@@ -288,6 +282,9 @@ body, html {
 
 	#AndroidCat {
 		background: #009688;
+	}
+	#AndroidCat:hover {
+		color: #47a3da;
 	}
 
 	#dataSection {
