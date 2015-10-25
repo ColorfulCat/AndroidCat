@@ -211,6 +211,7 @@ function getKaifakuangjiaData(){
 	+ newDataItem("DroidPlugin（插件化）", "https://github.com/Qihoo360/DroidPlugin")
 	+ newDataItem("Universal-Image-Loader（图片）", "https://github.com/nostra13/Android-Universal-Image-Loader")
 	+ newDataItem("Fresco（图片）", "http://www.fresco-cn.org/")
+	+ newDataItem("Glide（图片）", "https://github.com/bumptech/glide")
 	+ newDataItem("okhttp（网络请求）", "http://square.github.io/okhttp/")
 	+ newDataItem("Volley（网络请求）", "http://blog.csdn.net/guolin_blog/article/details/17482095")
 	+ newDataItem("Netroid（网络请求）", "http://www.open-open.com/lib/view/open1402825446810.html")
