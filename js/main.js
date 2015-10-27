@@ -11,6 +11,7 @@ function load()
 	}
 	setMenuSelection(0);
 	aboutSection.style.visibility = "visible";
+
 }
 
 navMenu.onclick = function() {
@@ -87,4 +88,6 @@ function showData(index){
 function isMobile(){    
 	return window.body.clientWidth < 600;
 } 
+
+ 
 
