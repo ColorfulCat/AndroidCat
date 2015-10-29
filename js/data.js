@@ -339,7 +339,6 @@ function getZhaopinwangzhanData(){
 	+ newDataItem("拉勾网", "http://www.lagou.com/")
 	+ newDataItem("BOSS直聘", "http://www.bosszhipin.com/home/")
 	+ newDataItem("哪上班", "https://www.nashangban.com/")
-	+ newDataItem("JobDeer", "http://www.jobdeer.com/")
 	+ newDataItem("100Offer", "http://www.100offer.com/")
 	+ newDataItem("猎聘网", "http://www.liepin.com/")
 	+ newDataItem("大街网", "http://www.dajie.com/")
