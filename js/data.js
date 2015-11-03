@@ -35,14 +35,15 @@ function getDataList(index){
 function getHotRecommendData(){
 	return "<h2 style='text-align:center;'>AndroidCat热门推荐</h2>"
 	+ newDataItem("稀土掘金", "http://gold.xitu.io/#/tag/Android")
-	+ newDataItem("Android中文API", "http://www.android-doc.com/")
-	+ newDataItem("AndroidDevTools", "http://www.androiddevtools.cn/")
+	+ newDataItem("程序员客栈","http://www.proginn.com/")
 	+ newDataItem("开发者头条", "http://toutiao.io/")
 	+ newDataItem("极客头条", "http://geek.csdn.net/")
+	+ newDataItem("泡在网上的日子", "http://www.jcodecraeer.com/")
 	+ newDataItem("Code4App", "http://a.code4app.com/category")
 	+ newDataItem("36氪", "http://36kr.com/")
 	+ newDataItem("23Code", "http://www.23code.com/ ")
 	+ newDataItem("codeKK", "http://codekk.com/open-source-project-analysis")
+	+ newDataItem("LeanCloud云服务", "https://leancloud.cn/")
 	+ newDataItem("Trinea", "http://www.trinea.cn/")
 	+ newDataItem("夏安明", "http://blog.csdn.net/xiaanming/")
 	+ newDataItem("MobDevGroup", "http://www.mobdevgroup.com/")
@@ -51,12 +52,11 @@ function getHotRecommendData(){
 	+ newDataItem("okhttp（网络请求）", "http://square.github.io/okhttp/")
 	+ newDataItem("Volley（网络请求）", "http://blog.csdn.net/guolin_blog/article/details/17482095")
 	+ newDataItem("Fresco（图片）", "http://www.fresco-cn.org/")
-	+ newDataItem("Universal-Image-Loader（图片）", "https://github.com/nostra13/Android-Universal-Image-Loader")
 	+ newDataItem("greenDao（数据库）", "http://greendao-orm.com/")
 	+ newDataItem("DevStore开发商店", "http://www.devstore.cn/")
 	+ newDataItem("FACE++人脸识别云", "http://www.faceplusplus.com.cn/")
-	+ newDataItem("LeanCloud云服务", "https://leancloud.cn/")
 	+ newDataItem("七牛云存储", "http://www.qiniu.com/")
+	+ newDataItem("移动APP整体策划", "http://geek.csdn.net/news/detail/38125")
 
 	+"<p style='text-align:center;'>~end~</p>";
 }
@@ -379,9 +379,7 @@ function getZhaopinwangzhanData(){
 	+ newDataItem("人才啊", "http://www.rencaiaaa.com/index.do")
 	+ newDataItem("闪聘", "http://www.shanp.com/")
 	+ newDataItem("枇杷派", "https://www.pipapai.com/")
-	+ newDataItem("51猎人网", "http://www.51lrw.com/")
-	+ newDataItem("51猎人网", "http://www.51lrw.com/")
-	+ newDataItem("51猎人网", "http://www.51lrw.com/")
+
 	
 	+"<p style='text-align:center;'>~end~</p>";
 }
