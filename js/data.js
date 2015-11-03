@@ -58,7 +58,7 @@ function getHotRecommendData(){
 	+ newDataItem("七牛云存储", "http://www.qiniu.com/")
 	+ newDataItem("移动APP整体策划", "http://geek.csdn.net/news/detail/38125")
 
-	+"<p style='text-align:center;'>~end~</p>";
+	+"<p style='text-align:center;'>Waiting for more</p>";
 }
 
 //---------------------------------------------------------资源文档
@@ -76,7 +76,7 @@ function getZiyuanwendangData(){
 	+ newDataItem("Material Design 中文版", "http://design.1sters.com")
 	+ newDataItem("Android中文API", "http://www.android-doc.com/")
 
-	+"<p style='text-align:center;'>~end~</p>";
+	+"<p style='text-align:center;'>Waiting for more</p>";
 }
 
 //---------------------------------------------------------技术社区
@@ -104,7 +104,7 @@ function getJishushequData(){
 	+ newDataItem("看源社区", "http://www.see-source.com/index.html")
 	+ newDataItem("importnew", "http://www.importnew.com/")
 
-	+"<p style='text-align:center;'>~end~</p>";
+	+"<p style='text-align:center;'>Waiting for more</p>";
 }
 
 //---------------------------------------------------------学习教程
@@ -133,7 +133,7 @@ function getXuexijiaochengData(){
 	+ newDataItem("android100", "http://www.android100.org/")
 	+ newDataItem("android开发网", "http://www.jizhuomi.com/android/")
 	
-	+"<p style='text-align:center;'>~end~</p>";
+	+"<p style='text-align:center;'>Waiting for more</p>";
 }
 
 //---------------------------------------------------------开源代码
@@ -157,7 +157,7 @@ function getKaiyuandaimaData(){
 	+ newDataItem("awesome-android", "https://github.com/snowdream/awesome-android")
 	+ newDataItem("阳和移动开发", "http://www.mobile-open.com/")
 	
-	+"<p style='text-align:center;'>~end~</p>";
+	+"<p style='text-align:center;'>Waiting for more</p>";
 }
 
 //---------------------------------------------------------知名博客
@@ -202,7 +202,7 @@ function getZhimingbokeData(){
 	+ newDataItem("代码家", "http://blog.daimajia.com/")
 	+ newDataItem("stay", "http://www.cnblogs.com/stay/")
 	
-	+"<p style='text-align:center;'>~end~</p>";
+	+"<p style='text-align:center;'>Waiting for more</p>";
 }
 
 //---------------------------------------------------------开发框架
@@ -236,7 +236,7 @@ function getKaifakuangjiaData(){
 	+ newDataItem("ActiveAndroid（数据库）", "https://github.com/pardom/ActiveAndroid")
 	+ newDataItem("SnappyDB（数据库）", "https://github.com/nhachicha/SnappyDB")
 
-	+"<p style='text-align:center;'>~end~</p>";
+	+"<p style='text-align:center;'>Waiting for more</p>";
 }
 
 //---------------------------------------------------------前沿资讯
@@ -259,7 +259,7 @@ function getQianyanzixunData(){
 	+ newDataItem("π少数派", "http://sspai.com/tag/android")
 	+ newDataItem("ANDROID WEEKLY", "http://androidweekly.net/")
 	
-	+"<p style='text-align:center;'>~end~</p>";
+	+"<p style='text-align:center;'>Waiting for more</p>";
 }
 
 //---------------------------------------------------------开发服务
@@ -297,7 +297,7 @@ function getKaifafuwuData(){
 	+ newDataItem("蒲公英", "http://www.pgyer.com/")
 	+ newDataItem("socket.io", "http://socket.io/")
 	
-	+"<p style='text-align:center;'>~end~</p>";
+	+"<p style='text-align:center;'>Waiting for more</p>";
 }
 
 
@@ -331,7 +331,7 @@ function getShichangqudaoData(){
 	+ newDataItem("UC+开放平台", "http://plus.uc.cn/")
 	+ newDataItem("安智市场", "http://www.anzhi.com/")
 	
-	+"<p style='text-align:center;'>~end~</p>";
+	+"<p style='text-align:center;'>Waiting for more</p>";
 }
 
 
@@ -350,7 +350,7 @@ function getGuanggaofuwuData(){
 	+ newDataItem("果合", "http://www.guohead.com/home.html")
 	+ newDataItem("点金", "http://mjoy.91.com/")
 	
-	+"<p style='text-align:center;'>~end~</p>";
+	+"<p style='text-align:center;'>Waiting for more</p>";
 }
 
 //---------------------------------------------------------招聘网站
@@ -381,5 +381,5 @@ function getZhaopinwangzhanData(){
 	+ newDataItem("枇杷派", "https://www.pipapai.com/")
 
 	
-	+"<p style='text-align:center;'>~end~</p>";
+	+"<p style='text-align:center;'>Waiting for more</p>";
 }
