@@ -101,6 +101,8 @@ function getJishushequData(){
 	+ newDataItem("eoe Android社区", "http://www.eoeandroid.com/")
 	+ newDataItem("酷粒", "http://coollist.cn/")
 	+ newDataItem("码农网", "http://www.codeceo.com/")
+	+ newDataItem("看源社区", "http://www.see-source.com/index.html")
+	+ newDataItem("importnew", "http://www.importnew.com/")
 
 	+"<p style='text-align:center;'>~end~</p>";
 }
@@ -174,7 +176,7 @@ function getZhimingbokeData(){
 	+ newDataItem("谦虚的天下", "http://www.cnblogs.com/qianxudetianxia/")
 	+ newDataItem("兰亭风雨", "http://blog.csdn.net/ns_code")
 	+ newDataItem("Mr.Simple", "http://blog.csdn.net/bboyfeiyu")
-	+ newDataItem("罗升阳", "http://blog.csdn.net/luoshengyang/")
+	+ newDataItem("罗升阳（老罗）", "http://blog.csdn.net/luoshengyang/")
 	+ newDataItem("邓凡平", "http://www.cnblogs.com/innost/")
 	+ newDataItem("Race604", "http://www.race604.com/")
 	+ newDataItem("stormzhang", "http://stormzhang.com/")
@@ -188,6 +190,17 @@ function getZhimingbokeData(){
 	+ newDataItem("bongizmo", "http://www.bongizmo.com/blog/")
 	+ newDataItem("Cyril Mottier", "http://cyrilmottier.com")
 	+ newDataItem("悠城札记", "http://www.linfuyan.com/")
+	+ newDataItem("赵凯强", "http://blog.csdn.net/zhaokaiqiang1992")
+	+ newDataItem("kymjs张涛", "http://kymjs.com/")
+	+ newDataItem("郝锡强", "http://www.haoxiqiang.info/static/timing.html")
+	+ newDataItem("IT_xiao小巫", "http://blog.csdn.net/wwj_748")
+	+ newDataItem("郭霖", "http://blog.csdn.net/sinyu890807/")
+	+ newDataItem("xyz_lmn", "http://blog.csdn.net/xyz_lmn/")
+	+ newDataItem("咪当我系欧巴", "http://blog.csdn.net/hellogv")
+	+ newDataItem("CoderRobin", "http://coderrobin.com/")
+	+ newDataItem("农民伯伯", "http://www.cnblogs.com/over140/")
+	+ newDataItem("代码家", "http://blog.daimajia.com/")
+	+ newDataItem("stay", "http://www.cnblogs.com/stay/")
 	
 	+"<p style='text-align:center;'>~end~</p>";
 }
@@ -203,6 +216,7 @@ function getKaifakuangjiaData(){
 	+ newDataItem("LoonAndroid（快速）", "https://github.com/gdpancheng/LoonAndroid")
 	+ newDataItem("androidannotations（快速）", "https://github.com/excilys/androidannotations/wiki")
 	+ newDataItem("AndroidFine（快速）", "AndroidFine（快速）")
+	+ newDataItem("React Native（JS跨平台）", "http://wiki.jikexueyuan.com/project/react-native/")
 	+ newDataItem("Cordova（H5跨平台）", "http://cordova.apache.org/")
 	+ newDataItem("HBuilder（H5跨平台）", "http://www.dcloud.io/")
 	+ newDataItem("AppCan（H5跨平台）", "http://www.appcan.cn/")
@@ -216,6 +230,7 @@ function getKaifakuangjiaData(){
 	+ newDataItem("Volley（网络请求）", "http://blog.csdn.net/guolin_blog/article/details/17482095")
 	+ newDataItem("Netroid（网络请求）", "http://www.open-open.com/lib/view/open1402825446810.html")
 	+ newDataItem("android-async-http（网络请求）", "https://github.com/loopj/android-async-http")
+	+ newDataItem("Retrofit（网络请求）", "http://square.github.io/retrofit/")
 	+ newDataItem("greenDao（数据库）", "http://greendao-orm.com/")
 	+ newDataItem("Lite Orm（数据库）", "https://github.com/litesuits/android-lite-orm")
 	+ newDataItem("ActiveAndroid（数据库）", "https://github.com/pardom/ActiveAndroid")
@@ -242,6 +257,7 @@ function getQianyanzixunData(){
 	+ newDataItem("推酷", "http://www.tuicool.com/")
 	+ newDataItem("mind", "http://mindstore.io/")
 	+ newDataItem("π少数派", "http://sspai.com/tag/android")
+	+ newDataItem("ANDROID WEEKLY", "http://androidweekly.net/")
 	
 	+"<p style='text-align:center;'>~end~</p>";
 }
@@ -257,6 +273,7 @@ function getKaifafuwuData(){
 	+ newDataItem("Wilddog野狗", "https://www.wilddog.com/")
 	+ newDataItem("融云即时通讯云", "http://www.rongcloud.cn/")
 	+ newDataItem("环信即时通讯云", "http://www.easemob.com/")
+	+ newDataItem("阿里悟空", "https://imwukong.com/")
 	+ newDataItem("讯飞开放平台", "http://www.xfyun.cn/")
 	+ newDataItem("FACE++人脸识别云", "http://www.faceplusplus.com.cn/")
 	+ newDataItem("七牛云存储", "http://www.qiniu.com/")
@@ -275,6 +292,10 @@ function getKaifafuwuData(){
 	+ newDataItem("小米消息推送", "http://dev.xiaomi.com/doc/?page_id=1670")
 	+ newDataItem("聚合数据", "http://www.juhe.cn/")
 	+ newDataItem("云测", "http://crash.testin.cn/zh/")
+	+ newDataItem("阿里百川", "http://baichuan.taobao.com/")
+	+ newDataItem("fir.im", "http://fir.im/")
+	+ newDataItem("蒲公英", "http://www.pgyer.com/")
+	+ newDataItem("socket.io", "http://socket.io/")
 	
 	+"<p style='text-align:center;'>~end~</p>";
 }
@@ -354,6 +375,13 @@ function getZhaopinwangzhanData(){
 	+ newDataItem("MyHiringClub", "http://www.myhiringclub.com/")
 	+ newDataItem("牵牛招聘", "http://www.1000new.com/")
 	+ newDataItem("HiStarter", "http://www.histarter.com/p/jobs/job_main")
+	+ newDataItem("51猎人网", "http://www.51lrw.com/")
+	+ newDataItem("人才啊", "http://www.rencaiaaa.com/index.do")
+	+ newDataItem("闪聘", "http://www.shanp.com/")
+	+ newDataItem("枇杷派", "https://www.pipapai.com/")
+	+ newDataItem("51猎人网", "http://www.51lrw.com/")
+	+ newDataItem("51猎人网", "http://www.51lrw.com/")
+	+ newDataItem("51猎人网", "http://www.51lrw.com/")
 	
 	+"<p style='text-align:center;'>~end~</p>";
 }
