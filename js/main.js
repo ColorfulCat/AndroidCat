@@ -33,11 +33,6 @@ function clickAndroidCat(){
 
 
 
-
-
-
-
-
 function isShowCoverDiv(){
 	if(!isMobile()){
 		// if(menuLeft.style.visibility == 'hidden'){
@@ -88,6 +83,10 @@ function showData(index){
 function isMobile(){    
 	return window.body.clientWidth < 600;
 } 
+
+
+
+
 
  
 
