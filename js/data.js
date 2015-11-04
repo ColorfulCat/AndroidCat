@@ -194,7 +194,6 @@ function getZhimingbokeData(){
 	+ newDataItem("kymjs张涛", "http://kymjs.com/")
 	+ newDataItem("郝锡强", "http://www.haoxiqiang.info/static/timing.html")
 	+ newDataItem("IT_xiao小巫", "http://blog.csdn.net/wwj_748")
-	+ newDataItem("郭霖", "http://blog.csdn.net/sinyu890807/")
 	+ newDataItem("xyz_lmn", "http://blog.csdn.net/xyz_lmn/")
 	+ newDataItem("咪当我系欧巴", "http://blog.csdn.net/hellogv")
 	+ newDataItem("CoderRobin", "http://coderrobin.com/")
