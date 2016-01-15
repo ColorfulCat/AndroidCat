@@ -299,6 +299,7 @@ function getKaifafuwuData(){
 	+ newDataItem("fir.im", "http://fir.im/")
 	+ newDataItem("蒲公英", "http://www.pgyer.com/")
 	+ newDataItem("socket.io", "http://socket.io/")
+	+ newDataItem("腾讯御安全", "http://yaq.qq.com/index.jsp")
 	
 	+"<p style='text-align:center;'>Waiting for more</p>";
 }
