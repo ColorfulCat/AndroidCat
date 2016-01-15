@@ -24,10 +24,12 @@ function getDataList(index){
 		case 8:
 		return getKaifafuwuData();
 		case 9:
-		return getShichangqudaoData();
+		return getUIsucaiData();
 		case 10:
-		return getGuanggaofuwuData();
+		return getShichangqudaoData();
 		case 11:
+		return getGuanggaofuwuData();
+		case 12:
 		return getZhaopinwangzhanData();
 	}
 }
@@ -300,6 +302,26 @@ function getKaifafuwuData(){
 	+"<p style='text-align:center;'>Waiting for more</p>";
 }
 
+//---------------------------------------------------------UI素材
+function getUIsucaiData(){
+	return "<h2 style='text-align:center;'>UI素材</h2>"
+	+ newDataItem("dribbble", "https://dribbble.com/")
+	+ newDataItem("花瓣网", "http://huaban.com/")
+	+ newDataItem("千图网", "http://www.58pic.com/")
+	+ newDataItem("uigarage", "http://uigarage.net/")
+	+ newDataItem("iconfont", "http://www.iconfont.cn/")
+	+ newDataItem("easyicon", "http://www.easyicon.net/")
+	+ newDataItem("iconpng", "http://www.iconpng.com/")
+	+ newDataItem("findicons", "http://findicons.com/")
+	+ newDataItem("iconfinder", "https://www.iconfinder.com/")
+	+ newDataItem("Android-Iconics", "https://github.com/mikepenz/Android-Iconics")
+	+ newDataItem("android-iconify", "https://github.com/JoanZapata/android-iconify")
+	+ newDataItem("material-design-icons", "https://github.com/google/material-design-icons")
+  
+	
+	+"<p style='text-align:center;'>Waiting for more</p>";
+}
+
 
 //---------------------------------------------------------市场渠道
 function getShichangqudaoData(){
@@ -379,6 +401,7 @@ function getZhaopinwangzhanData(){
 	+ newDataItem("人才啊", "http://www.rencaiaaa.com/index.do")
 	+ newDataItem("闪聘", "http://www.shanp.com/")
 	+ newDataItem("枇杷派", "https://www.pipapai.com/")
+	+ newDataItem("简寻", "http://jianxun.io/")
 
 	
 	+"<p style='text-align:center;'>Waiting for more</p>";
