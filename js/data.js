@@ -31,12 +31,14 @@ function getDataList(index){
 		return getGuanggaofuwuData();
 		case 12:
 		return getZhaopinwangzhanData();
+		case 13:
+		return getSihuowangzhanData();
 	}
 }
 //---------------------------------------------------------热门推荐
 function getHotRecommendData(){
 	return "<h2 style='text-align:center;'>AndroidCat热门推荐</h2>"
-	+ newDataItem("即将成为史上最全分类Android开源代码大全", "https://github.com/XXApple/AndroidLibs")
+	// + newDataItem("即将成为史上最全分类Android开源代码大全", "https://github.com/XXApple/AndroidLibs")
 	+ newDataItem("稀土掘金", "http://gold.xitu.io/#/tag/Android")
 	+ newDataItem("程序员客栈","http://www.proginn.com/")
 	+ newDataItem("七牛云存储", "https://portal.qiniu.com/signup?code=3lpr3oxtj6n9u")
@@ -79,6 +81,8 @@ function getZiyuanwendangData(){
 	+ newDataItem("Android Design设计指南中文版", "http://adchs.github.io")
 	+ newDataItem("Material Design 中文版", "http://design.1sters.com")
 	+ newDataItem("Android中文API", "http://www.android-doc.com/")
+	+ newDataItem("代码片段（JAVA）", "http://www.phpxs.com/code/java")
+	+ newDataItem("APKMirror", "http://www.apkmirror.com/apk/google-inc/")
 
 	+"<p style='text-align:center;'>Waiting for more</p>";
 }
@@ -104,9 +108,9 @@ function getJishushequData(){
 	+ newDataItem("天码营", "http://tianmaying.com/topics")
 	+ newDataItem("eoe Android社区", "http://www.eoeandroid.com/")
 	+ newDataItem("酷粒", "http://coollist.cn/")
-	+ newDataItem("码农网", "http://www.codeceo.com/")
 	+ newDataItem("看源社区", "http://www.see-source.com/index.html")
 	+ newDataItem("importnew", "http://www.importnew.com/")
+	+ newDataItem("码农网", "http://www.codeceo.com/article/category/develop/android")
 
 	+"<p style='text-align:center;'>Waiting for more</p>";
 }
@@ -136,6 +140,8 @@ function getXuexijiaochengData(){
 	+ newDataItem("LeanCloud Blog", "https://blog.leancloud.cn/3612/")
 	+ newDataItem("android100", "http://www.android100.org/")
 	+ newDataItem("android开发网", "http://www.jizhuomi.com/android/")
+	+ newDataItem("AlloyTeam", "http://www.alloyteam.com/mobiledevelop/android/")
+	+ newDataItem("fir.im飞行日志", "http://blog.fir.im/")
 	
 	+"<p style='text-align:center;'>Waiting for more</p>";
 }
@@ -204,6 +210,7 @@ function getZhimingbokeData(){
 	+ newDataItem("农民伯伯", "http://www.cnblogs.com/over140/")
 	+ newDataItem("代码家", "http://blog.daimajia.com/")
 	+ newDataItem("stay", "http://www.cnblogs.com/stay/")
+	+ newDataItem("Coder", "http://www.blogfshare.com/")
 	
 	+"<p style='text-align:center;'>Waiting for more</p>";
 }
@@ -283,6 +290,7 @@ function getKaifafuwuData(){
 	+ newDataItem("PING++支付SDK", "https://pingxx.com/")
 	+ newDataItem("涂图SDK-移动图像处理开发套件", "http://tusdk.com/")
 	+ newDataItem("Sticker表情大全开发者平台", "http://www.stickersdk.com/")
+	+ newDataItem("STICKER PIPE表情工具", "http://stickerpipe.com/")
 	+ newDataItem("亲加通讯云", "http://www.gotye.com.cn/")
 	+ newDataItem("容联云通讯", "http://www.yuntongxun.com/")
 	+ newDataItem("爱开发", "http://www.akaifa.com/")
@@ -300,13 +308,16 @@ function getKaifafuwuData(){
 	+ newDataItem("蒲公英", "http://www.pgyer.com/")
 	+ newDataItem("socket.io", "http://socket.io/")
 	+ newDataItem("腾讯御安全", "http://yaq.qq.com/index.jsp")
+	+ newDataItem("SDK.cn", "https://www.sdk.cn/")
+	+ newDataItem("SimSimi聊天机器人 API", "http://developer.simsimi.com/")
+	+ newDataItem("图灵聊天机器人 API", "http://www.tuling123.com/")
 	
 	+"<p style='text-align:center;'>Waiting for more</p>";
 }
 
-//---------------------------------------------------------UI素材
+//---------------------------------------------------------图片素材
 function getUIsucaiData(){
-	return "<h2 style='text-align:center;'>UI素材</h2>"
+	return "<h2 style='text-align:center;'>图片素材</h2>"
 	+ newDataItem("dribbble", "https://dribbble.com/")
 	+ newDataItem("花瓣网", "http://huaban.com/")
 	+ newDataItem("千图网", "http://www.58pic.com/")
@@ -319,7 +330,13 @@ function getUIsucaiData(){
 	+ newDataItem("Android-Iconics", "https://github.com/mikepenz/Android-Iconics")
 	+ newDataItem("android-iconify", "https://github.com/JoanZapata/android-iconify")
 	+ newDataItem("material-design-icons", "https://github.com/google/material-design-icons")
-  
+  	+ newDataItem("茶图", "http://www.teapic.com/list/ext/png.htm")
+  	+ newDataItem("免费的高清图片", "https://pixabay.com/")
+  	+ newDataItem("appiconsizes.com", "http://www.appiconsizes.com/")
+  	+ newDataItem("makeappicon.com", "https://makeappicon.com/")
+  	+ newDataItem("Android Asset Studio", "http://romannurik.github.io/AndroidAssetStudio/index.html")
+  	+ newDataItem("Collect UI", "http://collectui.com/")
+  	+ newDataItem("UI中国", "http://www.ui.cn/")
 	
 	+"<p style='text-align:center;'>Waiting for more</p>";
 }
@@ -328,10 +345,10 @@ function getUIsucaiData(){
 //---------------------------------------------------------市场渠道
 function getShichangqudaoData(){
 	return "<h2 style='text-align:center;'>市场渠道</h2>"
-	+ newDataItem("google play", "https://play.google.com/store")
+	+ newDataItem("google play", "https://play.google.com/apps/publish/")
 	+ newDataItem("360手机助手", "http://open.app.360.cn/developer/")
 	+ newDataItem("腾讯—应用宝", "http://op.open.qq.com/index.php?mod=mobile_manage_center#src")
-	+ newDataItem("百度手机助手", "http://developer.baidu.com/")
+	+ newDataItem("百度手机助手", "http://app.baidu.com/")
 	+ newDataItem("豌豆荚", "http://www.wandoujia.com/apps/dev/home")
 	+ newDataItem("小米", "http://developer.xiaomi.com/developer/tobindCompany")
 	+ newDataItem("安卓市场", "http://dev.apk.hiapk.com")
@@ -404,7 +421,33 @@ function getZhaopinwangzhanData(){
 	+ newDataItem("闪聘", "http://www.shanp.com/")
 	+ newDataItem("枇杷派", "https://www.pipapai.com/")
 	+ newDataItem("简寻", "http://jianxun.io/")
+	+ newDataItem("互推网", "http://www.hrhutui.com/")
 
 	
 	+"<p style='text-align:center;'>Waiting for more</p>";
 }
+
+
+//---------------------------------------------------------私活网站
+function getSihuowangzhanData(){
+	return "<h2 style='text-align:center;'>私活网站</h2>"
+	+ newDataItem("程序员客栈", "http://www.proginn.com/")
+	+ newDataItem("码市", "https://mart.coding.net/")
+	+ newDataItem("快码众包", "http://www.kuaima.co/")
+	+ newDataItem("猿团", "http://www.yuantuan.com/")
+	+ newDataItem("oschina众包", "https://zb.oschina.net/")
+	+ newDataItem("英选", "http://www.linktion.cn/")
+	+ newDataItem("码易众包平台", "http://www.mayigeek.com")
+	+ newDataItem("小圆桌", "http://www.xyuanzhuo.com/")
+	+ newDataItem("SXsoft", "http://www.sxsoft.com/")
+	+ newDataItem("人人开发", "http://rrkf.com/")
+	+ newDataItem("极客邦SOHO", "http://www.looip.cn/")
+	+ newDataItem("开发邦", "http://www.kaifabang.com/")
+	+ newDataItem("猪八戒", "http://www.zbj.com/")
+	+ newDataItem("智城", "http://www.taskcity.com/")
+	+ newDataItem("CSTO", "http://www.csto.com/home")
+	+ newDataItem("Freelancer", "https://www.freelancer.cn/")
+ 
+	+"<p style='text-align:center;'>Waiting for more</p>";
+}
+
