@@ -59,7 +59,7 @@ function clickMenu(index){
 }
 
 function setMenuSelection(index){
-	for(var i = 0; i <= 11; i++){
+	for(var i = 0; i <= 13; i++){
 		if(i == index){
 			document.getElementById( 'menu' + i ).style.backgroundColor = "#00695c";
 		}else{
