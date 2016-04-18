@@ -37,7 +37,7 @@ function getDataList(index){
 }
 //---------------------------------------------------------热门推荐
 function getHotRecommendData(){
-	return "<h2 style='text-align:center;'>AndroidCat热门推荐</h2>"
+	return "<h2 style='text-align:center;'>AndroidCat正在进行全新改版，正在寻求建议和反馈，QQ交流群:105472201</h2>"
 	// + newDataItem("即将成为史上最全分类Android开源代码大全", "https://github.com/XXApple/AndroidLibs")
 	+ newDataItem("稀土掘金", "http://gold.xitu.io/#/tag/Android")
 	+ newDataItem("程序员客栈","http://www.proginn.com/")
