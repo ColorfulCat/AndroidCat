@@ -1,4 +1,14 @@
 function AboutFragment() {
+	if(Manifest.isMeiQiaInited){
+		_MEIQIA._SHOWPANEL();
+	}else{
+		if(!Manifest.isPhone){
+			setTimeout(function(){
+				_MEIQIA._INIT();
+				Manifest.isMeiQiaInited = true;
+			}, 1000);
+		}
+	}
     ScrollView.apply(this);
 
     var scrollCnt = new ViewGroup();
@@ -37,8 +47,6 @@ function AboutFragment() {
      var commentView = new CommentView();
      cnt.addView(commentView, lp);
 
- 
-
   
 }
 
@@ -65,11 +73,6 @@ function LogoView() {
     logoImg.setImageUri("img/cat_icon.png");
     this.addView(logoImg, lp);
 
-    var logoName = new ImageView();
-    logoName.setScaleType(ScaleType.CENTER_INSIDE);
-    logoName.setImageUri("images/logoname.png");
-//  this.addView(logoName);
-
     var title = Theme.createTitle("AndroidCat 书签网");
     this.addView(title);
 
@@ -86,7 +89,6 @@ function LogoView() {
 
         logoArea.measure(logoAreaW, logoAreaW);
         logoImg.measure(logoSize, logoSize);
-        logoName.measure(logoSize, logoAreaW - logoSize);
 
         var cntW = w - padding * 3 - logoAreaW;
         title.measure(MS.makeMS(cntW, MS.EXACTLY), 0);
@@ -104,9 +106,6 @@ function LogoView() {
         x = padding + (logoAreaW - logoSize) / 2;
         y = padding;
         logoImg.layout(x, y);
-
-        y += logoImg.getMeasuredHeight() - 8;
-        logoName.layout(x, y);
 
         x = padding * 2 + logoAreaW;
         y = 24;

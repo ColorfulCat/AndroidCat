@@ -37,6 +37,15 @@ function _Theme() {
         v.setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
         return v;
     };
+    
+    this.createTip = function(t) {
+        var v = new TextView();
+        v.setText(t);
+        v.setTextColor(R.color.sub_text);
+        v.setTextSize(R.dimen.sub_text);
+        v.setGravity(Gravity.CENTER);
+        return v;
+    };
 
     this.createText = function(t) {
         var v = new TextView();

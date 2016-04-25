@@ -7,6 +7,9 @@ var contentLinearLayout;
 var contentScrollView;
 
 function CatFragment() {
+	if(Manifest.isMeiQiaInited){
+		_MEIQIA._HIDEPANEL();
+	}
 	LinearLayout.apply(this);
 	this.setOrientation(LinearLayout.HORIZONTAL);
 
@@ -184,6 +187,11 @@ function updateCats(catMenuItem) {
 		var item = new CatItem(mCats[i]);
 		contentLinearLayout.addView(item, lp);
 	}
+	var noMore = Theme.createTip("嘿嘿，木有了哦~");
+	noMore.setTextColor(R.color.theme);
+	var noMoreLp = new LP(LP.FP, LP.WC);
+	noMoreLp.gravity = Gravity.CENTER;
+	contentLinearLayout.addView(noMore, noMoreLp);
 	//返回顶部
 	contentScrollView.scrollTo(0,0);
 }

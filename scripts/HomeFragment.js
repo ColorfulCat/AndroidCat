@@ -1,4 +1,7 @@
 function HomeFragment() {
+	if(Manifest.isMeiQiaInited){
+		_MEIQIA._HIDEPANEL();
+	}
 	ScrollView.apply(this);
 
 	var linearLayout = new LinearLayout();

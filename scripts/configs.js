@@ -35,6 +35,9 @@ function _Manifest() {
 			R.dimen.content_padding_bottom = 72;
 		}
 	};
+	
+	//美恰是否初始化
+	this.isMeiQiaInited = false;
 }
 
 

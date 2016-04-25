@@ -1,4 +1,7 @@
 function ForumFragment() {
+	if(Manifest.isMeiQiaInited){
+		_MEIQIA._HIDEPANEL();
+	}
 	LinearLayout.apply(this);
 	this.setOrientation(LinearLayout.VERTICAL);
 	
