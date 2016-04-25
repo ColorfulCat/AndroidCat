@@ -6,7 +6,7 @@ function AboutFragment() {
 			setTimeout(function(){
 				_MEIQIA._INIT();
 				Manifest.isMeiQiaInited = true;
-			}, 1000);
+			}, 500);
 		}
 	}
     ScrollView.apply(this);
