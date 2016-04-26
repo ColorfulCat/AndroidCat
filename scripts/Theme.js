@@ -44,6 +44,11 @@ function _Theme() {
         v.setTextColor(R.color.sub_text);
         v.setTextSize(R.dimen.sub_text);
         v.setGravity(Gravity.CENTER);
+        var lp = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
+        lp.topMargin = R.dimen.padding;
+        lp.bottomMargin = R.dimen.padding;
+        lp.gravity = Gravity.CENTER;
+        v.setLayoutParams(lp);
         return v;
     };
 

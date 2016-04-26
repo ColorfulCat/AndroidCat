@@ -189,9 +189,7 @@ function updateCats(catMenuItem) {
 	}
 	var noMore = Theme.createTip("嘿嘿，木有了哦~");
 	noMore.setTextColor(R.color.theme);
-	var noMoreLp = new LP(LP.FP, LP.WC);
-	noMoreLp.gravity = Gravity.CENTER;
-	contentLinearLayout.addView(noMore, noMoreLp);
+	contentLinearLayout.addView(noMore);
 	//返回顶部
 	contentScrollView.scrollTo(0,0);
 }
