@@ -37,9 +37,10 @@ function HomeFragment() {
 	cntBody.setPadding(0, 0, 0, R.dimen.padding);
 	cnt.addView(cntBody);
 
-
 	var lp = new LP(LP.FP, LP.WC);
 	lp.setMargins(R.dimen.padding);
+	
+	
 
 	var subTitle = Theme.createCatTitle("推荐内容");
 	linearLayout.addView(subTitle);
