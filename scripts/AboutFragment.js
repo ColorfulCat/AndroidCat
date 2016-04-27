@@ -70,7 +70,7 @@ function LogoView() {
     var logoImg = new MImageButton();
     var lp = new LayoutParams(logoSize, logoSize);
     logoImg.setScaleType(ScaleType.FIT_CENTER);
-    logoImg.setImageUri("img/cat_icon.png");
+    logoImg.setImageUri("img/androidcat512.png");
     this.addView(logoImg, lp);
 
     var title = Theme.createTitle("AndroidCat 书签网");
