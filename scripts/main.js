@@ -20,11 +20,11 @@ function MainView() {
 					cnt.addFragment(createCatFragment(), "view=CatFragment");
 					break;
 				case 2:
-					if(Manifest.isPhone){
+//					if(Manifest.isPhone){
 						cnt.addFragment(createAboutFragment(), "view=AboutFragment");
-					}else{
-						cnt.addFragment(createForumFragment(), "view=ForumFragment");
-					}
+//					}else{
+//						cnt.addFragment(createForumFragment(), "view=ForumFragment");
+//					}
 					break;
 				case 3:
 					cnt.addFragment(createAboutFragment(), "view=AboutFragment");

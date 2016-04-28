@@ -58,11 +58,19 @@ function HomeFragment() {
 //			ShowOkDialog("哈哈，你好，我是Dialog!");
 //			ShowSnackBar("嘿嘿嘿~~");
 //		}, 1000);
-
-
 	});
 
 	linearLayout.addView(textView, lp);
+	
+	var textView1 = new TextLayoutView("或者去逛逛我们的Android开发者交流社区吧~");
+	textView1.setOnClickListener(function() {
+		setTimeout(function() {
+			window.open("http://133.130.120.73:9000/",'','');
+			//TODO 记录事件打点
+		}, 200);
+	});
+	linearLayout.addView(textView1, lp);
+	
 
 //	var button = new TextLayoutView("点我点我");
 //	button.setOnClickListener(function() {

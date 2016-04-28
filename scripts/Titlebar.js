@@ -14,7 +14,7 @@ function Titlebar() {
 	tab.addTabItem(createTabItem(R.string.intro));
 	tab.addTabItem(createTabItem(R.string.doc));
 	if(!Manifest.isPhone){
-		tab.addTabItem(createTabItem(R.string.vs_android));
+//		tab.addTabItem(createTabItem(R.string.vs_android));
 	}
 	//  tab.addTabItem(createTabItem(R.string.app));
 	tab.addTabItem(createTabItem(R.string.about));
@@ -64,7 +64,7 @@ function Titlebar() {
 
 	this.onMeasure = function(wMS) {
 		var w = MeasureSpec.getSize(wMS);
-		var h = 64;
+		var h = R.dimen.titlebar_height;
 		this.setMeasuredDimension(w, h);
 
 		line1.measure(1, h);
@@ -82,7 +82,7 @@ function Titlebar() {
 			tab.setVisibility(View.VISIBLE);
 
 			logoArea.measure(190, h);
-			tab.measure(w - 190 - 64, h);
+			tab.measure(w - 190 - R.dimen.titlebar_height, h);
 		}
 	};
 
@@ -101,7 +101,7 @@ function Titlebar() {
 			x = menu.getMW();
 			line1.layout(x, y);
 
-			x = this.getMW() - 64;
+			x = this.getMW() - R.dimen.titlebar_height;
 			line2.layout(x, y);
 		} else {
 			logoArea.layout(x, y);
@@ -115,7 +115,7 @@ function Titlebar() {
 			x = logoArea.getMW();
 			line1.layout(x, y);
 
-			x = this.getMW() - 64;
+			x = this.getMW() - R.dimen.titlebar_height;
 			line2.layout(x, y);
 		}
 	};

@@ -15,8 +15,14 @@ function SettingView() {
 		return "今天是" + today.getFullYear() + "年" + (today.getMonth() + 1) + "月" + today.getDate() + "日 星期" + weeks[today.getDay()];
 	}
     
+    var titleText = Theme.createHuangLiTitle("Android程序员老黄历");
+    titleText.setPadding(R.dimen.padding32);
+    cnt.addView(titleText);
+    
+    
     var dateText = Theme.createText(getTodayString());
     dateText.setPadding(R.dimen.padding);
+    dateText.setTextSize(R.dimen.tips);
     var dateLp = new LayoutParams(LayoutParams.FILL_PARENT, 48);
     cnt.addView(dateText, dateLp);
 
@@ -30,10 +36,10 @@ function SettingView() {
     var subGood = Theme.createText("专心看谷歌官方文档~（测试文字）");
     subGood.setTextColor(R.color.theme);
     subGood.setPadding(R.dimen.padding);
-    var subTitleLp = new LayoutParams(LayoutParams.FILL_PARENT, 48);
+    var subTitleLp = new LayoutParams(LayoutParams.FILL_PARENT, 64);
     cnt.addView(subGood, subTitleLp);
     
-     var bad = Theme.createTitle("忌");
+    var bad = Theme.createTitle("忌");
     bad.setTextColor(R.color.red);
     bad.setPadding(R.dimen.padding);
     bad.setBorderTop(2, R.color.dividers);
@@ -50,6 +56,35 @@ function SettingView() {
 	myImage.setScaleType(ScaleType.FIT_CENTER);
 	myImage.setImageUri("http://7xki8q.com1.z0.glb.clouddn.com/android-1.png");
 	cnt.addView(myImage, imageLp);
+	
+	//get data
+	
+	var queryGood = new AV.Query('HuangLi');
+	queryGood.addDescending('createdAt');
+	queryGood.equalTo('enable', true);
+	queryGood.find().then(function(results) {
+		if(results != null &&results.size() > 0){
+			subGood.setText(results[0].get("content") +", " +results[0].get("good"));
+		}
+		
+	}, function(error) {
+		alert('Error: ' + error.code + ' ' + error.message);
+	});
+	
+	var queryBad = new AV.Query('HuangLi');
+	queryBad.addDescending('createdAt');
+	queryBad.equalTo('enable', true);
+	queryBad.find().then(function(results) {
+		if(results != null &&results.size() > 1){
+			subBad.setText(results[1].get("content") +", " +results[1].get("bad"));
+		}
+		
+	}, function(error) {
+		alert('Error: ' + error.code + ' ' + error.message);
+	});
+	
+	
+	
 
     this.onMeasure = function(wMS, hMS) {
         var w = MeasureSpec.getSize(wMS) * 2 / 3;

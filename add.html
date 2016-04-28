@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>添加书签数据</title>
+		<script src="https://cdn1.lncld.net/static/js/av-mini-0.6.4.js"></script>
+		<script type="text/javascript" src="scripts/AVManager.js" ></script>
+	</head>
+	<body>
+		标题title:<input placeholder="请输入标题，建议10个字以内" id="title" style="width:500px;height:20px"/></br></br>
+		地址url:<input placeholder="请输入地址" id="url" style="width:500px;height:20px" /></br></br>
+		描述desc:<input placeholder="请输入描述，建议50个字以内" id="desc" style="width:500px;height:20px" /></br></br>
+		图标icon:<input placeholder="请输入图标url" id="icon" style="width:500px;height:20px" /></br></br>
+		标签tag:<input placeholder="请输入标签，请根据给定的标签填写" id="tag" style="width:500px;height:20px" /></br></br></br>
+		<button id="submit" style="width:120px;height:40px" onclick="onSubmit()">提交数据</button></br></br></br></br>
+		<button id="delete" style="width:120px;height:40px" onclick="onDelete()">删除数据</button>
+		<script>
+			var title = document.getElementById("title");
+			var url = document.getElementById("url");
+			var desc = document.getElementById("desc");
+			var icon = document.getElementById("icon");
+			var tag = document.getElementById("tag");
+			var submit = document.getElementById("submit");
+			
+			function onSubmit(){
+				if(title.value == ""){
+					alert("请输入标题");
+				}else if(url.value == ""){
+					alert("请输入地址");
+				}else if(tag.value == ""){
+					alert("请输入标签");
+				}else{
+					var query = new AV.Query('Cat');
+					query.equalTo('tag', tag.value);
+					query.equalTo('title', title.value);
+					query.find().then(function(results) {
+					  console.log('Successfully retrieved ' + results.length + ' posts.');
+					  // 处理返回的结果数据
+					   if(results == null || results.length == 0){
+						   	var cat = AV.Object.new('Cat');
+							cat.set('title', title.value);
+							cat.set('url', url.value);
+							cat.set('desc', desc.value);
+							cat.set('tag', tag.value);
+							cat.set('icon', icon.value);
+							cat.save().then(function(cat) {
+							  alert("提交成功");
+							  title.value = "";
+							  url.value = "";
+							  desc.value = "";
+							  icon.value = "";
+							}, function(err) {
+							  // 失败之后执行其他逻辑
+							  // error 是 AV.Error 的实例，包含有错误码和描述信息.
+							  console.log('Failed to create new object, with error message: ' + err.message);
+							  alert("提交失败，请查看console");
+							});
+					   }else{
+					   		alert("提交同一标签下已经存在改标题");
+					   }
+					   
+					   
+					}, function(error) {
+					  console.log('Error: ' + error.code + ' ' + error.message);
+					});
+					
+					
+					
+				}
+			}
+			
+			function onDelete(){
+				if(title.value == ""){
+					alert("请输入对应的标题");
+				}else if(tag.tag == ""){
+					alert("请输入对应的标签");
+				}else{
+					var query = new AV.Query('Cat');
+					query.equalTo('tag', tag.value);
+					query.equalTo('title', title.value);
+					query.destroyAll().then(function() {
+					  // 删除成功
+					  alert("删除成功");
+					}, function() {
+					  // 失败
+					  alert("删除失败，请查看console");
+					});
+				}
+			}
+		
+		</script>
+		
+		
+	</body>
+</html>
