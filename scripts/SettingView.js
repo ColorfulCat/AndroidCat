@@ -61,6 +61,7 @@ function SettingView() {
 	
 	var queryGood = new AV.Query('HuangLi');
 	queryGood.addDescending('createdAt');
+	queryGood.equalTo('enable', true);
 	queryGood.find().then(function(results) {
 		if(results != null &&results.size() > 0){
 			subGood.setText(results[0].get("content") +", " +results[0].get("good"));
@@ -72,6 +73,7 @@ function SettingView() {
 	
 	var queryBad = new AV.Query('HuangLi');
 	queryBad.addDescending('createdAt');
+	queryBad.equalTo('enable', true);
 	queryBad.find().then(function(results) {
 		if(results != null &&results.size() > 1){
 			subBad.setText(results[1].get("content") +", " +results[1].get("bad"));
