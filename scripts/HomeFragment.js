@@ -39,7 +39,7 @@ function HomeFragment() {
 
 	var lp = new LP(LP.FP, LP.WC);
 	lp.setMargins(R.dimen.padding);
-	
+
 	
 
 	var subTitle = Theme.createCatTitle("推荐内容");
