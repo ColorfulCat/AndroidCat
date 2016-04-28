@@ -14,7 +14,7 @@ function Titlebar() {
 	tab.addTabItem(createTabItem(R.string.intro));
 	tab.addTabItem(createTabItem(R.string.doc));
 	if(!Manifest.isPhone){
-		tab.addTabItem(createTabItem(R.string.vs_android));
+//		tab.addTabItem(createTabItem(R.string.vs_android));
 	}
 	//  tab.addTabItem(createTabItem(R.string.app));
 	tab.addTabItem(createTabItem(R.string.about));
