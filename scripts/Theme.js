@@ -28,6 +28,20 @@ function _Theme() {
         v.setLayoutParams(lp);
         return v;
     };
+    
+    this.createHuangLiTitle = function(t) {
+        var v = new TextView();
+        v.setText(t);
+        v.setTextColor(R.color.white);
+        v.setBackgroundColor(R.color.theme);
+        v.setTextSize(R.dimen.text);
+        v.setGravity(Gravity.CENTER);
+        v.setPadding(R.dimen.padding32);
+        var lp = new LayoutParams(LayoutParams.FILL_PARENT, R.dimen.titlebar_height);
+        v.setLayoutParams(lp);
+
+        return v;
+    };
 
     this.createTitle = function(t) {
         var v = new TextView();

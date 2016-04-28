@@ -151,22 +151,24 @@ function queryCats(catMenuItem) {
 	}
 	query.addDescending('grade');
 	query.find().then(function(results) {
-		
-		for (var i = 0; i < results.length; i++) {
-			var catItem = {};
-			catItem.index = i;
-			catItem.id = results[i].get("objectId");
-			catItem.createdAt = results[i].get("createdAt");
-			catItem.updatedAt = results[i].get("updatedAt");
-			catItem.icon = results[i].get("icon");
-			catItem.title = results[i].get("title");
-			catItem.tag = results[i].get("tag");
-			catItem.hit = results[i].get("hit");
-			catItem.url = results[i].get("url");
-			catItem.desc = results[i].get("desc");
-
-			mCats.push(catItem);
+		if(results != null && results.size() > 0){
+			for (var i = 0; i < results.length; i++) {
+				var catItem = {};
+				catItem.index = i;
+				catItem.id = results[i].get("objectId");
+				catItem.createdAt = results[i].get("createdAt");
+				catItem.updatedAt = results[i].get("updatedAt");
+				catItem.icon = results[i].get("icon");
+				catItem.title = results[i].get("title");
+				catItem.tag = results[i].get("tag");
+				catItem.hit = results[i].get("hit");
+				catItem.url = results[i].get("url");
+				catItem.desc = results[i].get("desc");
+	
+				mCats.push(catItem);
+			}
 		}
+		
 		updateCats(catMenuItem);
 	}, function(error) {
 		alert('Error: ' + error.code + ' ' + error.message);

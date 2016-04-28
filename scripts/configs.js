@@ -110,6 +110,8 @@ function _R() {
 		this.title_padding_top = 24;
 		this.paragraph_padding_top = 66;
 		this.content_padding_bottom = 66;
+		
+		this.titlebar_height = 64;
 
 		this.padding32 = 32;
 		this.padding24 = 24;
@@ -118,6 +120,7 @@ function _R() {
 
 		this.supTitle = 44;
 		this.title = 24;
+		this.tips = 11;
 		this.text = 14;
 		this.sub_text = 12;
 	}
