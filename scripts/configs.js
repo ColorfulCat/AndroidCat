@@ -61,7 +61,7 @@ function _R() {
 		this.about = "关于我们";
 		this.setting = "设置";
 
-		this.intro_content = "AndroidCat安卓书签网，是专门为Android开发者而收集整理的网站资源导航。";
+		this.intro_content = "AndroidCat安卓书签网，是专门为Android开发者而收集整理的网站资源导航。</br></br>Android开发者的一站导航~";
 		this.material_design = "谷歌Material Design";
 
 		this.to_android_develop = "致安卓开发者";
@@ -121,6 +121,7 @@ function _R() {
 		this.supTitle = 44;
 		this.title = 24;
 		this.tips = 11;
+		this.bigText = 18;
 		this.text = 14;
 		this.sub_text = 12;
 	}

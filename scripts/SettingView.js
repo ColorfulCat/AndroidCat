@@ -14,6 +14,10 @@ function SettingView() {
     function getTodayString() {
 		return "今天是" + today.getFullYear() + "年" + (today.getMonth() + 1) + "月" + today.getDate() + "日 星期" + weeks[today.getDay()];
 	}
+    function isWeekend() {
+    		return today.getDay() == 0 || today.getDay() == 6;
+	}
+
     
     var titleText = Theme.createHuangLiTitle("Android程序员老黄历");
     titleText.setPadding(R.dimen.padding32);
@@ -21,39 +25,41 @@ function SettingView() {
     
     
     var dateText = Theme.createText(getTodayString());
-    dateText.setPadding(R.dimen.padding);
+    dateText.setPadding(R.dimen.half_padding);
     dateText.setTextSize(R.dimen.tips);
+    dateText.setGravity(Gravity.CENTER);
+    if(isWeekend()){
+    		dateText.setTextColor(R.color.red);
+    }
     var dateLp = new LayoutParams(LayoutParams.FILL_PARENT, 48);
     cnt.addView(dateText, dateLp);
 
     var good = Theme.createTitle("宜");
     good.setTextColor(R.color.theme);
-    good.setPadding(R.dimen.padding);
     var titleLp = new LayoutParams(LayoutParams.FILL_PARENT, 48);
-    titleLp.topMargin = R.dimen.padding;
-    cnt.addView(good);
+    cnt.addView(good, titleLp);
 
-    var subGood = Theme.createText("专心看谷歌官方文档~（测试文字）");
+    var subGood = Theme.createText("");
     subGood.setTextColor(R.color.theme);
     subGood.setPadding(R.dimen.padding);
-    var subTitleLp = new LayoutParams(LayoutParams.FILL_PARENT, 64);
+    var subTitleLp = new LayoutParams(LayoutParams.FILL_PARENT, 66);
     cnt.addView(subGood, subTitleLp);
     
     var bad = Theme.createTitle("忌");
     bad.setTextColor(R.color.red);
-    bad.setPadding(R.dimen.padding);
     bad.setBorderTop(2, R.color.dividers);
     cnt.addView(bad, titleLp);
     
-    var subBad = Theme.createText("三天打鱼，两天晒网~（测试文字）");
+    var subBad = Theme.createText("");
     subBad.setTextColor(R.color.red);
     subBad.setPadding(R.dimen.padding);
     cnt.addView(subBad, subTitleLp);
     
 //  http://7xki8q.com1.z0.glb.clouddn.com/android-1.png
 	var myImage = new ImageView();
-	var imageLp = new LayoutParams(LayoutParams.FILL_PARENT, 188);
+	var imageLp = new LayoutParams(LayoutParams.FILL_PARENT, 166);
 	myImage.setScaleType(ScaleType.FIT_CENTER);
+	myImage.setPadding(R.dimen.half_padding);
 	myImage.setImageUri("http://7xki8q.com1.z0.glb.clouddn.com/android-1.png");
 	cnt.addView(myImage, imageLp);
 	
@@ -62,6 +68,7 @@ function SettingView() {
 	var queryGood = new AV.Query('HuangLi');
 	queryGood.addDescending('createdAt');
 	queryGood.equalTo('enable', true);
+//	queryGood.equalTo('isWeekend', isWeekend());
 	queryGood.find().then(function(results) {
 		if(results != null &&results.size() > 0){
 			subGood.setText(results[0].get("content") +", " +results[0].get("good"));
@@ -74,6 +81,7 @@ function SettingView() {
 	var queryBad = new AV.Query('HuangLi');
 	queryBad.addDescending('createdAt');
 	queryBad.equalTo('enable', true);
+//	queryBad.equalTo('isWeekend', isWeekend());
 	queryBad.find().then(function(results) {
 		if(results != null &&results.size() > 1){
 			subBad.setText(results[1].get("content") +", " +results[1].get("bad"));

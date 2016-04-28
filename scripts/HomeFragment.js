@@ -62,7 +62,7 @@ function HomeFragment() {
 
 	linearLayout.addView(textView, lp);
 	
-	var textView1 = new TextLayoutView("或者去逛逛我们的Android开发者交流社区吧~");
+	var textView1 = new TextLayoutView("或者去逛逛我们的Android开发者交流社区吧~</br>（虽然还在测试~交流群：105472201）");
 	textView1.setOnClickListener(function() {
 		setTimeout(function() {
 			window.open("http://133.130.120.73:9000/",'','');
@@ -71,6 +71,10 @@ function HomeFragment() {
 	});
 	linearLayout.addView(textView1, lp);
 	
+		setTimeout(function() {
+			var tabItems = mTitle.getTab().getTabItems();
+		    tabItems[1].performClick();
+		}, 1024);
 
 //	var button = new TextLayoutView("点我点我");
 //	button.setOnClickListener(function() {

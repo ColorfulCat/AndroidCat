@@ -34,7 +34,7 @@ function _Theme() {
         v.setText(t);
         v.setTextColor(R.color.white);
         v.setBackgroundColor(R.color.theme);
-        v.setTextSize(R.dimen.text);
+        v.setTextSize(R.dimen.bigText);
         v.setGravity(Gravity.CENTER);
         v.setPadding(R.dimen.padding32);
         var lp = new LayoutParams(LayoutParams.FILL_PARENT, R.dimen.titlebar_height);
@@ -48,7 +48,7 @@ function _Theme() {
         v.setText(t);
         v.setTextColor(R.color.text);
         v.setTextSize(R.dimen.title);
-        v.setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
+        v.setGravity(Gravity.CENTER);
         return v;
     };
     

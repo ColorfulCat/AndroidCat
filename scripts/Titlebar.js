@@ -188,7 +188,7 @@ function LogoArea(alignLeft) {
 	this.addView(name);
  
  	this.setOnClickListener(function(){
-		ShowSnackBar("欢迎来到AndroidCat安卓书签网~");
+		ShowSnackBar("感谢访问我们的网站，祝您天天开心~");
  	});
  
 

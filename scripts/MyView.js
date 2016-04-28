@@ -26,11 +26,20 @@ function LinkButton(text) {
 	this.setText(text);
 }
 
-function ShowOkDialog(text){
-	MDialog.setOkText(R.string.ok); 
+function ShowLikeDialog(text, okCallback, cancelCallback){
+	MDialog.setText("dfd");
+	MDialog.setOkText("df"); 
 	MDialog.setCancelText(R.string.cancel);
 	MDialog.setOkColor(R.color.green);
+	
 	MDialog.setCancelColor(R.color.red);
+	MDialog.setOkAction(function(){
+		ShowSnackBar("谢谢您的支持~");
+	});
+	MDialog.setCancelAction(function(){
+		ShowSnackBar("/(ㄒoㄒ)/~~~");
+	});
+	
 	MDialog.show();
 }
 
