@@ -33,11 +33,11 @@
 			var isFirfox = false;
 
 			function myBrowser() {
-				var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
-				var isOpera = userAgent.indexOf("Opera") > -1; //判断是否Opera浏览器
-				var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera; //判断是否IE浏览器
-				var isFF = userAgent.indexOf("Firefox") > -1; //判断是否Firefox浏览器
-				var isSafari = userAgent.indexOf("Safari") > -1; //判断是否Safari浏览器
+				var userAgent = navigator.userAgent; 
+				var isOpera = userAgent.indexOf("Opera") > -1; 
+				var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera; 
+				var isFF = userAgent.indexOf("Firefox") > -1; 
+				var isSafari = userAgent.indexOf("Safari") > -1; 
 				var isChrome = userAgent.indexOf("Chrome") > -1;
 				if (isIE) {
 					var IE5 = IE55 = IE6 = IE7 = IE8 = false;
@@ -70,16 +70,15 @@
 				if (isChrome) {
 					return "Chrome";
 				}
-			} //myBrowser() end
+			} 
 			var oldVersion = "http://www.colorfulcat.xyz/AndroidCat2/";
-			//以下是调用上面的函数
+			
 			var mb = myBrowser();
 			if (mb == "Chrome") {
 				console.log("我是 Chrome");
 			}
 			if (mb == "FF") {
 				console.log("我是 Firefox");
-				//			   self.location=oldVersion; 
 				isFirfox = true;
 			}
 			if (mb == "Opera") {
@@ -90,11 +89,9 @@
 			}
 			if (mb == "IE55") {
 				console.log("我是 IE5.5");
-				//			    self.location=oldVersion; 
 			}
 			if (mb == "IE6") {
 				console.log("我是 IE6");
-				//			   self.location=oldVersion; 
 			}
 			if (mb == "IE7") {
 				console.log("我是 IE7");

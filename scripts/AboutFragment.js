@@ -6,7 +6,7 @@ function AboutFragment() {
 			setTimeout(function(){
 				_MEIQIA._INIT();
 				Manifest.isMeiQiaInited = true;
-			}, 1500);
+			}, 1000);
 		}
 	}
     ScrollView.apply(this);
@@ -41,7 +41,7 @@ function AboutFragment() {
     var questionView = new QuestionView();
     cnt.addView(questionView, lp);
     
-     var commentTitle = Theme.createThemeTitle("维护网站的小伙伴们~");
+     var commentTitle = Theme.createThemeTitle("小伙伴们~");
      cnt.addView(commentTitle);
     
      var commentView = new CommentView();
