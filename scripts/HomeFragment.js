@@ -69,12 +69,16 @@ function HomeFragment() {
 			//TODO 记录事件打点
 		}, 200);
 	});
-	linearLayout.addView(textView1, lp);
+//	linearLayout.addView(textView1, lp);
 	
-		setTimeout(function() {
-			var tabItems = mTitle.getTab().getTabItems();
-		    tabItems[1].performClick();
-		}, 1024);
+	
+	
+	setTimeout(function() {
+		var tabItems = mTitle.getTab().getTabItems();
+	    tabItems[1].performClick();
+	    
+	    ShowSnackBar("欢迎来到AndroidCat安卓书签网~");
+	}, 1024);
 
 //	var button = new TextLayoutView("点我点我");
 //	button.setOnClickListener(function() {
