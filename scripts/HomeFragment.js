@@ -71,13 +71,20 @@ function HomeFragment() {
 	});
 //	linearLayout.addView(textView1, lp);
 	
-	
+	//延时操作
 	
 	setTimeout(function() {
-		var tabItems = mTitle.getTab().getTabItems();
-	    tabItems[1].performClick();
+		if(isFirfox){
+	    		ShowSnackBar("火狐用户将强制重定向到旧版本~");
+	    		setTimeout(function() {
+				 self.location="http://www.colorfulcat.xyz/AndroidCat2/"; 
+			}, 1024);
+		}else{
+			var tabItems = mTitle.getTab().getTabItems();
+	    		tabItems[1].performClick();
 	    
-	    ShowSnackBar("欢迎来到AndroidCat安卓书签网~");
+	    		ShowSnackBar("欢迎来到AndroidCat安卓书签网~");
+		}
 	}, 1024);
 
 //	var button = new TextLayoutView("点我点我");
