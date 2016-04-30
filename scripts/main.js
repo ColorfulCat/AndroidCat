@@ -26,9 +26,9 @@ function MainView() {
 //						cnt.addFragment(createForumFragment(), "view=ForumFragment");
 //					}
 					break;
-				case 3:
-					cnt.addFragment(createAboutFragment(), "view=AboutFragment");
-					break;
+//				case 3:
+//					cnt.addFragment(createAboutFragment(), "view=AboutFragment");
+//					break;
 			}
 		}, 200);
 	});
@@ -39,7 +39,7 @@ function MainView() {
 		var v;
 		if (view == "AboutFragment") {
 			v = createAboutFragment();
-			mTitle.setSelectIndex(3)
+			mTitle.setSelectIndex(2)
 		} else if (view == "ForumFragment") {
 			v = createForumFragment();
 			mTitle.setSelectIndex(2);

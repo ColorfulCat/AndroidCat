@@ -21,7 +21,7 @@ function StateFrameLayout(getViewCallback) {
         if (urlParam) {
             p += "&" + urlParam;
         }
-//      history.pushState(null, "", p);
+        history.pushState(null, "", p);
     };
 
     this.removeFragment = function() {

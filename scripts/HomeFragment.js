@@ -80,8 +80,8 @@ function HomeFragment() {
 				 self.location="http://www.colorfulcat.xyz/AndroidCat2/"; 
 			}, 1024);
 		}else{
-			var tabItems = mTitle.getTab().getTabItems();
-	    		tabItems[1].performClick();
+//			var tabItems = mTitle.getTab().getTabItems();
+//	    		tabItems[1].performClick();
 	    
 	    		ShowSnackBar("欢迎来到AndroidCat安卓书签网~");
 		}
