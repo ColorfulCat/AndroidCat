@@ -1,14 +1,4 @@
 function AboutFragment() {
-	if (Manifest.isMeiQiaInited) {
-		_MEIQIA._SHOWPANEL();
-	} else {
-		if (!Manifest.isPhone) {
-			setTimeout(function() {
-				_MEIQIA._INIT();
-				Manifest.isMeiQiaInited = true;
-			}, 1000);
-		}
-	}
 	ScrollView.apply(this);
 
 	var scrollCnt = new ViewGroup();
@@ -40,6 +30,14 @@ function AboutFragment() {
 
 	var questionView = new QuestionView();
 	cnt.addView(questionView, lp);
+	
+	
+	var commentButton= new TextLayoutView("快来给我们留言评论一下吧~");
+	commentButton.setOnClickListener(function() {
+ 
+	});
+
+	cnt.addView(commentButton, lp);
 
 	var cooperationTitle = Theme.createThemeTitle("大伙伴们~");
 	cnt.addView(cooperationTitle);
@@ -78,7 +76,7 @@ function LogoView() {
 	logoImg.setImageUri("img/androidcat512.png");
 	this.addView(logoImg, lp);
 
-	var title = Theme.createTitle("AndroidCat 书签网");
+	var title = Theme.createTitle("AndroidCat");
 	this.addView(title);
 
 	var version = Theme.createSubText(R.string.version + ": " + Manifest.versionName);
@@ -120,12 +118,6 @@ function LogoView() {
 
 		y += version.getMeasuredHeight() + 8;
 		copyRight.layout(x, y);
-
-		//      if (mMileStoneView) {
-		//          x = 0;
-		//          y = padding + logoAreaW + padding;
-		//          mMileStoneView.layout(x, y);
-		//      }
 	};
 
 }
@@ -138,12 +130,18 @@ function CooperationView() {
 	this.setBoxShadow(0, 1, 2, 0, R.color.shadow);
 	this.setPadding(R.dimen.padding, R.dimen.padding, R.dimen.padding, 0);
 
-	var shixian = new Cooperation('http://shixian.com/assets/favicon-f40d78ab7180651ef018e5c672937b6fb070e7d0b3b344754ab38000dfbbe777.ico', '实现网', '实现网，程序员、设计师、产品经理、运营编辑“时薪制”兼职平台，先付款后工作。');
+	var juejin = new Cooperation('http://gold.xitu.io/images/app/logo.png', '稀土掘金', '挖掘最优质的互联网技术 / 联合编辑每日精选内容 / 移动端优质阅读体验');
+	juejin.setBorderBottom(1, R.color.dividers);
+	juejin.setOnClickListener(function(){
+		window.open("http://gold.xitu.io/",'','');
+	});
+	this.addView(juejin);
+	
+	var shixian = new Cooperation('http://ac-mhke0kuv.clouddn.com/c5476d18a696b677.png', '实现网', '实现网，程序员、设计师、产品经理、运营编辑“时薪制”兼职平台，先付款后工作。');
 	shixian.setBorderBottom(1, R.color.dividers);
 	shixian.setOnClickListener(function(){
 		window.open("http://shixian.com/",'','');
 	});
-	
 	this.addView(shixian);
 }
 

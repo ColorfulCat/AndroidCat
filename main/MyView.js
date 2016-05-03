@@ -11,9 +11,16 @@ function TextLayoutView(text) {
 			this.setBg(R.color.white);
 		}
 	};
-	var question = Theme.createText(text);
+	var textView = Theme.createText(text);
 //	question.setTextIsSelectable(true);
-	this.addView(question);
+	this.addView(textView);
+	
+	this.setHoverEnterListener(function() {
+        textView.setTextColor(R.color.theme);
+    });
+    this.setHoverExitListener(function() {
+        textView.setTextColor(R.color.text);
+    });
 }
 
 function LinkButton(text) {

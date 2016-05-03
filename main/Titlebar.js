@@ -11,10 +11,10 @@ function Titlebar() {
 
 	var tab = new Tab();
 	tab.setIndicatorColor(R.color.theme);
-	tab.addTabItem(createTabItem(R.string.intro));
-	tab.addTabItem(createTabItem(R.string.doc));
+	tab.addTabItem(createTabItem(R.string.home));
+	tab.addTabItem(createTabItem(R.string.cat));
 	if(!Manifest.isPhone){
-//		tab.addTabItem(createTabItem(R.string.vs_android));
+//		tab.addTabItem(createTabItem(R.string.community));
 	}
 	//  tab.addTabItem(createTabItem(R.string.app));
 	tab.addTabItem(createTabItem(R.string.about));

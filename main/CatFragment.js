@@ -7,9 +7,6 @@ var contentLinearLayout;
 var contentScrollView;
 
 function CatFragment() {
-	if(Manifest.isMeiQiaInited){
-		_MEIQIA._HIDEPANEL();
-	}
 	LinearLayout.apply(this);
 	this.setOrientation(LinearLayout.HORIZONTAL);
 

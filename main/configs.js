@@ -35,9 +35,6 @@ function _Manifest() {
 			R.dimen.content_padding_bottom = 72;
 		}
 	};
-	
-	//美恰是否初始化
-	this.isMeiQiaInited = false;
 }
 
 
@@ -53,15 +50,15 @@ function _R() {
 		this.ok = "确定";
 		this.cancel = "取消";
 
-		this.intro = "首页推荐";
+		this.home = "首页推荐";
 		this.getstart = "开始";
-		this.vs_android = "交流社区";
-		this.doc = "书签导航";
+		this.community = "交流社区";
+		this.cat = "书签导航";
 		this.app = "应用推荐";
 		this.about = "关于我们";
 		this.setting = "设置";
 
-		this.intro_content = "AndroidCat安卓书签网，是专门为Android开发者而收集整理的网站资源导航。</br></br>Android开发者的一站导航~";
+		this.intro_content = "AndroidCat安卓书签网，是专门为Android开发者而收集整理的网站资源导航。</br></br>Android开发者专属的一站导航~";
 		this.material_design = "谷歌Material Design";
 
 		this.to_android_develop = "致安卓开发者";
@@ -78,7 +75,7 @@ function _R() {
 		this.change_log = "更新记录";
 		this.comments = "~~~";
 		this.qa = "联系";
-		this.ask_question = "AndroidCat安卓书签网</br>是专门为Android开发者而收集整理的网站资源导航。</br></br>如果有任何涉及版权问题请及时联系我们。</br></br>QQ反馈交流群：105472201</br></br>Thanks to  Jndroid & LeanCloud & You.";
+		this.ask_question = "AndroidCat安卓书签网</br></br>是专门为Android开发者而收集整理的网站资源导航。</br></br>如果有任何涉及版权问题请及时联系我们。</br></br>QQ反馈交流群：105472201</br></br>Thanks to  Jndroid & LeanCloud & You.";
 
 		this.version_update = "版本已更新";
 
