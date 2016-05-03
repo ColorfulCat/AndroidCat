@@ -34,7 +34,7 @@ function AboutFragment() {
 	
 	var commentButton= new TextLayoutView("快来给我们留言评论一下吧~");
 	commentButton.setOnClickListener(function() {
- 
+ 		window.open('comment.html','','');
 	});
 
 	cnt.addView(commentButton, lp);
