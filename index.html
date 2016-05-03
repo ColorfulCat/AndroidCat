@@ -26,10 +26,10 @@
 		<script src="js/jndroid/jndroid.layout.js"></script>
 		<script src="js/jndroid/jndroid.mwidget.js"></script>
 		<script src="js/jndroid/ListView.js"></script>
+		<!--<script type="text/javascript" src="js/AV.analytics.js" ></script>-->
 
 		<!-- LeanCloud -->
 		<script src="https://cdn1.lncld.net/static/js/av-mini-0.6.4.js"></script>
-		<script type="text/javascript" src="scripts/AVManager.js"></script>
 		<!--<script src="http://file.gtbrowser.cn/jndroid/jndroid.min.js"></script>-->
 
 	</head>
@@ -145,21 +145,22 @@
 			setContentView(mSplash);
 		</script>
 		<script>
-			includeJs("scripts/MyView.js");
-			includeJs("scripts/CatItem.js");
-			includeJs("scripts/CatMenuItem.js");
-			includeJs("scripts/HomeFragment.js");
-			includeJs("scripts/CatFragment.js");
-			includeJs("scripts/ForumFragment.js");
-			includeJs("scripts/AboutFragment.js");
-			includeJs("scripts/configs.js");
-			includeJs("scripts/main.js");
-			includeJs("scripts/StateFrameLayout.js");
-			includeJs("scripts/Theme.js");
-			includeJs("scripts/Tab.js");
-			includeJs("scripts/Menu.js");
-			includeJs("scripts/Titlebar.js");
-			includeJs("scripts/SettingView.js");
+			includeJs("main/MyView.js");
+			includeJs("main/AVManager.js");
+			includeJs("main/CatItem.js");
+			includeJs("main/CatMenuItem.js");
+			includeJs("main/HomeFragment.js");
+			includeJs("main/CatFragment.js");
+			includeJs("main/ForumFragment.js");
+			includeJs("main/AboutFragment.js");
+			includeJs("main/configs.js");
+			includeJs("main/main.js");
+			includeJs("main/StateFrameLayout.js");
+			includeJs("main/Theme.js");
+			includeJs("main/Tab.js");
+			includeJs("main/Menu.js");
+			includeJs("main/Titlebar.js");
+			includeJs("main/SettingView.js");
 			window.onJSProgressChanged = function(p) {
 				requestAnimationFrame(function() {
 					mSplash.setProgress(p);
