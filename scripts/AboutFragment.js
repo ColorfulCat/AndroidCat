@@ -1,219 +1,298 @@
 function AboutFragment() {
-	if(Manifest.isMeiQiaInited){
+	if (Manifest.isMeiQiaInited) {
 		_MEIQIA._SHOWPANEL();
-	}else{
-		if(!Manifest.isPhone){
-			setTimeout(function(){
+	} else {
+		if (!Manifest.isPhone) {
+			setTimeout(function() {
 				_MEIQIA._INIT();
 				Manifest.isMeiQiaInited = true;
 			}, 1000);
 		}
 	}
-    ScrollView.apply(this);
+	ScrollView.apply(this);
 
-    var scrollCnt = new ViewGroup();
-    scrollCnt.setBackgroundColor(R.color.card_bg);
-    scrollCnt.onMeasure = function(wMS) {
-        var w = MeasureSpec.getSize(wMS);
-        var cntW = Math.min(w, Manifest.maxWidth);
-        cnt.measure(cntW, 0);
-        this.setMeasuredDimension(w, cnt.getMH());
-    };
-    scrollCnt.onLayout = function() {
-        var x = (this.getMW() - cnt.getMW()) / 2;
-        cnt.layout(x, 0);
-    };
-    this.addView(scrollCnt);
+	var scrollCnt = new ViewGroup();
+	scrollCnt.setBackgroundColor(R.color.card_bg);
+	scrollCnt.onMeasure = function(wMS) {
+		var w = MeasureSpec.getSize(wMS);
+		var cntW = Math.min(w, Manifest.maxWidth);
+		cnt.measure(cntW, 0);
+		this.setMeasuredDimension(w, cnt.getMH());
+	};
+	scrollCnt.onLayout = function() {
+		var x = (this.getMW() - cnt.getMW()) / 2;
+		cnt.layout(x, 0);
+	};
+	this.addView(scrollCnt);
 
-    var cnt = new LinearLayout();
-    cnt.setPadding(0, 0, 0, R.dimen.content_padding_bottom);
-    scrollCnt.addView(cnt);
+	var cnt = new LinearLayout();
+	cnt.setPadding(0, 0, 0, R.dimen.content_padding_bottom);
+	scrollCnt.addView(cnt);
 
-    var lp = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
-    lp.setMargins(R.dimen.padding);
+	var lp = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
+	lp.setMargins(R.dimen.padding);
 
-    var logoTitle = Theme.createThemeTitle(R.string.about);
-    cnt.addView(logoTitle);
+	var logoTitle = Theme.createThemeTitle(R.string.about);
+	cnt.addView(logoTitle);
 
-    var logoView = new LogoView();
-    cnt.addView(logoView, lp);
-    
-    var questionView = new QuestionView();
-    cnt.addView(questionView, lp);
-    
-     var commentTitle = Theme.createThemeTitle("小伙伴们~");
-     cnt.addView(commentTitle);
-    
-     var commentView = new CommentView();
-     cnt.addView(commentView, lp);
+	var logoView = new LogoView();
+	cnt.addView(logoView, lp);
 
-  
+	var questionView = new QuestionView();
+	cnt.addView(questionView, lp);
+
+	var cooperationTitle = Theme.createThemeTitle("大伙伴们~");
+	cnt.addView(cooperationTitle);
+
+	var cooperationView = new CooperationView();
+	cnt.addView(cooperationView, lp);
+
+	var commentTitle = Theme.createThemeTitle("小伙伴们~");
+	cnt.addView(commentTitle);
+
+	var commentView = new CommentView();
+	cnt.addView(commentView, lp);
+
 }
 
 function LogoView() {
-    ViewGroup.apply(this);
+	ViewGroup.apply(this);
 
-    var logoAreaW = 108;
-    var logoSize = 108;
-    var padding = R.dimen.padding;
+	var logoAreaW = 108;
+	var logoSize = 108;
+	var padding = R.dimen.padding;
 
-    this.setBackgroundColor(0xffffffff);
-    this.setCornerSize(2, 2, 2, 2);
-    this.setBoxShadow(0, 1, 2, 0, 0x66000000);
-    this.setPadding(padding, padding, padding, 0);
+	this.setBackgroundColor(0xffffffff);
+	this.setCornerSize(2, 2, 2, 2);
+	this.setBoxShadow(0, 1, 2, 0, 0x66000000);
+	this.setPadding(padding, padding, padding, 0);
 
-    var logoArea = new View();
-    logoArea.setCornerSize(2);
-    logoArea.setBackgroundColor(0x04000000);
-    this.addView(logoArea);
+	var logoArea = new View();
+	logoArea.setCornerSize(2);
+	logoArea.setBackgroundColor(0x04000000);
+	this.addView(logoArea);
 
-    var logoImg = new MImageButton();
-    var lp = new LayoutParams(logoSize, logoSize);
-    logoImg.setScaleType(ScaleType.FIT_CENTER);
-    logoImg.setImageUri("img/androidcat512.png");
-    this.addView(logoImg, lp);
+	var logoImg = new MImageButton();
+	var lp = new LayoutParams(logoSize, logoSize);
+	logoImg.setScaleType(ScaleType.FIT_CENTER);
+	logoImg.setImageUri("img/androidcat512.png");
+	this.addView(logoImg, lp);
 
-    var title = Theme.createTitle("AndroidCat 书签网");
-    this.addView(title);
+	var title = Theme.createTitle("AndroidCat 书签网");
+	this.addView(title);
 
-    var version = Theme.createSubText(R.string.version + ": " + Manifest.versionName);
-    this.addView(version);
+	var version = Theme.createSubText(R.string.version + ": " + Manifest.versionName);
+	this.addView(version);
 
-    var copyRight = Theme.createSubText("Focus on Android Developers!  </br>");
-    this.addView(copyRight);
- 
+	var copyRight = Theme.createSubText("Focus on Android Developers!  </br>");
+	this.addView(copyRight);
 
-    this.onMeasure = function(wMS) {
-        var w = MeasureSpec.getSize(wMS);
-        var h = logoAreaW + padding * 2;
+	this.onMeasure = function(wMS) {
+		var w = MeasureSpec.getSize(wMS);
+		var h = logoAreaW + padding * 2;
 
-        logoArea.measure(logoAreaW, logoAreaW);
-        logoImg.measure(logoSize, logoSize);
+		logoArea.measure(logoAreaW, logoAreaW);
+		logoImg.measure(logoSize, logoSize);
 
-        var cntW = w - padding * 3 - logoAreaW;
-        title.measure(MS.makeMS(cntW, MS.EXACTLY), 0);
-        version.measure(MS.makeMS(cntW, MS.EXACTLY), 0);
-        copyRight.measure(MS.makeMS(cntW, MS.EXACTLY), 0);
+		var cntW = w - padding * 3 - logoAreaW;
+		title.measure(MS.makeMS(cntW, MS.EXACTLY), 0);
+		version.measure(MS.makeMS(cntW, MS.EXACTLY), 0);
+		copyRight.measure(MS.makeMS(cntW, MS.EXACTLY), 0);
 
-        this.setMeasuredDimension(w, h);
-    };
+		this.setMeasuredDimension(w, h);
+	};
 
-    this.onLayout = function() {
-        var x = padding;
-        var y = padding;
-        logoArea.layout(x, y);
+	this.onLayout = function() {
+		var x = padding;
+		var y = padding;
+		logoArea.layout(x, y);
 
-        x = padding + (logoAreaW - logoSize) / 2;
-        y = padding;
-        logoImg.layout(x, y);
+		x = padding + (logoAreaW - logoSize) / 2;
+		y = padding;
+		logoImg.layout(x, y);
 
-        x = padding * 2 + logoAreaW;
-        y = 24;
-        title.layout(x, y);
+		x = padding * 2 + logoAreaW;
+		y = 24;
+		title.layout(x, y);
 
-        y += title.getMeasuredHeight() + 8;
-        version.layout(x, y);
+		y += title.getMeasuredHeight() + 8;
+		version.layout(x, y);
 
-        y += version.getMeasuredHeight() + 8;
-        copyRight.layout(x, y);
+		y += version.getMeasuredHeight() + 8;
+		copyRight.layout(x, y);
 
-//      if (mMileStoneView) {
-//          x = 0;
-//          y = padding + logoAreaW + padding;
-//          mMileStoneView.layout(x, y);
-//      }
-    };
+		//      if (mMileStoneView) {
+		//          x = 0;
+		//          y = padding + logoAreaW + padding;
+		//          mMileStoneView.layout(x, y);
+		//      }
+	};
 
-    }
+}
 
- 
+function CooperationView() {
+	LinearLayout.apply(this);
+
+	this.setBackgroundColor(0xffffffff);
+	this.setCornerSize(R.dimen.corner);
+	this.setBoxShadow(0, 1, 2, 0, R.color.shadow);
+	this.setPadding(R.dimen.padding, R.dimen.padding, R.dimen.padding, 0);
+
+	var shixian = new Cooperation('http://shixian.com/assets/favicon-f40d78ab7180651ef018e5c672937b6fb070e7d0b3b344754ab38000dfbbe777.ico', '实现网', '实现网，程序员、设计师、产品经理、运营编辑“时薪制”兼职平台，先付款后工作。');
+	shixian.setBorderBottom(1, R.color.dividers);
+	shixian.setOnClickListener(function(){
+		window.open("http://shixian.com/",'','');
+	});
+	
+	this.addView(shixian);
+}
+
 function CommentView() {
-    LinearLayout.apply(this);
+	LinearLayout.apply(this);
 
-    this.setBackgroundColor(0xffffffff);
-    this.setCornerSize(R.dimen.corner);
-    this.setBoxShadow(0, 1, 2, 0, R.color.shadow);
-    this.setPadding(R.dimen.padding, R.dimen.padding, R.dimen.padding, 0);
+	this.setBackgroundColor(0xffffffff);
+	this.setCornerSize(R.dimen.corner);
+	this.setBoxShadow(0, 1, 2, 0, R.color.shadow);
+	this.setPadding(R.dimen.padding, R.dimen.padding, R.dimen.padding, 0);
 
+	var comment = new Comment('https://avatars1.githubusercontent.com/u/6687122?v=3&s=460', '大花猫', 'AndroidCat创建者，技术渣，目前隐居西湖旁猫厂潜心修炼。');
+	comment.setBorderBottom(1, R.color.dividers);
+	this.addView(comment);
 
-    var comment = new Comment('https://avatars1.githubusercontent.com/u/6687122?v=3&s=460', '大花猫', 'AndroidCat创建者，技术渣，目前隐居西湖旁猫厂潜心修炼。');
-    comment.setBorderBottom(1, R.color.dividers);
-    this.addView(comment);
+	comment = new Comment('https://avatars0.githubusercontent.com/u/4728583?v=3&s=460', 'Patrick', '常驻广州的撸码铲屎官。http://pixelblog.top/');
+	comment.setBorderBottom(1, R.color.dividers);
+	this.addView(comment);
 
-    comment = new Comment('https://avatars0.githubusercontent.com/u/4728583?v=3&s=460', 'Patrick', '常驻广州的撸码铲屎官。http://pixelblog.top/');
-    comment.setBorderBottom(1, R.color.dividers);
-    this.addView(comment);
+	comment = new Comment('https://avatars3.githubusercontent.com/u/7868514?v=3&s=460', '捕风的汉子', '走在路上的安卓开发学习者，欢迎交流。https://jp1017.github.io/');
+	comment.setBorderBottom(1, R.color.dividers);
+	this.addView(comment);
 
-    comment = new Comment('https://avatars3.githubusercontent.com/u/7868514?v=3&s=460', '捕风的汉子', '走在路上的安卓开发学习者，欢迎交流。https://jp1017.github.io/');
-    comment.setBorderBottom(1, R.color.dividers);
-    this.addView(comment);
+	comment = new Comment('https://avatars0.githubusercontent.com/u/6269257?v=3&s=460', '小鱼', '活的没心没肺的渣渣，大神等等我！');
+	comment.setBorderBottom(1, R.color.dividers);
+	this.addView(comment);
 
-    comment = new Comment('https://avatars0.githubusercontent.com/u/6269257?v=3&s=460', '小鱼', '活的没心没肺的渣渣，大神等等我！');
-    comment.setBorderBottom(1, R.color.dividers);
-    this.addView(comment);
+	comment = new Comment('img/cat_icon.png', '你', '对的，就是你，还不赶快加入我们？！');
+	this.addView(comment);
+}
 
-    comment = new Comment('img/cat_icon.png', '你', '对的，就是你，还不赶快加入我们？！');
-    this.addView(comment);
+function Cooperation(icon, name, text) {
+	LinearLayout.apply(this);
+
+	var iconAreaW = 72;
+	var iconSize = 42;
+	var editH = 150;
+
+	this.setOrientation(LinearLayout.HORIZONTAL);
+
+	this.setEditHeight = function(h) {
+		editH = h;
+		this.requestLayout();
+	};
+	
+	
+
+	var iconArea = new FrameLayout();
+	var iconAreaLp = new LayoutParams(iconAreaW, iconAreaW);
+	this.addView(iconArea, iconAreaLp);
+
+	var avatar = new ImageView();
+	avatar.setImgSrc(icon);
+	avatar.setId("avatar");
+	avatar.setImgWidth(iconSize);
+	avatar.setImgHeight(iconSize);
+	var avatarLp = new LayoutParams(iconSize, iconSize);
+	avatarLp.gravity = Gravity.CENTER;
+	iconArea.addView(avatar, avatarLp);
+
+	var contentArea = new LinearLayout();
+	var contentLp = new LayoutParams(0, LayoutParams.WRAP_CONTENT);
+	contentLp.weight = 1;
+	this.addView(contentArea, contentLp);
+
+	var nameView = Theme.createText(name);
+	nameView.setTextIsSelectable(false);
+	var nameLp = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
+	nameLp.topMargin = R.dimen.padding;
+	contentArea.addView(nameView, nameLp);
+
+	var comment = Theme.createSubText(text);
+	comment.setLineHeight(R.dimen.text);
+	comment.setTextIsSelectable(false);
+	var commentLp = new LayoutParams(nameLp);
+	commentLp.topMargin = R.dimen.half_padding;
+	commentLp.bottomMargin = R.dimen.padding;
+	contentArea.addView(comment, commentLp);
+	
+	
+	this.setHoverEnterListener(function() {
+        nameView.setTextColor(R.color.theme);
+        comment.setTextColor(R.color.theme);
+    });
+    this.setHoverExitListener(function() {
+        nameView.setTextColor(R.color.text);
+        comment.setTextColor(R.color.text);
+    });
+
 }
 
 function Comment(icon, name, text) {
-    LinearLayout.apply(this);
+	LinearLayout.apply(this);
 
-    var iconAreaW = 72;
-    var iconSize = 42;
-    var editH = 150;
+	var iconAreaW = 72;
+	var iconSize = 42;
+	var editH = 150;
 
-    this.setOrientation(LinearLayout.HORIZONTAL);
+	this.setOrientation(LinearLayout.HORIZONTAL);
 
-    this.setEditHeight = function(h) {
-        editH = h;
-        this.requestLayout();
-    };
+	this.setEditHeight = function(h) {
+		editH = h;
+		this.requestLayout();
+	};
 
-    var iconArea = new FrameLayout();
-    var iconAreaLp = new LayoutParams(iconAreaW, iconAreaW);
-    this.addView(iconArea, iconAreaLp);
+	var iconArea = new FrameLayout();
+	var iconAreaLp = new LayoutParams(iconAreaW, iconAreaW);
+	this.addView(iconArea, iconAreaLp);
 
-    var avatar = new ImageView();
-    avatar.setImgSrc(icon);
-    avatar.setId("avatar");
-    avatar.setImgWidth(iconSize);
-    avatar.setImgHeight(iconSize);
-    avatar.setCornerSize(iconSize / 2);
-    var avatarLp = new LayoutParams(iconSize, iconSize);
-    avatarLp.gravity = Gravity.CENTER;
-    iconArea.addView(avatar, avatarLp);
+	var avatar = new ImageView();
+	avatar.setImgSrc(icon);
+	avatar.setId("avatar");
+	avatar.setImgWidth(iconSize);
+	avatar.setImgHeight(iconSize);
+	avatar.setCornerSize(iconSize / 2);
+	var avatarLp = new LayoutParams(iconSize, iconSize);
+	avatarLp.gravity = Gravity.CENTER;
+	iconArea.addView(avatar, avatarLp);
 
-    var contentArea = new LinearLayout();
-    var contentLp = new LayoutParams(0, LayoutParams.WRAP_CONTENT);
-    contentLp.weight = 1;
-    this.addView(contentArea, contentLp);
+	var contentArea = new LinearLayout();
+	var contentLp = new LayoutParams(0, LayoutParams.WRAP_CONTENT);
+	contentLp.weight = 1;
+	this.addView(contentArea, contentLp);
 
-    var nameView = Theme.createText(name);
-    nameView.setTextIsSelectable(true);
-    var nameLp = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
-    nameLp.topMargin = R.dimen.padding;
-    contentArea.addView(nameView, nameLp);
+	var nameView = Theme.createText(name);
+	nameView.setTextIsSelectable(true);
+	var nameLp = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
+	nameLp.topMargin = R.dimen.padding;
+	contentArea.addView(nameView, nameLp);
 
-    var comment = Theme.createSubText(text);
-    comment.setLineHeight(R.dimen.text);
-    comment.setTextIsSelectable(true);
-    var commentLp = new LayoutParams(nameLp);
-    commentLp.topMargin = R.dimen.half_padding;
-    commentLp.bottomMargin = R.dimen.padding;
-    contentArea.addView(comment, commentLp);
+	var comment = Theme.createSubText(text);
+	comment.setLineHeight(R.dimen.text);
+	comment.setTextIsSelectable(true);
+	var commentLp = new LayoutParams(nameLp);
+	commentLp.topMargin = R.dimen.half_padding;
+	commentLp.bottomMargin = R.dimen.padding;
+	contentArea.addView(comment, commentLp);
 
 }
 
 function QuestionView() {
-    LinearLayout.apply(this);
+	LinearLayout.apply(this);
 
-    this.setBackgroundColor(0xffffffff);
-    this.setCornerSize(R.dimen.corner);
-    this.setBoxShadow(0, 1, 2, 0, R.color.shadow);
-    this.setPadding(R.dimen.padding24);
+	this.setBackgroundColor(0xffffffff);
+	this.setCornerSize(R.dimen.corner);
+	this.setBoxShadow(0, 1, 2, 0, R.color.shadow);
+	this.setPadding(R.dimen.padding24);
 
-    var question = Theme.createText(R.string.ask_question);
-    question.setTextIsSelectable(true);
-    this.addView(question);
+	var question = Theme.createText(R.string.ask_question);
+	question.setTextIsSelectable(true);
+	this.addView(question);
 }

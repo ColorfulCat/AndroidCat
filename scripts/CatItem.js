@@ -61,10 +61,12 @@ function CatItem(catItem) {
 	});
 	
 	this.setHoverEnterListener(function() {
-        this.setAlpha(0.6);
+        nameTv.setTextColor(R.color.theme);
+        descTV.setTextColor(R.color.theme);
     });
     this.setHoverExitListener(function() {
-        this.setAlpha(1);
+        nameTv.setTextColor(R.color.text);
+        descTV.setTextColor(R.color.text);
     });
 	
 	var downX;
