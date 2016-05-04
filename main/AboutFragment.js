@@ -28,8 +28,8 @@ function AboutFragment() {
 	var logoView = new LogoView();
 	cnt.addView(logoView, lp);
 
-	var questionView = new QuestionView();
-	cnt.addView(questionView, lp);
+	var descriptionView = new DescriptionView();
+	cnt.addView(descriptionView, lp);
 	
 	
 	var commentButton= new TextLayoutView("快来给我们留言评论一下吧~");
@@ -50,8 +50,17 @@ function AboutFragment() {
 
 	var commentView = new CommentView();
 	cnt.addView(commentView, lp);
+	
+	var addCat = Theme.createThemeTitle("提交网站地址~");
+	cnt.addView(addCat);
+	
+	var addCatView = new AddCatView();
+	cnt.addView(addCatView, lp);
 
 }
+
+
+
 
 function LogoView() {
 	ViewGroup.apply(this);
@@ -173,6 +182,9 @@ function CommentView() {
 	this.addView(comment);
 }
 
+
+
+
 function Cooperation(icon, name, text) {
 	LinearLayout.apply(this);
 
@@ -282,7 +294,54 @@ function Comment(icon, name, text) {
 
 }
 
-function QuestionView() {
+
+function AddCatView() {
+	LinearLayout.apply(this);
+	
+	var lp = new LP(LP.FP, LP.WC);
+	lp.setMargins(R.dimen.padding);
+
+	this.setBackgroundColor(0xffffffff);
+	this.setCornerSize(R.dimen.corner);
+	this.setBoxShadow(0, 1, 2, 0, R.color.shadow);
+	this.setPadding(R.dimen.padding24);
+	
+	var editText = new MEditText();
+	editText.setHint("(づ￣ 3￣)づ 请把网站链接粘贴到这来吧~ ");
+	editText.setHighlightColor(0xff0091ea);
+	this.addView(editText, lp);
+	
+	var lpButton = new LP(300, 50);
+	lpButton.setMargins(R.dimen.padding);
+	lpButton.gravity = Gravity.Center;
+	var submitButton = new MButton();
+	submitButton.setCornerSize(R.dimen.corner);
+	submitButton.setBoxShadow(0, 1, 2, 0, R.color.shadow);
+	submitButton.setText("提交");
+	submitButton.setBackgroundColor(R.color.theme);
+	submitButton.setTextColor(R.color.white);
+	submitButton.setPadding(R.dimen.padding);
+	this.addView(submitButton, lpButton);
+	submitButton.setOnClickListener(function(){
+		var AddCat = AV.Object.extend('AddCat');
+		var addCat = new AddCat();
+		addCat.set("url", editText.getText());
+		addCat.save().then(function(post) {
+		  // 成功保存之后，执行其他逻辑.
+		  ShowSnackBar("提交成功，感谢您的支持！");
+		  editText.setText("");
+		  console.log('New object created with objectId: ' + post.id);
+		}, function(err) {
+		  // 失败之后执行其他逻辑
+		  ShowSnackBar("哎呀，提交失败了，感谢您的支持！");
+		  // error 是 AV.Error 的实例，包含有错误码和描述信息.
+		  console.log('Failed to create new object, with error message: ' + err.message);
+		});
+		});
+	
+}
+
+function DescriptionView() {
 	LinearLayout.apply(this);
 
 	this.setBackgroundColor(0xffffffff);
@@ -290,7 +349,7 @@ function QuestionView() {
 	this.setBoxShadow(0, 1, 2, 0, R.color.shadow);
 	this.setPadding(R.dimen.padding24);
 
-	var question = Theme.createText(R.string.ask_question);
-	question.setTextIsSelectable(true);
-	this.addView(question);
+	var description = Theme.createText(R.string.description);
+	description.setTextIsSelectable(true);
+	this.addView(description);
 }

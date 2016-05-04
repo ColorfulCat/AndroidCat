@@ -30,18 +30,20 @@ analytics.send({
 });
 
 
-
-//function saveLib(){
-//	var TestObject = AV.Object.extend('Cat');
-//	var testObject = new TestObject();
-//	testObject.save({
-//	  title: 'AndroidCat安卓书签网',
-//	  icon: '11',
-//	  url: 'http://androidcat.com/',
-//	  tag: 'recommend'
-//	}, {
-//	  success: function(object) {
-////	    alert('LeanCloud works!！');
-//	  } 
+//
+//function addCat(site){
+//	var AddCat = AV.Object.extend('AddCat');
+//	var addCat = new AddCat();
+//	addCat.set("url", site);
+//	addCat.save().then(function(post) {
+//	  // 成功保存之后，执行其他逻辑.
+//	  ShowSnackBar("提交成功，感谢您的支持！");
+//	  console.log('New object created with objectId: ' + post.id);
+//	}, function(err) {
+//	  // 失败之后执行其他逻辑
+//	  ShowSnackBar("哎呀，提交失败了，感谢您的支持！");
+//	  // error 是 AV.Error 的实例，包含有错误码和描述信息.
+//	  console.log('Failed to create new object, with error message: ' + err.message);
 //	});
+// 
 //}

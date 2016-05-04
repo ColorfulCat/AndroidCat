@@ -75,7 +75,7 @@ function _R() {
 		this.change_log = "更新记录";
 		this.comments = "~~~";
 		this.qa = "联系";
-		this.ask_question = "AndroidCat安卓书签网</br></br>是专门为Android开发者而收集整理的网站资源导航。</br></br>如果有任何涉及版权问题请及时联系我们。</br></br>QQ反馈交流群：105472201</br></br>Thanks to  Jndroid & LeanCloud & You.";
+		this.description = "AndroidCat安卓书签网</br></br>是专门为Android开发者而收集整理的网站资源导航。</br></br>如果有任何涉及版权问题请及时联系我们。</br></br>QQ反馈交流群：105472201</br></br>Thanks to  Jndroid & LeanCloud & You.";
 
 		this.version_update = "版本已更新";
 
