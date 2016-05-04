@@ -39,10 +39,10 @@ function HomeFragment() {
 
 	
 
-	var subTitle = Theme.createCatTitle("推荐内容");
+	var subTitle = Theme.createCatTitle("每日干货精选");
 	linearLayout.addView(subTitle);
 
-	var textView = new TextLayoutView("首页暂时没有什么内容，先去书签导航页面看看吧~");
+	var textView = new TextLayoutView("正在准备高质量干货，稍后上线，先去书签导航页面看看吧~");
 	textView.setOnClickListener(function() {
 				var tabItems = mTitle.getTab().getTabItems();
 		           tabItems[1].performClick();
@@ -77,6 +77,7 @@ function HomeFragment() {
 				 self.location="http://www.colorfulcat.xyz/AndroidCat2/"; 
 			}, 1024);
 		}else{
+			//TODO  判断是否首次打开页面，首次就自动跳转
 //			var tabItems = mTitle.getTab().getTabItems();
 //	    		tabItems[1].performClick();
 	    
