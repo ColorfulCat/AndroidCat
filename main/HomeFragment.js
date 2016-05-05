@@ -81,7 +81,7 @@ function HomeFragment() {
 //			var tabItems = mTitle.getTab().getTabItems();
 //	    		tabItems[1].performClick();
 	    
-	    		ShowSnackBar("👏欢迎光临~");
+	    		ShowSnackBar("欢迎大驾光临！");
 		}
 	}, 1024);
 

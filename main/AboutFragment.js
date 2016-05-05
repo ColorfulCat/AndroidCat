@@ -333,7 +333,7 @@ function AddCatView() {
 		addCat.set("url", text);
 		addCat.save().then(function(post) {
 		  // 成功保存之后，执行其他逻辑.
-		  ShowSnackBar("✌️提交成功！~");
+		  ShowSnackBar("Yes!提交成功！~");
 		  editText.setText("");
 		  console.log('New object created with objectId: ' + post.id);
 		}, function(err) {
