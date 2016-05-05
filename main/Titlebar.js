@@ -188,7 +188,7 @@ function LogoArea(alignLeft) {
 	this.addView(name);
  
  	this.setOnClickListener(function(){
-		ShowSnackBar("感谢访问我们的网站，祝您天天开心~");
+		ShowSnackBar("(づ￣ 3￣)づ 么么哒~");
  	});
  
 

@@ -47,7 +47,7 @@ function ScrollView() {
     img.style.height = "50px";
     img.style.verticalAlign = "text-bottom";
 //  jndroid.appendChild(img); 
-    jndroid.appendChild(document.createTextNode("么么哒~(づ￣ 3￣)づ~"));
+    jndroid.appendChild(document.createTextNode("(づ￣ 3￣)づ 么么哒~"));
 
     this.div.appendChild(jndroid);
 

@@ -42,7 +42,7 @@ function HomeFragment() {
 	var subTitle = Theme.createCatTitle("每日干货精选");
 	linearLayout.addView(subTitle);
 
-	var textView = new TextLayoutView("正在准备高质量干货，稍后上线，先去书签导航页面看看吧~");
+	var textView = new TextLayoutView("正在准备高质量干货哦，先去书签导航页面看看吧~");
 	textView.setOnClickListener(function() {
 				var tabItems = mTitle.getTab().getTabItems();
 		           tabItems[1].performClick();
@@ -81,7 +81,7 @@ function HomeFragment() {
 //			var tabItems = mTitle.getTab().getTabItems();
 //	    		tabItems[1].performClick();
 	    
-	    		ShowSnackBar("欢迎来到AndroidCat安卓书签网~");
+	    		ShowSnackBar("👏欢迎光临~");
 		}
 	}, 1024);
 

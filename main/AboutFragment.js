@@ -323,17 +323,22 @@ function AddCatView() {
 	submitButton.setPadding(R.dimen.padding);
 	this.addView(submitButton, lpButton);
 	submitButton.setOnClickListener(function(){
+		var text = editText.getText();
+		if(text == "" || text == null){
+			ShowSnackBar("怎么啥也没有~");
+			return;
+		}
 		var AddCat = AV.Object.extend('AddCat');
 		var addCat = new AddCat();
-		addCat.set("url", editText.getText());
+		addCat.set("url", text);
 		addCat.save().then(function(post) {
 		  // 成功保存之后，执行其他逻辑.
-		  ShowSnackBar("提交成功，感谢您的支持！");
+		  ShowSnackBar("✌️提交成功！~");
 		  editText.setText("");
 		  console.log('New object created with objectId: ' + post.id);
 		}, function(err) {
 		  // 失败之后执行其他逻辑
-		  ShowSnackBar("哎呀，提交失败了，感谢您的支持！");
+		  ShowSnackBar("哎呀，提交失败了~");
 		  // error 是 AV.Error 的实例，包含有错误码和描述信息.
 		  console.log('Failed to create new object, with error message: ' + err.message);
 		});

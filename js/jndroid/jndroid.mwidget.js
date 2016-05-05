@@ -422,7 +422,7 @@ function MEditText() {
     var isSingleLine = true;
     var focusListener = null;
     var textChangeListener = null;
-    var highlightColor = 0xFF2196F2;
+    var highlightColor = 0xff00bb9c;
     var textColor = 0xff212121;
     var maxCount = 0;
 
