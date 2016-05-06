@@ -39,6 +39,7 @@ function CatItem(catItem) {
 	this.addView(contentArea, contentLp);
 
 	var nameTv = Theme.createText(name);
+	nameTv.setSingleLine(true);
 //	nameTv.setTextIsSelectable(true);
 	var nameLp = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
 	nameLp.topMargin = 13;

@@ -31,13 +31,23 @@ function AboutFragment() {
 	var descriptionView = new DescriptionView();
 	cnt.addView(descriptionView, lp);
 	
-	
-	var commentButton= new TextLayoutView("快来给我们留言评论一下吧~");
+	var lpButton = new LP(LP.FP, 50);
+	lpButton.setMargins(R.dimen.padding);
+	var commentButton= new MButton();
+	commentButton.setText("快来给我们留言评论一下吧~");
+	commentButton.setBoxShadow(0, 1, 2, 0, R.color.shadow);
+	commentButton.setTextColor(R.color.white);
+	commentButton.setBackgroundColor(R.color.theme);
 	commentButton.setOnClickListener(function() {
  		window.open('comment.html','','');
 	});
-
-	cnt.addView(commentButton, lp);
+	commentButton.setHoverEnterListener(function() {
+        commentButton.setAlpha(0.8);
+    });
+    commentButton.setHoverExitListener(function() {
+        commentButton.setAlpha(1);
+    });
+	cnt.addView(commentButton, lpButton);
 
 	var cooperationTitle = Theme.createThemeTitle("大伙伴们~");
 	cnt.addView(cooperationTitle);
@@ -311,7 +321,7 @@ function AddCatView() {
 	editText.setHighlightColor(0xff0091ea);
 	this.addView(editText, lp);
 	
-	var lpButton = new LP(300, 50);
+	var lpButton = new LP(LP.FP, 50);
 	lpButton.setMargins(R.dimen.padding);
 	lpButton.gravity = Gravity.Center;
 	var submitButton = new MButton();
@@ -344,17 +354,4 @@ function AddCatView() {
 		});
 		});
 	
-}
-
-function DescriptionView() {
-	LinearLayout.apply(this);
-
-	this.setBackgroundColor(0xffffffff);
-	this.setCornerSize(R.dimen.corner);
-	this.setBoxShadow(0, 1, 2, 0, R.color.shadow);
-	this.setPadding(R.dimen.padding24);
-
-	var description = Theme.createText(R.string.description);
-	description.setTextIsSelectable(true);
-	this.addView(description);
 }

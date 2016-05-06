@@ -3,7 +3,7 @@ function HomeFragment() {
 
 	var linearLayout = new LinearLayout();
 	linearLayout.setBackgroundColor(R.color.card_bg);
-	this.addView(linearLayout)
+	this.addView(linearLayout);
 
 	var padding = R.dimen.padding;
 
@@ -41,6 +41,13 @@ function HomeFragment() {
 
 	var subTitle = Theme.createCatTitle("每日干货精选");
 	linearLayout.addView(subTitle);
+	
+	var ganhuoLayout = new getGanHuoLayout();
+	linearLayout.addView(ganhuoLayout, lp);
+	
+	
+	
+	
 
 	var textView = new TextLayoutView("正在准备高质量干货哦，先去书签导航页面看看吧~");
 	textView.setOnClickListener(function() {
@@ -184,7 +191,72 @@ function HomeFragment() {
 		}
 	}
 
-
+	//获取干货的接口
+	function getGanHuoLayout(){
+		LinearLayout.apply(this);
+		this.setOrientation(LinearLayout.VERTICAL);
+		
+		var lp = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
+		lp.setMargins(R.dimen.padding);
+		
+		var containerLayout = new LinearLayout();
+		containerLayout.setOrientation(LinearLayout.VERTICAL);
+		this.addView(containerLayout);
+		
+		var linearLayout = new LinearLayout();
+		linearLayout.setOrientation(LinearLayout.VERTICAL);
+		containerLayout.addView(linearLayout);
+		
+		var lpProgress = new LP(LP.FP, LP.WC);
+		lpProgress.gravity = Gravity.CENTER;
+		lpProgress.setMargins(R.dimen.padding32);
+		var progress = new MProgressBar();
+		progress.setProgressColor(R.color.theme);
+		progress.setStyle(MProgressBar.Small); //Small
+		linearLayout.addView(progress,lpProgress); 
+		
+ 		liteAjax("http://api.xitu.io/resources/gold/android?order=heat&offset=0&limit=6",function(data){
+ 			var dataArray = eval(data);
+ 			if(dataArray.length > 0){
+ 				linearLayout.removeAllViews();
+ 				for (var i = 0; i < dataArray.length; i++) {
+					var catItem = {};
+					catItem.index = i;
+	 				catItem.icon = dataArray[i].user.avatar;
+	 				catItem.title = dataArray[i].title;
+	 				catItem.desc = dataArray[i].date.substring(0, 10);
+	 				catItem.url = dataArray[i].url;
+	 				
+	 				var item = new CatItem(catItem);
+	 				linearLayout.addView(item, lp);
+				}
+	 			
+	 			var toJueJin = Theme.createTip("以上干货来自万能的稀土掘金~");
+				toJueJin.setTextColor(R.color.theme);
+				linearLayout.addView(toJueJin);
+ 			}else{
+ 				ShowSnackBar("干货获取失败，请刷新页面~");
+ 			}
+		});
+		
+		
+		containerLayout.onMeasure = function(wMS, hMS) {
+			var w = MeasureSpec.getSize(wMS);
+			var h = MeasureSpec.getSize(hMS);
+			var cntW = Math.min(w, Manifest.maxWidth);
+			linearLayout.measure(cntW, h);
+			this.setMeasuredDimension(w, h);
+		};
+		containerLayout.onLayout = function() {
+			var x = 0;
+			var y = 0;
+			var x = (this.getMW() - linearLayout.getMW()) / 2;
+			linearLayout.layout(x, 0);
+		};
+		
+		
+		
+	}
 
 
 

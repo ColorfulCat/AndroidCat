@@ -34,7 +34,7 @@ function SettingView() {
     var dateLp = new LayoutParams(LayoutParams.FILL_PARENT, 48);
     cnt.addView(dateText, dateLp);
 
-    var good = Theme.createTitle("宜");
+    var good = Theme.createTitleCenter("宜");
     good.setTextColor(R.color.theme);
     var titleLp = new LayoutParams(LayoutParams.FILL_PARENT, 48);
     cnt.addView(good, titleLp);
@@ -45,7 +45,7 @@ function SettingView() {
     var subTitleLp = new LayoutParams(LayoutParams.FILL_PARENT, 66);
     cnt.addView(subGood, subTitleLp);
     
-    var bad = Theme.createTitle("忌");
+    var bad = Theme.createTitleCenter("忌");
     bad.setTextColor(R.color.red);
     bad.setBorderTop(2, R.color.dividers);
     cnt.addView(bad, titleLp);

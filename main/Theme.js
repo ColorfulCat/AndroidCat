@@ -46,7 +46,15 @@ function _Theme() {
     this.createTitle = function(t) {
         var v = new TextView();
         v.setText(t);
-        v.setTextColor(R.color.text);
+        v.setTextColor(R.color.theme);
+        v.setTextSize(R.dimen.title);
+        v.setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
+        return v;
+    };
+    this.createTitleCenter = function(t) {
+        var v = new TextView();
+        v.setText(t);
+        v.setTextColor(R.color.theme);
         v.setTextSize(R.dimen.title);
         v.setGravity(Gravity.CENTER);
         return v;

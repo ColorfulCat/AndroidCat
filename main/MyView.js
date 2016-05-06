@@ -53,3 +53,18 @@ function ShowLikeDialog(text, okCallback, cancelCallback){
 function ShowSnackBar(text){
 	MSnackBar.show(text, 2000);
 }
+
+
+ 
+function DescriptionView() {
+	LinearLayout.apply(this);
+
+	this.setBackgroundColor(0xffffffff);
+	this.setCornerSize(R.dimen.corner);
+	this.setBoxShadow(0, 1, 2, 0, R.color.shadow);
+	this.setPadding(R.dimen.padding24);
+
+	var description = Theme.createText(R.string.description);
+	description.setTextIsSelectable(true);
+	this.addView(description);
+}
