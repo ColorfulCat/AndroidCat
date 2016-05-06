@@ -37,7 +37,7 @@ function HomeFragment() {
 	var lp = new LP(LP.FP, LP.WC);
 	lp.setMargins(R.dimen.padding);
 
-	var subTitle = Theme.createCatTitle("掘金干货精选");
+	var subTitle = Theme.createCatTitle("Android干货推荐");
 	linearLayout.addView(subTitle);
 
 	var ganhuoLayout = new getGanHuoLayout();
