@@ -23,8 +23,8 @@ function _Theme() {
         v.setGravity(Gravity.CENTER);
 
         var lp = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
-        lp.topMargin = R.dimen.padding32;
-        lp.bottomMargin = R.dimen.padding32;
+        lp.topMargin = R.dimen.padding;
+        lp.bottomMargin = R.dimen.padding;
         v.setLayoutParams(lp);
         return v;
     };

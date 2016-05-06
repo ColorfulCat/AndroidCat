@@ -1,23 +1,27 @@
 /* 自定义ListView中item的实现 */
-function CatItem(catItem) {
+function GanHuoItem(ganHuoItem) {
 	LinearLayout.apply(this);
-	var icon = catItem.icon;
-	var name = catItem.title;
-	var desc = catItem.desc;
-	var url = catItem.url;
+	
+	var icon = ganHuoItem.user.avatar;
+	var name = ganHuoItem.title;
+	var desc = ganHuoItem.date.substring(0, 10) + 
+	"   收藏 " +  ganHuoItem.collectionCount +
+	"   浏览 " + ganHuoItem.viewCount;
+	var url = ganHuoItem.url;
+	var originUrl = ganHuoItem.originalUrl;
 	
 	var iconAreaW = 66;
 	var iconSize = 40;
 	var editH = 150;
 
-	this.setOrientation(LinearLayout.HORIZONTAL);
+	this.setOrientation(LinearLayout.VERTICAL);
 	this.setBackgroundColor(R.color.white);
 	this.setCornerSize(R.dimen.corner);
 	this.setBoxShadow(0, 1, 2, 0, R.color.shadow);
 
 	var iconArea = new FrameLayout();
 	var iconAreaLp = new LayoutParams(iconAreaW, iconAreaW);
-	this.addView(iconArea, iconAreaLp);
+//	this.addView(iconArea, iconAreaLp);
 
 	var avatar = new ImageView();
 	if(icon.trim() == "" || icon == null){
@@ -31,27 +35,40 @@ function CatItem(catItem) {
 	//  avatar.setCornerSize(iconSize / 2);
 	var avatarLp = new LayoutParams(iconSize, iconSize);
 	avatarLp.gravity = Gravity.CENTER;
-	iconArea.addView(avatar, avatarLp);
+//	iconArea.addView(avatar, avatarLp);
 
-	var contentArea = new LinearLayout();
-	var contentLp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-//	contentLp.weight = 1;
-	this.addView(contentArea, contentLp);
+//	var contentArea = new LinearLayout();
+//	var contentLp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+////	contentLp.weight = 1;
+//	this.addView(contentArea, contentLp);
 
 	var nameTv = Theme.createText(name);
 	nameTv.setSingleLine(true);
+	nameTv.setOnClickListener(function(){
+		setTimeout(function() {
+			window.open(originUrl,'','');
+			//TODO 记录事件打点
+		}, 200);
+		
+	});
 //	nameTv.setTextIsSelectable(true);
 	var nameLp = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
 	nameLp.topMargin = 13;
-	contentArea.addView(nameTv, nameLp);
+	nameLp.leftMargin = 13;
+	nameLp.rightMargin = 13;
+	nameLp.bottomMargin = 5;
+	this.addView(nameTv, nameLp);
 
 	var descTV = Theme.createSubText(desc);
 //	descTV.setTextIsSelectable(true);
 //	descTV.setLineHeight(R.dimen.text * 2);
 	descTV.setSingleLine(true);
 	var commentLp = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
-	commentLp.topMargin = 4;
-	contentArea.addView(descTV, commentLp);
+	commentLp.topMargin = 5;
+	commentLp.leftMargin = 13;
+	commentLp.rightMargin = 13;
+	commentLp.bottomMargin = 13;
+	this.addView(descTV, commentLp);
 	
 	this.setOnClickListener(function(){
 		setTimeout(function() {
@@ -72,6 +89,7 @@ function CatItem(catItem) {
         this.setBoxShadow(0, 1, 2, 0, R.color.shadow);
     });
 	
+	// ripple
 	var downX;
     var downY;
     var density = DisplayMetrics.density;

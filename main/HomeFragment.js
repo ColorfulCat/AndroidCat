@@ -37,91 +37,55 @@ function HomeFragment() {
 	var lp = new LP(LP.FP, LP.WC);
 	lp.setMargins(R.dimen.padding);
 
-	
-
 	var subTitle = Theme.createCatTitle("每日干货精选");
 	linearLayout.addView(subTitle);
-	
+
 	var ganhuoLayout = new getGanHuoLayout();
 	linearLayout.addView(ganhuoLayout, lp);
-	
-	
-	
-	
 
-	var textView = new TextLayoutView("正在准备高质量干货哦，先去书签导航页面看看吧~");
-	textView.setOnClickListener(function() {
-				var tabItems = mTitle.getTab().getTabItems();
-		           tabItems[1].performClick();
-		//		liteAjax("https://www.baidu.com/",function(data){
-		////			textView.setText("123");
-		//			 
-		//		});
-
-//		setTimeout(function() {
-//			ShowOkDialog("哈哈，你好，我是Dialog!");
-//			ShowSnackBar("嘿嘿嘿~~");
-//		}, 1000);
-	});
-
-	linearLayout.addView(textView, lp);
-	
-	var textView1 = new TextLayoutView("或者去逛逛我们的Android开发者交流社区吧~</br>（虽然还在测试~交流群：105472201）");
-	textView1.setOnClickListener(function() {
-		setTimeout(function() {
-			window.open("http://133.130.120.73:9000/",'','');
-			//TODO 记录事件打点
-		}, 200);
-	});
-//	linearLayout.addView(textView1, lp);
-	
 	//延时操作
-	
 	setTimeout(function() {
-		if(isFirfox){
-	    		ShowSnackBar("火狐用户将强制重定向到旧版本~");
-	    		setTimeout(function() {
-				 self.location="http://www.colorfulcat.xyz/AndroidCat2/"; 
+		if (isFirfox) {
+			ShowSnackBar("火狐用户将强制重定向到旧版本~");
+			setTimeout(function() {
+				self.location = "http://www.colorfulcat.xyz/AndroidCat2/";
 			}, 1024);
-		}else{
+		} else {
 			//TODO  判断是否首次打开页面，首次就自动跳转
-//			var tabItems = mTitle.getTab().getTabItems();
-//	    		tabItems[1].performClick();
-	    
-	    		ShowSnackBar("欢迎大驾光临！");
+			//			var tabItems = mTitle.getTab().getTabItems();
+			//	    		tabItems[1].performClick();
+			ShowSnackBar("欢迎光临！");
 		}
 	}, 1024);
 
-//	var button = new TextLayoutView("点我点我");
-//	button.setOnClickListener(function() {
-//		ShowSnackBar("hahaha~~");
-//	});
-//	linearLayout.addView(button, lp);
-//
-//
-//	var editText = new MEditText();
-//	editText.setHint("input text here");
-//	editText.setHighlightColor(0xff0091ea);
-//	linearLayout.addView(editText, lp);
-//
-//
-//	var progress = new MProgressBar();
-//	progress.setProgressColor(0xff0091ea);
-//	progress.setStyle(MProgressBar.Large); //Small
-//	linearLayout.addView(progress, lp);
-//
-//	var toggleButton = new MToggleButton();
-//	toggleButton.setColor(0xff0091ea);
-//	linearLayout.addView(toggleButton, lp);
-//
-//	var comment = new Comment('images/kkmoving.jpg', '123', '4567');
-//	comment.setBackgroundColor(R.color.white);
-//	comment.setCornerSize(R.dimen.corner);
-//	comment.setBoxShadow(0, 1, 2, 0, R.color.shadow);
-//  comment.setBorderBottom(1, R.color.dividers);
-//  linearLayout.addView(comment, lp);
-
-
+	//	var button = new TextLayoutView("点我点我");
+	//	button.setOnClickListener(function() {
+	//		ShowSnackBar("hahaha~~");
+	//	});
+	//	linearLayout.addView(button, lp);
+	//
+	//
+	//	var editText = new MEditText();
+	//	editText.setHint("input text here");
+	//	editText.setHighlightColor(0xff0091ea);
+	//	linearLayout.addView(editText, lp);
+	//
+	//
+	//	var progress = new MProgressBar();
+	//	progress.setProgressColor(0xff0091ea);
+	//	progress.setStyle(MProgressBar.Large); //Small
+	//	linearLayout.addView(progress, lp);
+	//
+	//	var toggleButton = new MToggleButton();
+	//	toggleButton.setColor(0xff0091ea);
+	//	linearLayout.addView(toggleButton, lp);
+	//
+	//	var comment = new Comment('images/kkmoving.jpg', '123', '4567');
+	//	comment.setBackgroundColor(R.color.white);
+	//	comment.setCornerSize(R.dimen.corner);
+	//	comment.setBoxShadow(0, 1, 2, 0, R.color.shadow);
+	//  comment.setBorderBottom(1, R.color.dividers);
+	//  linearLayout.addView(comment, lp);
 
 	function IntroHeader() {
 		ViewGroup.apply(this);
@@ -192,54 +156,47 @@ function HomeFragment() {
 	}
 
 	//获取干货的接口
-	function getGanHuoLayout(){
+	function getGanHuoLayout() {
 		LinearLayout.apply(this);
 		this.setOrientation(LinearLayout.VERTICAL);
-		
+
 		var lp = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
-		lp.setMargins(R.dimen.padding);
-		
+		lp.setMargins(R.dimen.half_padding);
+
 		var containerLayout = new LinearLayout();
 		containerLayout.setOrientation(LinearLayout.VERTICAL);
 		this.addView(containerLayout);
-		
+
 		var linearLayout = new LinearLayout();
 		linearLayout.setOrientation(LinearLayout.VERTICAL);
 		containerLayout.addView(linearLayout);
-		
+
 		var lpProgress = new LP(LP.FP, LP.WC);
 		lpProgress.gravity = Gravity.CENTER;
-		lpProgress.setMargins(R.dimen.padding32);
+		lpProgress.setMargins(R.dimen.padding);
 		var progress = new MProgressBar();
 		progress.setProgressColor(R.color.theme);
 		progress.setStyle(MProgressBar.Small); //Small
-		linearLayout.addView(progress,lpProgress); 
-		
- 		liteAjax("http://api.xitu.io/resources/gold/android?order=heat&offset=0&limit=6",function(data){
- 			var dataArray = eval(data);
- 			if(dataArray.length > 0){
- 				linearLayout.removeAllViews();
- 				for (var i = 0; i < dataArray.length; i++) {
-					var catItem = {};
-					catItem.index = i;
-	 				catItem.icon = dataArray[i].user.avatar;
-	 				catItem.title = dataArray[i].title;
-	 				catItem.desc = dataArray[i].date.substring(0, 10);
-	 				catItem.url = dataArray[i].url;
-	 				
-	 				var item = new CatItem(catItem);
-	 				linearLayout.addView(item, lp);
+		linearLayout.addView(progress, lpProgress);
+		var url = "http://api.xitu.io/resources/gold/android?order=heat&offset=0&limit=6";
+		liteAjax(url, function(data) {
+			var dataArray = eval(data);
+			if (dataArray.length > 0) {
+				linearLayout.removeAllViews();
+				for (var i = 0; i < dataArray.length; i++) {
+					var ganHuoItem = dataArray[i]; 
+					var item = new GanHuoItem(ganHuoItem);
+					linearLayout.addView(item, lp);
 				}
-	 			
-	 			var toJueJin = Theme.createTip("以上干货来自万能的稀土掘金~");
+
+				var toJueJin = Theme.createTip("以上干货来自万能的稀土掘金~");
 				toJueJin.setTextColor(R.color.theme);
 				linearLayout.addView(toJueJin);
- 			}else{
- 				ShowSnackBar("干货获取失败，请刷新页面~");
- 			}
+			} else {
+				ShowSnackBar("干货获取失败，请刷新页面~");
+			}
 		});
-		
-		
+
 		containerLayout.onMeasure = function(wMS, hMS) {
 			var w = MeasureSpec.getSize(wMS);
 			var h = MeasureSpec.getSize(hMS);
@@ -253,11 +210,7 @@ function HomeFragment() {
 			var x = (this.getMW() - linearLayout.getMW()) / 2;
 			linearLayout.layout(x, 0);
 		};
-		
-		
-		
+
 	}
-
-
 
 }

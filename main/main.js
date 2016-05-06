@@ -74,12 +74,8 @@ function MainView() {
 	};
 
 	this.onLayout = function() {
-		var x = 0;
-		var y = 0;
-		mTitle.layout(x, y);
-
-		y += mTitle.getMH();
-		cnt.layout(x, y);
+		cnt.layout(0, mTitle.getMH());
+		mTitle.layout(0, 0);
 	};
 
 	function createHomeFragment() {

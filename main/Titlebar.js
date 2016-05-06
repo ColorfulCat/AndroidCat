@@ -4,7 +4,8 @@ function Titlebar() {
 	var self = this;
 
 	this.setBg(0xffffffff);
-	this.setBorderBottom(1, R.color.dividers);
+//	this.setBorderBottom(1, R.color.dividers);
+	this.setBoxShadow(0, 1, 2, 0, R.color.shadow);
 
 	var logoArea = new LogoArea();
 	this.addView(logoArea);

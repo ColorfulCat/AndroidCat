@@ -352,6 +352,12 @@ function AddCatView() {
 		  // error 是 AV.Error 的实例，包含有错误码和描述信息.
 		  console.log('Failed to create new object, with error message: ' + err.message);
 		});
-		});
+	});
+	submitButton.setHoverEnterListener(function() {
+        submitButton.setAlpha(0.8);
+    });
+    submitButton.setHoverExitListener(function() {
+        submitButton.setAlpha(1);
+    });
 	
 }
