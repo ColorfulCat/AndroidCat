@@ -37,7 +37,7 @@ function HomeFragment() {
 	var lp = new LP(LP.FP, LP.WC);
 	lp.setMargins(R.dimen.padding);
 
-	var subTitle = Theme.createCatTitle("Android干货推荐");
+	var subTitle = Theme.createCatTitle("Android 干货推荐");
 	linearLayout.addView(subTitle);
 
 	var ganhuoLayout = new getGanHuoLayout();
@@ -178,7 +178,7 @@ function HomeFragment() {
 		progress.setProgressColor(R.color.theme);
 		progress.setStyle(MProgressBar.Small); //Small
 		linearLayout.addView(progress, lpProgress);
-		var url = "http://api.xitu.io/resources/gold/android?order=heat&offset=0&limit=5";
+		var url = "http://api.xitu.io/resources/gold/android?order=time&offset=0&limit=5";
 		liteAjax(url, function(data) {
 			var dataArray = eval(data);
 			if (dataArray.length > 0) {
