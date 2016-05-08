@@ -54,6 +54,7 @@ function CatMenuItem(catMenuItem) {
 	this.setOnClickListener(function(){
 		setTimeout(function() {
 			updateMenusSelection(catMenuItem.index);
+			updateCatMenuHit(catMenuItem.id);
 			queryCats(catMenuItem);
 		}, 200);
 		

@@ -79,6 +79,7 @@ function queryMenus() {
 			catMenuItem.index = i;
 			catMenuItem.title = results[i].get("title");
 			catMenuItem.tag = results[i].get("tag");
+			catMenuItem.id = results[i].id;
 			if (i == 0) {
 				catMenuItem.isSelected = true;
 			} else {
@@ -152,7 +153,7 @@ function queryCats(catMenuItem) {
 			for (var i = 0; i < results.length; i++) {
 				var catItem = {};
 				catItem.index = i;
-				catItem.id = results[i].get("objectId");
+				catItem.id = results[i].id;
 				catItem.createdAt = results[i].get("createdAt");
 				catItem.updatedAt = results[i].get("updatedAt");
 				catItem.icon = results[i].get("icon");
@@ -165,7 +166,6 @@ function queryCats(catMenuItem) {
 				mCats.push(catItem);
 			}
 		}
-		
 		updateCats(catMenuItem);
 	}, function(error) {
 		alert('Error: ' + error.code + ' ' + error.message);

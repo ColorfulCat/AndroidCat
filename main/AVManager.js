@@ -29,6 +29,47 @@ analytics.send({
     }
 });
 
+function updateCatHit(objectId){
+	var Post = AV.Object.extend('Cat');
+	var query = new AV.Query(Post);
+	query.get(objectId).then(function(post) {
+		console.log('success when updateHit');
+	    // 成功获得实例
+	    post.increment('hit');
+		post.save().then(function() {
+			console.log('success when updateHit increment');
+		  // 保存成功
+		}, function(error) {
+			console.log('error when updateHit increment ' + error.code + ' ' + error.message);
+		  // 失败
+		});
+	}, function(error) {
+		console.log('error when updateHit ' + error.code + ' ' + error.message);
+	  // 失败了
+	});
+}
+
+function updateCatMenuHit(objectId){
+	console.log('updateCatMenuHit ' +objectId);
+	var Post = AV.Object.extend('Sort');
+	var query = new AV.Query(Post);
+	query.get(objectId).then(function(post) {
+		console.log('success when updateCatMenuHit');
+	    // 成功获得实例
+	    post.increment('hit');
+		post.save().then(function() {
+			console.log('success when updateCatMenuHit increment');
+		  // 保存成功
+		}, function(error) {
+			console.log('error when updateCatMenuHit increment ' +  error.code + ' ' + error.message);
+		  // 失败
+		});
+	}, function(error) {
+		console.log('error when updateCatMenuHit '  + error.code + ' ' + error.message);
+	  // 失败了
+	});
+}
+
 
 //
 //function addCat(site){
