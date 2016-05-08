@@ -99,6 +99,7 @@ function _R() {
 		this.wave = 0x1a000000;
 		this.item_press = 0x22000000;
 		this.mask_bg = 0x66000000;
+		this.transparent = 0x00000000;
 	}
 
 	function _dimen() {

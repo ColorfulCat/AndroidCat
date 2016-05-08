@@ -37,11 +37,8 @@ function HomeFragment() {
 	var lp = new LP(LP.FP, LP.WC);
 	lp.setMargins(R.dimen.padding);
 
-	var subTitle = Theme.createCatTitle("Android 干货推荐");
-	linearLayout.addView(subTitle);
-
-	var ganhuoLayout = new getGanHuoLayout();
-	linearLayout.addView(ganhuoLayout, lp);
+	var homeContentLayout = new getHomeContentLayout();
+	linearLayout.addView(homeContentLayout, lp);
 
 	//延时操作
 	setTimeout(function() {
@@ -156,7 +153,7 @@ function HomeFragment() {
 	}
 
 	//获取干货的接口
-	function getGanHuoLayout() {
+	function getHomeContentLayout() {
 		LinearLayout.apply(this);
 		this.setOrientation(LinearLayout.VERTICAL);
 
@@ -164,12 +161,18 @@ function HomeFragment() {
 		lp.setMargins(R.dimen.half_padding);
 
 		var containerLayout = new LinearLayout();
-		containerLayout.setOrientation(LinearLayout.VERTICAL);
+		containerLayout.setOrientation(LinearLayout.HORIZONTAL);
 		this.addView(containerLayout);
 
-		var linearLayout = new LinearLayout();
-		linearLayout.setOrientation(LinearLayout.VERTICAL);
-		containerLayout.addView(linearLayout);
+		var ganhuoLayout = new LinearLayout();
+		ganhuoLayout.setOrientation(LinearLayout.VERTICAL);
+		containerLayout.addView(ganhuoLayout);
+		
+		var musicLayout = new LinearLayout();
+		musicLayout.setOrientation(LinearLayout.VERTICAL);
+//		containerLayout.addView(musicLayout);
+		
+		///ganhuo
 
 		var lpProgress = new LP(LP.FP, LP.WC);
 		lpProgress.gravity = Gravity.CENTER;
@@ -177,38 +180,66 @@ function HomeFragment() {
 		var progress = new MProgressBar();
 		progress.setProgressColor(R.color.theme);
 		progress.setStyle(MProgressBar.Small); //Small
-		linearLayout.addView(progress, lpProgress);
+		ganhuoLayout.addView(progress, lpProgress);
 		var url = "http://api.xitu.io/resources/gold/android?order=time&offset=0&limit=5";
 		liteAjax(url, function(data) {
 			var dataArray = eval(data);
 			if (dataArray.length > 0) {
-				linearLayout.removeAllViews();
+				ganhuoLayout.removeAllViews();
+				var ganhuoTitle = Theme.createCatTitle("Android 干货推荐");
+				ganhuoLayout.addView(ganhuoTitle);
 				for (var i = 0; i < dataArray.length; i++) {
 					var ganHuoItem = dataArray[i]; 
 					var item = new GanHuoItem(ganHuoItem);
-					linearLayout.addView(item, lp);
+					ganhuoLayout.addView(item, lp);
 				}
 
 				var toJueJin = Theme.createTip("以上干货来自万能的稀土掘金~");
 				toJueJin.setTextColor(R.color.theme);
-				linearLayout.addView(toJueJin);
+				ganhuoLayout.addView(toJueJin);
 			} else {
 				ShowSnackBar("干货获取失败，请刷新页面~");
 			}
 		});
+		
+		///music
+		var musicTitle = Theme.createCatTitle("");
+		musicLayout.addView(musicTitle);
+		
+		var layoutParam = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
+		var mWebView = new WebView();
+		mWebView.setBackgroundColor(R.color.transparent);
+		mWebView.loadUrl("http://music.163.com/outchain/player?type=0&id=20244469&auto=1&height=430"); 
+	//	mWebView.setOnPageFinishListener(function(){
+	//		progress.setVisibility(View.GONE);
+	//		this.requestLayout();
+	//	}, 1000);
+		musicLayout.addView(mWebView);
+		musicLayout.requestLayout(); 
+		
+		
 
 		containerLayout.onMeasure = function(wMS, hMS) {
 			var w = MeasureSpec.getSize(wMS);
 			var h = MeasureSpec.getSize(hMS);
-			var cntW = Math.min(w, Manifest.maxWidth);
-			linearLayout.measure(cntW, h);
+			if(w > Manifest.maxWidth){
+//				musicLayout.measure(Manifest.maxWidth/3, h);
+				ganhuoLayout.measure(Manifest.maxWidth, h);
+			}else{
+//				musicLayout.measure(0,0);
+				ganhuoLayout.measure(w, h);
+			}
+			
 			this.setMeasuredDimension(w, h);
 		};
 		containerLayout.onLayout = function() {
 			var x = 0;
 			var y = 0;
-			var x = (this.getMW() - linearLayout.getMW()) / 2;
-			linearLayout.layout(x, 0);
+//			var x = (this.getMW() - ganhuoLayout.getMW() - musicLayout.getMW()) / 2;、
+			var x = (this.getMW() - ganhuoLayout.getMW() - musicLayout.getMW()) / 2;
+//			var x2 = x + ganhuoLayout.getMW();
+			ganhuoLayout.layout(x, 0);
+//			musicLayout.layout(x2, 0);
 		};
 
 	}
