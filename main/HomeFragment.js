@@ -45,7 +45,7 @@ function HomeFragment() {
 		if (isFirfox) {
 			ShowSnackBar("火狐用户将强制重定向到旧版本~");
 			setTimeout(function() {
-				self.location = "http://www.colorfulcat.xyz/AndroidCat2/";
+				self.location = "http://androidcat.com/version2/";
 			}, 1024);
 		} else {
 			//TODO  判断是否首次打开页面，首次就自动跳转
@@ -91,7 +91,7 @@ function HomeFragment() {
 
 		var imageView = new ImageView();
 		imageView.setBg(0x08000000);
-		imageView.setImageUri("img/android_bg.jpg");
+		imageView.setImageUri("http://7xtu0c.com1.z0.glb.clouddn.com/androidbg-1.png");
 		imageView.setScaleType(ScaleType.CENTER_CROP);
 		imageView.setBoxShadow(0, 3, 3, 0, R.color.shadow);
 		this.addView(imageView);
@@ -170,7 +170,7 @@ function HomeFragment() {
 		
 		var musicLayout = new LinearLayout();
 		musicLayout.setOrientation(LinearLayout.VERTICAL);
-//		containerLayout.addView(musicLayout);
+		containerLayout.addView(musicLayout);
 		
 		///ganhuo
 
@@ -214,19 +214,30 @@ function HomeFragment() {
 	//		progress.setVisibility(View.GONE);
 	//		this.requestLayout();
 	//	}, 1000);
-		musicLayout.addView(mWebView);
-		musicLayout.requestLayout(); 
-		
+//		musicLayout.addView(mWebView);
+//		musicLayout.requestLayout(); 
+
+		var myImage = new ImageView();
+		var imageLp = new LayoutParams(LayoutParams.FILL_PARENT, 200);
+		myImage.setScaleType(ScaleType.FIT_CENTER);
+		myImage.setPadding(R.dimen.half_padding);
+		myImage.setImageUri("http://7xtu0c.com1.z0.glb.clouddn.com/android-2.png");
+		myImage.setOnClickListener(function(){
+			window.open("https://androidify.com/en/#/",'','');
+		});
+		musicLayout.addView(myImage, imageLp);
+		var tipHello = Theme.createCatTitle("Hello Android");
+		musicLayout.addView(tipHello);
 		
 
 		containerLayout.onMeasure = function(wMS, hMS) {
 			var w = MeasureSpec.getSize(wMS);
 			var h = MeasureSpec.getSize(hMS);
 			if(w > Manifest.maxWidth){
-//				musicLayout.measure(Manifest.maxWidth/3, h);
-				ganhuoLayout.measure(Manifest.maxWidth, h);
+				musicLayout.measure(Manifest.maxWidth/3, h);
+				ganhuoLayout.measure(Manifest.maxWidth*2/3, h);
 			}else{
-//				musicLayout.measure(0,0);
+				musicLayout.measure(0,0);
 				ganhuoLayout.measure(w, h);
 			}
 			
@@ -235,11 +246,11 @@ function HomeFragment() {
 		containerLayout.onLayout = function() {
 			var x = 0;
 			var y = 0;
-//			var x = (this.getMW() - ganhuoLayout.getMW() - musicLayout.getMW()) / 2;、
 			var x = (this.getMW() - ganhuoLayout.getMW() - musicLayout.getMW()) / 2;
-//			var x2 = x + ganhuoLayout.getMW();
+//			var x = (this.getMW() - ganhuoLayout.getMW()) / 2;
+			var x2 = x + ganhuoLayout.getMW();
 			ganhuoLayout.layout(x, 0);
-//			musicLayout.layout(x2, 0);
+			musicLayout.layout(x2, 0);
 		};
 
 	}
