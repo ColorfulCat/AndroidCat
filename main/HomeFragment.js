@@ -186,7 +186,7 @@ function HomeFragment() {
 			var dataArray = eval(data);
 			if (dataArray.length > 0) {
 				ganhuoLayout.removeAllViews();
-				var ganhuoTitle = Theme.createCatTitle("Android 干货推荐");
+				var ganhuoTitle = Theme.createCatTitle("Android 全新干货");
 				ganhuoLayout.addView(ganhuoTitle);
 				for (var i = 0; i < dataArray.length; i++) {
 					var ganHuoItem = dataArray[i]; 
@@ -194,7 +194,7 @@ function HomeFragment() {
 					ganhuoLayout.addView(item, lp);
 				}
 
-				var toJueJin = Theme.createTip("以上干货来自万能的稀土掘金~");
+				var toJueJin = Theme.createTip("以上干货来自万能的 ' 稀土掘金 ' ~");
 				toJueJin.setTextColor(R.color.theme);
 				ganhuoLayout.addView(toJueJin);
 			} else {
