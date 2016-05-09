@@ -91,7 +91,7 @@ function HomeFragment() {
 
 		var imageView = new ImageView();
 		imageView.setBg(0x08000000);
-		imageView.setImageUri("http://7xtu0c.com1.z0.glb.clouddn.com/androidbg-1.png");
+		imageView.setImageUri("http://o6wiczyg1.bkt.clouddn.com/devices.jpg");
 		imageView.setScaleType(ScaleType.CENTER_CROP);
 		imageView.setBoxShadow(0, 3, 3, 0, R.color.shadow);
 		this.addView(imageView);
