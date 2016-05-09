@@ -221,7 +221,7 @@ function HomeFragment() {
 		var imageLp = new LayoutParams(LayoutParams.FILL_PARENT, 200);
 		myImage.setScaleType(ScaleType.FIT_CENTER);
 		myImage.setPadding(R.dimen.half_padding);
-		myImage.setImageUri("http://7xtu0c.com1.z0.glb.clouddn.com/android-2.png");
+		myImage.setImageUri("http://7xtu0c.com1.z0.glb.clouddn.com/androidcat-3.png");
 		myImage.setOnClickListener(function(){
 			window.open("https://androidify.com/en/#/",'','');
 		});

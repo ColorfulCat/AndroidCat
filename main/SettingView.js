@@ -42,7 +42,8 @@ function SettingView() {
 	var subGood = Theme.createText("");
 	subGood.setTextColor(R.color.theme);
 	subGood.setPadding(R.dimen.padding);
-	var subTitleLp = new LayoutParams(LayoutParams.FILL_PARENT, 132);
+	var subTitleLp = new LayoutParams(LayoutParams.FILL_PARENT, 108);
+//	subTitleLp.gravity = Gravity.Top;
 	cnt.addView(subGood, subTitleLp);
 
 	var bad = Theme.createTitleCenter("忌");
@@ -70,8 +71,8 @@ function SettingView() {
 	queryGood.equalTo('enable', true);
 	queryGood.equalTo('isWeekend', isWeekend());
 	queryGood.find().then(function(results) {
-		if (results != null && results.size() > 1) {
-			subGood.setText(results[0].get("content") + ", " + results[0].get("good") + "</br></br>" + results[1].get("content") + ", " + results[1].get("good"));
+		if (results != null && results.size() > 0) {
+			subGood.setText("【"+results[0].get("content") + "】:</br> " + results[0].get("good"));
 		}
 
 	}, function(error) {
@@ -83,8 +84,8 @@ function SettingView() {
 	queryBad.equalTo('enable', true);
 	queryBad.equalTo('isWeekend', isWeekend());
 	queryBad.find().then(function(results) {
-		if (results != null && results.size() > 3) {
-			subBad.setText(results[2].get("content") + ", " + results[2].get("bad") + "</br></br>" + results[3].get("content") + ", " + results[3].get("bad"));
+		if (results != null && results.size() > 1) {
+			subBad.setText("【"+results[1].get("content") + "】:</br>" + results[1].get("bad"));
 		}
 
 	}, function(error) {
