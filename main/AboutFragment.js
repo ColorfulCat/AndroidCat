@@ -187,6 +187,10 @@ function CommentView() {
 	comment = new Comment('https://avatars0.githubusercontent.com/u/6269257?v=3&s=460', '小鱼', '活的没心没肺的渣渣，大神等等我！');
 	comment.setBorderBottom(1, R.color.dividers);
 	this.addView(comment);
+	
+	comment = new Comment('http://upload.jianshu.io/users/upload_avatars/1931006/ca142ff30884.jpg?imageMogr/thumbnail/90x90/quality/100', 'wolearn', '永远在路上的开发者，在代码里打滚打滚。');
+	comment.setBorderBottom(1, R.color.dividers);
+	this.addView(comment);
 
 	comment = new Comment('img/cat_icon.png', '你', '对的，就是你，还不赶快加入我们？！');
 	this.addView(comment);
