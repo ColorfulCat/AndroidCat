@@ -54,6 +54,7 @@ function _R() {
 		this.getstart = "开始";
 		this.community = "交流社区";
 		this.cat = "书签导航";
+		this.lib = "开源库";
 		this.app = "应用推荐";
 		this.about = "关于我们";
 		this.setting = "设置";
