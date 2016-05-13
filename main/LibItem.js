@@ -7,9 +7,6 @@ function LibItem(libItem) {
 	var url = libItem.url;
 	
 	var imageHeight = 150;
-	var iconAreaW = 66;
-	var iconSize = 40;
-	var editH = 150;
 	
 	var lp = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
 	lp.setMargins(R.dimen.padding);
@@ -36,7 +33,7 @@ function LibItem(libItem) {
 	image2.setImgSrc("https://camo.githubusercontent.com/d406ac5a03a2b1fa5cf41fadc8d2408cb8709bdc/68747470733a2f2f6431337961637572716a676172612e636c6f756466726f6e742e6e65742f75736572732f3132353035362f73637265656e73686f74732f313635303331372f7265616c6573746174652d70756c6c5f312d322d332e676966");
 	image2.setScaleType(ScaleType.FIT_CENTER);
 	
-		var image3 = new ImageView();
+	var image3 = new ImageView();
 	image3.setImgSrc("https://camo.githubusercontent.com/d406ac5a03a2b1fa5cf41fadc8d2408cb8709bdc/68747470733a2f2f6431337961637572716a676172612e636c6f756466726f6e742e6e65742f75736572732f3132353035362f73637265656e73686f74732f313635303331372f7265616c6573746174652d70756c6c5f312d322d332e676966");
 	image3.setScaleType(ScaleType.FIT_CENTER);
 	
