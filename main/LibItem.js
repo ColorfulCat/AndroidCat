@@ -8,43 +8,27 @@ function LibItem(libItem) {
 	
 	var imageHeight = 150;
 	
-	var lp = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
+	var lp = new LayoutParams(LayoutParams.FILL_PARENT, imageHeight);
 	lp.setMargins(R.dimen.padding);
 	
 	var imageLp = new LayoutParams(LayoutParams.WRAP_CONTENT, imageHeight);
 	imageLp.setMargins(R.dimen.half_padding);
-	
-	var galleryLp = new LayoutParams(LayoutParams.FILL_PARENT, imageHeight);
-	galleryLp.setMargins(R.dimen.half_padding);
 
 	this.setOrientation(LinearLayout.VERTICAL);
 	this.setBackgroundColor(R.color.white);
 	this.setCornerSize(R.dimen.corner);
 	this.setBoxShadow(0, 1, 2, 0, R.color.shadow);
 
-	var imageLayout = new Gallery();
-	this.addView(imageLayout, galleryLp);
-
-	var image1 = new ImageView();
-	image1.setImgSrc("https://camo.githubusercontent.com/d406ac5a03a2b1fa5cf41fadc8d2408cb8709bdc/68747470733a2f2f6431337961637572716a676172612e636c6f756466726f6e742e6e65742f75736572732f3132353035362f73637265656e73686f74732f313635303331372f7265616c6573746174652d70756c6c5f312d322d332e676966");
-	image1.setScaleType(ScaleType.FIT_CENTER);
+	var image = new ImageView();
+	image.setImgSrc("https://raw.githubusercontent.com/Yalantis/Persei/master/Assets/animation.gif");
+//	image.setImgSrc("https://camo.githubusercontent.com/d406ac5a03a2b1fa5cf41fadc8d2408cb8709bdc/68747470733a2f2f6431337961637572716a676172612e636c6f756466726f6e742e6e65742f75736572732f3132353035362f73637265656e73686f74732f313635303331372f7265616c6573746174652d70756c6c5f312d322d332e676966");
+	image.setScaleType(ScaleType.FIT_CENTER);
 	
-	var image2 = new ImageView();
-	image2.setImgSrc("https://camo.githubusercontent.com/d406ac5a03a2b1fa5cf41fadc8d2408cb8709bdc/68747470733a2f2f6431337961637572716a676172612e636c6f756466726f6e742e6e65742f75736572732f3132353035362f73637265656e73686f74732f313635303331372f7265616c6573746174652d70756c6c5f312d322d332e676966");
-	image2.setScaleType(ScaleType.FIT_CENTER);
-	
-	var image3 = new ImageView();
-	image3.setImgSrc("https://camo.githubusercontent.com/d406ac5a03a2b1fa5cf41fadc8d2408cb8709bdc/68747470733a2f2f6431337961637572716a676172612e636c6f756466726f6e742e6e65742f75736572732f3132353035362f73637265656e73686f74732f313635303331372f7265616c6573746174652d70756c6c5f312d322d332e676966");
-	image3.setScaleType(ScaleType.FIT_CENTER);
-	
-	imageLayout.addView(image1, imageLp);
-	imageLayout.addView(image2, imageLp);
-	imageLayout.addView(image3, imageLp);
-	
+	this.addView(image);
 	
 	this.setOnClickListener(function(){
 		setTimeout(function() {
-			window.open(url,'','');
+//			window.open(url,'','');
 			 
 		}, 200);
 	});
