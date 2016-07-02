@@ -6,7 +6,7 @@ function LibItem(libItem) {
 	var desc = libItem.desc;
 	var url = libItem.url;
 	
-	var imageHeight = 150;
+	var imageHeight = 250;
 	
 	var lp = new LayoutParams(LayoutParams.FILL_PARENT, imageHeight);
 	lp.setMargins(R.dimen.padding);
