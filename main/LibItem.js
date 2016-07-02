@@ -6,13 +6,13 @@ function LibItem(libItem) {
 	var desc = libItem.desc;
 	var url = libItem.url;
 	
-	var imageHeight = 150;
-	var imageWidth = 100;
+	var ITEM_HEIGHT = 300;
+	var imageWidth = 200;
 	
-	var lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.FILL_PARENT);
+	var lp = new LayoutParams(LayoutParams.FILL_PARENT, ITEM_HEIGHT);
 	lp.setMargins(R.dimen.padding);
 	
-	var imageLp = new LayoutParams(imageWidth, imageHeight);
+	var imageLp = new LayoutParams(imageWidth, ITEM_HEIGHT);
 	imageLp.setMargins(R.dimen.half_padding);
 
 	this.setOrientation(LinearLayout.VERTICAL);
@@ -23,12 +23,12 @@ function LibItem(libItem) {
 
 	var image1 = new ImageView();
 	image1.setImgSrc("https://camo.githubusercontent.com/d406ac5a03a2b1fa5cf41fadc8d2408cb8709bdc/68747470733a2f2f6431337961637572716a676172612e636c6f756466726f6e742e6e65742f75736572732f3132353035362f73637265656e73686f74732f313635303331372f7265616c6573746174652d70756c6c5f312d322d332e676966");
-	image1.setScaleType(ScaleType.FIT_CENTER);
+	image1.setScaleType(ScaleType.CENTER_CROP);
 	this.addView(image1, imageLp);
 	
-	image1.setOnClickListener(function(){
-
-	});
+//	image1.setOnClickListener(function(){
+//
+//	});
 	
 	this.setOnClickListener(function(){
 		setTimeout(function() {

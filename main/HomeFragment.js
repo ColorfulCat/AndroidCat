@@ -197,7 +197,7 @@ function HomeFragment() {
 					ganhuoLayout.addView(item, lp);
 				}
 
-				var toJueJin = Theme.createTip("以上干货来自万能的<a href='http://gold.xitu.io/#/'> ' 稀土掘金 '</a> ");
+				var toJueJin = Theme.createTip("以上干货来自万能的<a href='http://gold.xitu.io/#/' target='_blank'> ' 稀土掘金 '</a> ");
 				toJueJin.setTextColor(R.color.theme);
 				ganhuoLayout.addView(toJueJin);
 			} else {

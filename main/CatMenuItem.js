@@ -12,7 +12,7 @@ function CatMenuItem(catMenuItem) {
 	this.setOrientation(LinearLayout.HORIZONTAL);
 	
 	
-	this.setBorderBottom(1, 0x08000000);
+//	this.setBorderBottom(1, 0x08000000);
 
 
 	var iconArea = new FrameLayout();
@@ -43,20 +43,20 @@ function CatMenuItem(catMenuItem) {
 	
 	if(isSelected){
 		menuIcon.setImgSrc("img/cat_foot.png");
-		this.setBackgroundColor(R.color.bg);
+//		this.setBackgroundColor(R.color.bg);
 		nameTv.setTextColor(R.color.theme);
 	}else{
 		menuIcon.setImgSrc("img/cat_foot_gray.png");
-		this.setBackgroundColor(R.color.card_bg);
+		
 		nameTv.setTextColor(R.color.text);
 	}
-	
+	this.setBackgroundColor(R.color.card_bg);
 	this.setOnClickListener(function(){
 		setTimeout(function() {
 			updateMenusSelection(catMenuItem.index);
 			updateCatMenuHit(catMenuItem.id);
 			queryCats(catMenuItem);
-		}, 200);
+		}, 100);
 		
 	});
 	
@@ -70,9 +70,11 @@ function CatMenuItem(catMenuItem) {
 	
 	this.setHoverEnterListener(function() {
         this.setAlpha(0.6);
+//      nameLp.setBoxShadow(0, 2, 8, 0, R.color.shadow);
     });
     this.setHoverExitListener(function() {
         this.setAlpha(1);
+//      nameLp.setBoxShadow(0, 0, 0, 0, R.color.shadow);
     });
 	
 	var downX;

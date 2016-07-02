@@ -117,12 +117,12 @@ function updateMenusViews(index) {
 	for (var i = 0; i < menuLinearLayout.getChildCount(); i++) {
 
 		if (index == i) {
-			menuLinearLayout.getChildAt(i).setBackgroundColor(R.color.bg);
+//			menuLinearLayout.getChildAt(i).setBackgroundColor(R.color.bg);
 			menuLinearLayout.getChildAt(i).getIcon().setImgSrc("img/cat_foot.png");
 			menuLinearLayout.getChildAt(i).getTitle().setTextColor(R.color.theme);
 		} else {
-			menuLinearLayout.getChildAt(i).setBackgroundColor(R.color.card_bg);
-			menuLinearLayout.getChildAt(i).getIcon().setImgSrc("img/cat_foot_gray.png");
+//			menuLinearLayout.getChildAt(i).setBackgroundColor(R.color.card_bg);
+			menuLinearLayout.getChildAt(i).getIcon().setImgSrc("");//img/cat_foot_gray.png");
 			menuLinearLayout.getChildAt(i).getTitle().setTextColor(R.color.text);
 		}
 	}
@@ -174,11 +174,11 @@ function queryCats(catMenuItem) {
 
 function updateCats(catMenuItem) {
 	contentLinearLayout.removeAllViews();
-	var title = Theme.createCatTitle(catMenuItem.title);
-	var lpTop = new LP(LP.FP, LP.WC);
-	lpTop.topMargin = R.dimen.padding;
-	lpTop.bottomMargin = R.dimen.padding;
-	contentLinearLayout.addView(title, lpTop);
+//	var title = Theme.createCatTitle(catMenuItem.title);
+//	var lpTop = new LP(LP.FP, LP.WC);
+//	lpTop.topMargin = R.dimen.padding;
+//	lpTop.bottomMargin = R.dimen.padding;
+//	contentLinearLayout.addView(title, lpTop);
 
 	var lp = new LP(LP.FP, LP.WC);
 	lp.setMargins(R.dimen.half_padding);
