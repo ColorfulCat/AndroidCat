@@ -46,8 +46,7 @@ function CatMenuItem(catMenuItem) {
 //		this.setBackgroundColor(R.color.bg);
 		nameTv.setTextColor(R.color.theme);
 	}else{
-		menuIcon.setImgSrc("img/cat_foot_gray.png");
-		
+		menuIcon.setImgSrc("img/point.png");
 		nameTv.setTextColor(R.color.text);
 	}
 	this.setBackgroundColor(R.color.card_bg);

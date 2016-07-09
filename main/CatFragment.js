@@ -26,11 +26,14 @@ function CatFragment() {
 	mainContainer.onMeasure = function(wMS, hMS) {
 		var w = MeasureSpec.getSize(wMS);
 		var h = MeasureSpec.getSize(hMS);
-		var cntW = Math.min(w, Manifest.maxWidth);
-		var menuW = Math.min(cntW / 3, 180);
+		var cntW = w;//Math.min(w, Manifest.maxWidth);
+		var menuW = Math.min(cntW / 3, 191);
+		var contentLayout = cntW-menuW;
 		menuScrollView.measure(menuW, h);
 		contentScrollView.measure(cntW - menuW, h);
+		contentLinearLayout.measure(Math.min(Manifest.maxWidth, cntW - menuW), h);
 		this.setMeasuredDimension(w, h);
+		
 	};
 	mainContainer.onLayout = function() {
 		var x = 0;
@@ -38,8 +41,9 @@ function CatFragment() {
 		var x = (this.getMW() - menuScrollView.getMW() - contentScrollView.getMW()) / 2;
 		menuScrollView.layout(x, 0);
 		contentScrollView.layout(x + menuScrollView.getMW(), 0);
+		contentLinearLayout.layout((contentScrollView.getMW() - contentLinearLayout.getMW())/2, 0);
 	};
-	this.addView(mainContainer);
+	this.addView(mainContainer); 
 
 	var mPadding = R.dimen.padding;
 	var menuScrollView = new ScrollView();
@@ -122,7 +126,7 @@ function updateMenusViews(index) {
 			menuLinearLayout.getChildAt(i).getTitle().setTextColor(R.color.theme);
 		} else {
 //			menuLinearLayout.getChildAt(i).setBackgroundColor(R.color.card_bg);
-			menuLinearLayout.getChildAt(i).getIcon().setImgSrc("");//img/cat_foot_gray.png");
+			menuLinearLayout.getChildAt(i).getIcon().setImgSrc("img/point.png");
 			menuLinearLayout.getChildAt(i).getTitle().setTextColor(R.color.text);
 		}
 	}
