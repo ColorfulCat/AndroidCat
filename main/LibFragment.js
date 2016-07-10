@@ -4,7 +4,7 @@ function LibFragment() {
 	ScrollView.apply(this);
 	
 	var linearLayout = new LinearLayout();
-//	linearLayout.setBackgroundColor(R.color.card_bg); tyxxekt0@icloud.com Aa110011
+//	linearLayout.setBackgroundColor(R.color.card_bg); 
 	
 	linearLayout.setOrientation(LinearLayout.HORIZONTAL);
 	linearLayout.setBackgroundColor(R.color.bg);

@@ -26,12 +26,12 @@ function CatFragment() {
 	mainContainer.onMeasure = function(wMS, hMS) {
 		var w = MeasureSpec.getSize(wMS);
 		var h = MeasureSpec.getSize(hMS);
-		var cntW = w;//Math.min(w, Manifest.maxWidth);
+		var cntW = Math.min(w, Manifest.maxWidth);
 		var menuW = Math.min(cntW / 3, 191);
 		var contentLayout = cntW-menuW;
 		menuScrollView.measure(menuW, h);
 		contentScrollView.measure(cntW - menuW, h);
-		contentLinearLayout.measure(Math.min(Manifest.maxWidth, cntW - menuW), h);
+//		contentLinearLayout.measure(Math.min(Manifest.maxWidth, cntW - menuW), h);
 		this.setMeasuredDimension(w, h);
 		
 	};
@@ -41,7 +41,7 @@ function CatFragment() {
 		var x = (this.getMW() - menuScrollView.getMW() - contentScrollView.getMW()) / 2;
 		menuScrollView.layout(x, 0);
 		contentScrollView.layout(x + menuScrollView.getMW(), 0);
-		contentLinearLayout.layout((contentScrollView.getMW() - contentLinearLayout.getMW())/2, 0);
+//		contentLinearLayout.layout((contentScrollView.getMW() - contentLinearLayout.getMW())/2, 0);
 	};
 	this.addView(mainContainer); 
 
