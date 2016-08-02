@@ -181,7 +181,7 @@ function HomeFragment() {
 		progress.setProgressColor(R.color.theme);
 		progress.setStyle(MProgressBar.Small); //Small
 		ganhuoLayout.addView(progress, lpProgress);
-		var url = "http://api.xitu.io/resources/gold/android?order=time&offset=0&limit=5";
+		var url = "http://api.xitu.io/resources/gold/android?order=time&offset=0&limit=10";
 		liteAjax(url, function(data) {
 			var dataArray = eval(data);
 			if (dataArray.length > 0) {
@@ -194,7 +194,8 @@ function HomeFragment() {
 					ganhuoLayout.addView(item, lp);
 				}
 
-				var toJueJin = Theme.createTip("以上干货来自万能的 ' 稀土掘金 ' ~");
+				var toJueJin = Theme.createTip("以上干货来自万能的 <a href='http://gold.xitu.io'>' 稀土掘金 ' </a>");
+
 				toJueJin.setTextColor(R.color.theme);
 				ganhuoLayout.addView(toJueJin);
 			} else {

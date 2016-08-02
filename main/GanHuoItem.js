@@ -24,7 +24,7 @@ function GanHuoItem(ganHuoItem) {
 //	this.addView(iconArea, iconAreaLp);
 
 	var avatar = new ImageView();
-	if(icon.trim() == "" || icon == null){
+	if(icon == null || icon.trim() == ""){
 		avatar.setImgSrc("img/cat_foot.png");
 	}else{
 		avatar.setImgSrc(icon);
