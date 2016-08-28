@@ -48,9 +48,12 @@ function HomeFragment() {
 				self.location = "http://androidcat.com/version2/";
 			}, 1024);
 		} else {
-			//TODO  判断是否首次打开页面，首次就自动跳转
-			//			var tabItems = mTitle.getTab().getTabItems();
-			//	    		tabItems[1].performClick();
+			//  判断是否首次打开页面，首次就自动跳转
+			if (!localStorage.hasOpened) {
+				localStorage.hasOpened = true;
+				var tabItems = mTitle.getTab().getTabItems();
+				tabItems[1].performClick();
+			}
 			ShowSnackBar("欢迎光临！");
 		}
 	}, 1024);
@@ -167,11 +170,11 @@ function HomeFragment() {
 		var ganhuoLayout = new LinearLayout();
 		ganhuoLayout.setOrientation(LinearLayout.VERTICAL);
 		containerLayout.addView(ganhuoLayout);
-		
+
 		var musicLayout = new LinearLayout();
 		musicLayout.setOrientation(LinearLayout.VERTICAL);
 		containerLayout.addView(musicLayout);
-		
+
 		///ganhuo
 
 		var lpProgress = new LP(LP.FP, LP.WC);
@@ -181,7 +184,7 @@ function HomeFragment() {
 		progress.setProgressColor(R.color.theme);
 		progress.setStyle(MProgressBar.Small); //Small
 		ganhuoLayout.addView(progress, lpProgress);
-		var url = "http://api.xitu.io/resources/gold/android?order=time&offset=0&limit=10";
+		var url = "http://api.xitu.io/resources/gold/android?order=time&offset=0&limit=8";
 		liteAjax(url, function(data) {
 			var dataArray = eval(data);
 			if (dataArray.length > 0) {
@@ -189,12 +192,11 @@ function HomeFragment() {
 				var ganhuoTitle = Theme.createCatTitle("Android 全新干货");
 				ganhuoLayout.addView(ganhuoTitle);
 				for (var i = 0; i < dataArray.length; i++) {
-					var ganHuoItem = dataArray[i]; 
+					var ganHuoItem = dataArray[i];
 					var item = new GanHuoItem(ganHuoItem);
 					ganhuoLayout.addView(item, lp);
 				}
-
-				var toJueJin = Theme.createTip("以上干货来自万能的 <a href='http://gold.xitu.io'>' 稀土掘金 ' </a>");
+				var toJueJin = Theme.createTip("以上干货来自万能的 <a href='http://gold.xitu.io/' target='_blank'>' 稀土掘金 '</a> ~");
 
 				toJueJin.setTextColor(R.color.theme);
 				ganhuoLayout.addView(toJueJin);
@@ -202,53 +204,52 @@ function HomeFragment() {
 				ShowSnackBar("干货获取失败，请刷新页面~");
 			}
 		});
-		
+
 		///music
 		var musicTitle = Theme.createCatTitle("");
 		musicLayout.addView(musicTitle);
-		
+
 		var layoutParam = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		var mWebView = new WebView();
 		mWebView.setBackgroundColor(R.color.transparent);
-		mWebView.loadUrl("http://music.163.com/outchain/player?type=0&id=20244469&auto=1&height=430"); 
-	//	mWebView.setOnPageFinishListener(function(){
-	//		progress.setVisibility(View.GONE);
-	//		this.requestLayout();
-	//	}, 1000);
-//		musicLayout.addView(mWebView);
-//		musicLayout.requestLayout(); 
+		mWebView.loadUrl("http://music.163.com/outchain/player?type=0&id=20244469&auto=1&height=430");
+		//	mWebView.setOnPageFinishListener(function(){
+		//		progress.setVisibility(View.GONE);
+		//		this.requestLayout();
+		//	}, 1000);
+		//		musicLayout.addView(mWebView);
+		//		musicLayout.requestLayout(); 
 
 		var myImage = new ImageView();
 		var imageLp = new LayoutParams(LayoutParams.FILL_PARENT, 200);
 		myImage.setScaleType(ScaleType.FIT_CENTER);
 		myImage.setPadding(R.dimen.half_padding);
 		myImage.setImageUri("http://7xtu0c.com1.z0.glb.clouddn.com/androidcat-3.png");
-		myImage.setOnClickListener(function(){
-			window.open("https://androidify.com/en/#/",'','');
+		myImage.setOnClickListener(function() {
+			window.open("https://androidify.com/en/#/", '', '');
 		});
 		musicLayout.addView(myImage, imageLp);
 		var tipHello = Theme.createCatTitle("Hello Android");
 		musicLayout.addView(tipHello);
-		
 
 		containerLayout.onMeasure = function(wMS, hMS) {
 			var w = MeasureSpec.getSize(wMS);
 			var h = MeasureSpec.getSize(hMS);
-			if(w > Manifest.maxWidth){
-				musicLayout.measure(Manifest.maxWidth/3, h);
-				ganhuoLayout.measure(Manifest.maxWidth*2/3, h);
-			}else{
-				musicLayout.measure(0,0);
+			if (w > Manifest.maxWidth) {
+				musicLayout.measure(Manifest.maxWidth / 3, h);
+				ganhuoLayout.measure(Manifest.maxWidth * 2 / 3, h);
+			} else {
+				musicLayout.measure(0, 0);
 				ganhuoLayout.measure(w, h);
 			}
-			
+
 			this.setMeasuredDimension(w, h);
 		};
 		containerLayout.onLayout = function() {
 			var x = 0;
 			var y = 0;
 			var x = (this.getMW() - ganhuoLayout.getMW() - musicLayout.getMW()) / 2;
-//			var x = (this.getMW() - ganhuoLayout.getMW()) / 2;
+			//			var x = (this.getMW() - ganhuoLayout.getMW()) / 2;
 			var x2 = x + ganhuoLayout.getMW();
 			ganhuoLayout.layout(x, 0);
 			musicLayout.layout(x2, 0);

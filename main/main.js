@@ -2,8 +2,8 @@ function MainView() {
 	ViewGroup.apply(this);
 
 	var homeFragment = null;
-	var forumFragment = null;
 	var catFragment = null;
+	var libFragment = null;
 	var aboutFragment = null;
 
 	mTitle = new Titlebar();
@@ -20,15 +20,11 @@ function MainView() {
 					cnt.addFragment(createCatFragment(), "view=CatFragment");
 					break;
 				case 2:
-//					if(Manifest.isPhone){
-						cnt.addFragment(createAboutFragment(), "view=AboutFragment");
-//					}else{
-//						cnt.addFragment(createForumFragment(), "view=ForumFragment");
-//					}
+					cnt.addFragment(createLibFragment(), "view=LibFragment");
 					break;
-//				case 3:
-//					cnt.addFragment(createAboutFragment(), "view=AboutFragment");
-//					break;
+				case 3:
+					cnt.addFragment(createAboutFragment(), "view=AboutFragment");
+					break;
 			}
 		}, 200);
 	});
@@ -39,9 +35,9 @@ function MainView() {
 		var v;
 		if (view == "AboutFragment") {
 			v = createAboutFragment();
-			mTitle.setSelectIndex(2)
-		} else if (view == "ForumFragment") {
-			v = createForumFragment();
+			mTitle.setSelectIndex(3)
+		} else if (view == "LibFragment") {
+			v = createLibFragment();
 			mTitle.setSelectIndex(2);
 		} else if (view == "CatFragment") {
 			v = createCatFragment();
@@ -85,11 +81,11 @@ function MainView() {
 		return homeFragment;
 	}
 
-	function createForumFragment() {
-		if (forumFragment == null) {
-			forumFragment = new ForumFragment();
+	function createLibFragment() {
+		if (libFragment == null) {
+			libFragment = new LibFragment();
 		}
-		return forumFragment;
+		return libFragment;
 	}
 
 	function createCatFragment() {

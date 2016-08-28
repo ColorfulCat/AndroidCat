@@ -27,10 +27,13 @@ function CatFragment() {
 		var w = MeasureSpec.getSize(wMS);
 		var h = MeasureSpec.getSize(hMS);
 		var cntW = Math.min(w, Manifest.maxWidth);
-		var menuW = Math.min(cntW / 3, 180);
+		var menuW = Math.min(cntW / 3, 191);
+		var contentLayout = cntW-menuW;
 		menuScrollView.measure(menuW, h);
 		contentScrollView.measure(cntW - menuW, h);
+//		contentLinearLayout.measure(Math.min(Manifest.maxWidth, cntW - menuW), h);
 		this.setMeasuredDimension(w, h);
+		
 	};
 	mainContainer.onLayout = function() {
 		var x = 0;
@@ -38,8 +41,9 @@ function CatFragment() {
 		var x = (this.getMW() - menuScrollView.getMW() - contentScrollView.getMW()) / 2;
 		menuScrollView.layout(x, 0);
 		contentScrollView.layout(x + menuScrollView.getMW(), 0);
+//		contentLinearLayout.layout((contentScrollView.getMW() - contentLinearLayout.getMW())/2, 0);
 	};
-	this.addView(mainContainer);
+	this.addView(mainContainer); 
 
 	var mPadding = R.dimen.padding;
 	var menuScrollView = new ScrollView();
@@ -117,12 +121,12 @@ function updateMenusViews(index) {
 	for (var i = 0; i < menuLinearLayout.getChildCount(); i++) {
 
 		if (index == i) {
-			menuLinearLayout.getChildAt(i).setBackgroundColor(R.color.bg);
+//			menuLinearLayout.getChildAt(i).setBackgroundColor(R.color.bg);
 			menuLinearLayout.getChildAt(i).getIcon().setImgSrc("img/cat_foot.png");
 			menuLinearLayout.getChildAt(i).getTitle().setTextColor(R.color.theme);
 		} else {
-			menuLinearLayout.getChildAt(i).setBackgroundColor(R.color.card_bg);
-			menuLinearLayout.getChildAt(i).getIcon().setImgSrc("img/cat_foot_gray.png");
+//			menuLinearLayout.getChildAt(i).setBackgroundColor(R.color.card_bg);
+			menuLinearLayout.getChildAt(i).getIcon().setImgSrc("img/point.png");
 			menuLinearLayout.getChildAt(i).getTitle().setTextColor(R.color.text);
 		}
 	}
@@ -174,11 +178,11 @@ function queryCats(catMenuItem) {
 
 function updateCats(catMenuItem) {
 	contentLinearLayout.removeAllViews();
-	var title = Theme.createCatTitle(catMenuItem.title);
-	var lpTop = new LP(LP.FP, LP.WC);
-	lpTop.topMargin = R.dimen.padding;
-	lpTop.bottomMargin = R.dimen.padding;
-	contentLinearLayout.addView(title, lpTop);
+//	var title = Theme.createCatTitle(catMenuItem.title);
+//	var lpTop = new LP(LP.FP, LP.WC);
+//	lpTop.topMargin = R.dimen.padding;
+//	lpTop.bottomMargin = R.dimen.padding;
+//	contentLinearLayout.addView(title, lpTop);
 
 	var lp = new LP(LP.FP, LP.WC);
 	lp.setMargins(R.dimen.half_padding);

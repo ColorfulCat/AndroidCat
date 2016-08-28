@@ -19,12 +19,8 @@ function Menu(titlebar) {
 
     addItem(0, R.string.home);
     addItem(1, R.string.cat);
-//  if(Manifest.isPhone){
-    		addItem(2, R.string.about);
-//  }else{
-//  		addItem(2, R.string.community);
-//  		addItem(3, R.string.about);
-//  }
+    addItem(2, R.string.lib);
+    	addItem(3, R.string.about);
  
     
     

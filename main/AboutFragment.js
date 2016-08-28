@@ -2,7 +2,7 @@ function AboutFragment() {
 	ScrollView.apply(this);
 
 	var scrollCnt = new ViewGroup();
-	scrollCnt.setBackgroundColor(R.color.card_bg);
+	scrollCnt.setBackgroundColor(R.color.bg);
 	scrollCnt.onMeasure = function(wMS) {
 		var w = MeasureSpec.getSize(wMS);
 		var cntW = Math.min(w, Manifest.maxWidth);
