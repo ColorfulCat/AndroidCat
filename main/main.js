@@ -19,10 +19,10 @@ function MainView() {
 				case 1:
 					cnt.addFragment(createCatFragment(), "view=CatFragment");
 					break;
+//				case 2:
+//					cnt.addFragment(createLibFragment(), "view=LibFragment");
+//					break;
 				case 2:
-					cnt.addFragment(createLibFragment(), "view=LibFragment");
-					break;
-				case 3:
 					cnt.addFragment(createAboutFragment(), "view=AboutFragment");
 					break;
 			}
@@ -35,7 +35,7 @@ function MainView() {
 		var v;
 		if (view == "AboutFragment") {
 			v = createAboutFragment();
-			mTitle.setSelectIndex(3)
+			mTitle.setSelectIndex(2)
 		} else if (view == "LibFragment") {
 			v = createLibFragment();
 			mTitle.setSelectIndex(2);

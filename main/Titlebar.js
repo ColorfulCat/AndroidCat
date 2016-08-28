@@ -14,7 +14,7 @@ function Titlebar() {
 	tab.setIndicatorColor(R.color.theme);
 	tab.addTabItem(createTabItem(R.string.home));
 	tab.addTabItem(createTabItem(R.string.cat));
-	tab.addTabItem(createTabItem(R.string.lib));
+//	tab.addTabItem(createTabItem(R.string.lib));
 	tab.addTabItem(createTabItem(R.string.about));
 	tab.setOnSelectedListener(function(index) {
         var items = tab.getTabItems();
