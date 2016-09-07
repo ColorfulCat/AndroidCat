@@ -35,15 +35,15 @@ function initCatMenus() {
 }
 
 function updateCatMenus(id) {
-	$("#menuId"+id).addClass("active"); //添加样式
-	$("#menuId"+lastId).removeClass("active"); //添加样式
+	$("#menuId"+id).addClass("menuItemActive"); //添加样式
+	$("#menuId"+lastId).removeClass("menuItemActive"); //添加样式
 	lastId = id;
 }
 
 function createCatMenu(title, tag) {
 	var currentId = idOffset;
 	var parentLi = $('<li></li>');
-	var textA = $('<a class="waves-effect">' + title + '</a>');
+	var textA = $('<a class="waves-effect subMenuItem">' + title + '</a>');
 	parentLi.attr("id","menuId"+currentId);
 	parentLi.click(function() {
 		log("idOffset = " +currentId);
@@ -51,6 +51,9 @@ function createCatMenu(title, tag) {
 		if(currentId != lastId){
 			queryCats(title, tag);
 			updateCatMenus(currentId);
+		}else{
+			//返回顶部
+			$(document.body).animate({'scrollTop':0},500);
 		}
 	});
 	idOffset = idOffset +1;

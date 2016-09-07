@@ -18,6 +18,11 @@ body {
 	box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 6px 0px;
 }
 
+.menuItemActive {
+	background-color: lightgray;
+	color: #0091ea;
+}
+
 .menuItem {
 }
 .menuItem:hover {
@@ -25,7 +30,16 @@ body {
 }
 
 .subMenuItem {
-	
+	width: 100%;
+	text-align: center;
+	color: black;
+	padding: 30px;
+}
+
+.subMenuItem:hover {
+	width: 100%;
+	text-align: center;
+	color: green;
 }
 
 .itemLayout{
