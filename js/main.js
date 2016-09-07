@@ -101,10 +101,11 @@ function queryCats(title, tag) {
 	query.addDescending('grade');
 	log("query.find()");
 	query.find().then(function(results) {
-		contentDiv.html("");
+		
 		log("callback");
 		if(results != null && results.length > 0) {
 			log("size = " + results.length);
+			contentDiv.html("");
 			for(var i = 0; i < results.length; i++) {
 				var catItem = {};
 				catItem.index = i;
@@ -132,7 +133,10 @@ function queryCats(title, tag) {
 				mCats.push(catItem);
 				contentDiv.append(createCatItem(catItem));
 			}
-			contentDiv.fadeIn();
+			//返回顶部
+			$(document.body).animate({'scrollTop':0},500);
+			//展示
+			contentDiv.fadeIn(500);
 		} else {
 			log("000");
 		}
