@@ -93,7 +93,7 @@
 		</main>
 		<footer class="ui-footer">
 			<div class="container">
-				<p>AndroidCat 2016</p>
+				<p>AndroidCat 2016 -- Android开发 一站导航</p>
 			</div>
 		</footer>
 		<div class="fbtn-container">
@@ -102,7 +102,8 @@
 				<div class="fbtn-dropup">
 					<a class="fbtn waves-attach waves-circle" href="https://github.com/ColorfulCat/AndroidGuide" target="_blank"><span class="fbtn-text fbtn-text-left">GitHub</span><span class="icon">code</span></a>
 					<a class="fbtn fbtn-brand waves-attach waves-circle waves-light" href="http://daemonite.github.io/material/" target="_blank"><span class="fbtn-text fbtn-text-left">分享一下吧</span><span class="icon">share</span></a>
-					<a class="fbtn fbtn-green waves-attach waves-circle" onclick="snackbar('暂未开通~~')"><span class="fbtn-text fbtn-text-left">提交网址链接</span><span class="icon">add</span></a>
+					<a class="fbtn fbtn-green waves-attach waves-circle waves-light" onclick="snackbar('暂未开通~~')"><span class="fbtn-text fbtn-text-left">提交网址链接</span><span class="icon">add</span></a>
+					<a class="fbtn fbtn-orange waves-attach waves-circle" data-toggle="modal" href="#ui_modal_example_iframe"><span class="fbtn-text fbtn-text-left">评论一下</span><span class="icon">comment</span></a>
 				</div>
 			</div>
 		</div>
@@ -164,6 +165,15 @@
 				</div>
 			</div>
 		</div>
+
+		<div aria-hidden="true" class="modal fade" id="ui_modal_example_iframe" role="dialog" tabindex="-1">
+			<div class="modal-dialog modal-full">
+				<div class="modal-content">
+					<iframe class="iframe-seamless" src="comment.html" title="Comment"></iframe>
+				</div>
+			</div>
+		</div>
+
 		</div>
 
 		<!-- js -->
@@ -176,7 +186,7 @@
 		<script type="text/javascript" src="js/util.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 		<script type="text/javascript" src="js/request.js"></script>
-		
+
 		<!-- CNZZ统计 -->
 		<div style="display: none;">
 			<script type="text/javascript">
@@ -184,7 +194,7 @@
 				document.write(unescape("%3Cspan id='cnzz_stat_icon_1256153205'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1256153205%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
 			</script>
 		</div>
-		
+
 	</body>
 
 </html>
