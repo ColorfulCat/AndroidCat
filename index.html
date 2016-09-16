@@ -34,15 +34,10 @@
 		<nav class="menu menu-left nav-drawer nav-drawer-md" id="ui_menu">
 			<div class="menu-scroll">
 				<div class="menu-content">
-					<a class="menu-logo themeColor" href="index.html">AndroidCat</a>
-					<ul class="nav">
-						<li>
-							<a class="waves-attach menuItem themeColor" data-toggle="collapse" href="#catMenus">书签导航</a>
-							<ul class="menu-collapse collapse in" id="catMenus">
-								
-							</ul>
-						</li>
-					</ul>
+					<a class="menu-logo themeColor" href="index.html">Android书签网</a>
+					<div class="" id="catMenus">
+
+					</div>
 				</div>
 			</div>
 		</nav>
@@ -64,13 +59,13 @@
 					</a>
 					<ul class="dropdown-menu dropdown-menu-right">
 						<li>
-							<a class="padding-right-lg waves-attach" href="javascript:void(0)"><span class="icon icon-lg margin-right">account_box</span>个人设置</a>
+							<a class="padding-right-lg waves-attach" onclick="snackbar('暂未开通~')"><span class="icon icon-lg margin-right">account_box</span>个人设置</a>
 						</li>
 						<li>
-							<a class="padding-right-lg waves-attach" href="javascript:void(0)"><span class="icon icon-lg margin-right">add_to_photos</span>关于我们</a>
+							<a class="padding-right-lg waves-attach" onclick="snackbar('暂未开通~~')"><span class="icon icon-lg margin-right">add_to_photos</span>关于我们</a>
 						</li>
 						<li>
-							<a class="padding-right-lg waves-attach" href="page-login.html"><span class="icon icon-lg margin-right">exit_to_app</span>退出登录</a>
+							<a class="padding-right-lg waves-attach" data-toggle="modal" href="#ui_modal_example_default"><span class="icon icon-lg margin-right">exit_to_app</span>退出登录</a>
 						</li>
 					</ul>
 				</li>
@@ -81,7 +76,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1">
-							<h1 class="content-heading" id="contentTitle">AndroidCat</h1>
+							<h1 class="content-heading" id="contentTitle"></h1>
 						</div>
 					</div>
 				</div>
@@ -105,11 +100,70 @@
 			<div class="fbtn-inner">
 				<a class="fbtn fbtn-lg fbtn-brand-accent waves-attach waves-circle waves-light" data-toggle="dropdown"><span class="fbtn-text fbtn-text-left">嗨</span><span class="fbtn-ori icon">apps</span><span class="fbtn-sub icon">close</span></a>
 				<div class="fbtn-dropup">
-					<a class="fbtn waves-attach waves-circle" onclick="clearCatItem()"><span class="fbtn-text fbtn-text-left">呵呵呵</span><span class="icon">code</span></a>
-					<a class="fbtn fbtn-brand waves-attach waves-circle waves-light" href="http://daemonite.github.io/material/" target="_blank"><span class="fbtn-text fbtn-text-left">嘿嘿嘿</span><span class="icon">share</span></a>
-					<a class="fbtn fbtn-green waves-attach waves-circle"><span class="fbtn-text fbtn-text-left">哈哈哈</span><span class="icon">link</span></a>
+					<a class="fbtn waves-attach waves-circle" href="https://github.com/ColorfulCat/AndroidGuide" target="_blank"><span class="fbtn-text fbtn-text-left">GitHub</span><span class="icon">code</span></a>
+					<a class="fbtn fbtn-brand waves-attach waves-circle waves-light" href="http://daemonite.github.io/material/" target="_blank"><span class="fbtn-text fbtn-text-left">分享一下吧</span><span class="icon">share</span></a>
+					<a class="fbtn fbtn-green waves-attach waves-circle"><span class="fbtn-text fbtn-text-left">复制链接</span><span class="icon">link</span></a>
 				</div>
 			</div>
+		</div>
+
+		<div aria-hidden="true" class="modal fade" id="ui_modal_example_default" role="dialog" tabindex="-1">
+			<div class="modal-dialog" style="max-width:500px;">
+				<div class="modal-content">
+					<div class="card-main">
+						<div class="card-header">
+							<div class="card-inner">
+								<h1 class="card-heading">Login</h1>
+							</div>
+						</div>
+						<div class="card-inner">
+							<p class="text-center">
+								<span class="avatar avatar-inline avatar-lg">
+											<img alt="Login" src="images/users/avatar-001.jpg">
+										</span>
+							</p>
+							<form class="form" action="index.html">
+								<div class="form-group form-group-label">
+									<div class="row">
+										<div class="col-md-10 col-md-push-1">
+											<label class="floating-label" for="ui_login_username">Username</label>
+											<input class="form-control" id="ui_login_username" type="text">
+										</div>
+									</div>
+								</div>
+								<div class="form-group form-group-label">
+									<div class="row">
+										<div class="col-md-10 col-md-push-1">
+											<label class="floating-label" for="ui_login_password">Password</label>
+											<input class="form-control" id="ui_login_password" type="password">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-md-10 col-md-push-1">
+											<button class="btn btn-block btn-brand waves-attach waves-light">Sign In</button>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-md-10 col-md-push-1">
+											<div class="checkbox checkbox-adv">
+												<label for="ui_login_remember">
+															<input class="access-hide" id="ui_login_remember" name="ui_login_remember" type="checkbox">Stay signed in
+															<span class="checkbox-circle"></span><span class="checkbox-circle-check"></span><span class="checkbox-circle-icon icon">done</span>
+														</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		</div>
 
 		<!-- js -->

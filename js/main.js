@@ -42,8 +42,7 @@ function updateCatMenus(id) {
 
 function createCatMenu(title, tag) {
 	var currentId = idOffset;
-	var parentLi = $('<li></li>');
-	var textA = $('<a class="waves-effect subMenuItem">' + title + '</a>');
+	var parentLi = $('<div class="waves-effect subMenuItem">' + title + '</div>');
 	parentLi.attr("id","menuId"+currentId);
 	parentLi.click(function() {
 		log("idOffset = " +currentId);
@@ -52,18 +51,17 @@ function createCatMenu(title, tag) {
 			queryCats(title, tag);
 			updateCatMenus(currentId);
 		}else{
-			//返回顶部
+			//返回滚动到顶部
 			$(document.body).animate({'scrollTop':0},500);
 		}
 	});
 	idOffset = idOffset +1;
-	textA.appendTo(parentLi);
 
 	return parentLi;
 }
 
 function createCatItem(item) {
-	var parentDiv = $('<div class="itemLayout card item waves-effect"></div>');
+	var parentDiv = $('<div class="itemLayout item waves-effect"></div>');
 	var childImage = $('<img class="itemLogo" alt="img" src="' + item.icon + '" />');
 	childImage.appendTo(parentDiv); //将子div添加到父div中
 
@@ -79,13 +77,12 @@ function createCatItem(item) {
 		setTimeout(function() {
 			window.open(item.url, '', '');
 		}, 300);
-
 	});
 	return parentDiv;
 }
 
 function clearCatItem() {
-	contentDiv.fadeOut();
+	contentDiv.fadeOut(300);
 	
 }
 
@@ -139,7 +136,7 @@ function queryCats(title, tag) {
 			//返回顶部
 			$(document.body).animate({'scrollTop':0},500);
 			//展示
-			contentDiv.fadeIn(500);
+			contentDiv.fadeIn(300);
 		} else {
 			log("000");
 		}

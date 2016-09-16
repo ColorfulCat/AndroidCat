@@ -33,13 +33,15 @@ body {
 	width: 100%;
 	text-align: center;
 	color: black;
-	padding: 30px;
+	padding: 10px;
+	font-size: 15px;
 }
 
 .subMenuItem:hover {
 	width: 100%;
 	text-align: center;
-	color: green;
+	color: dodgerblue;
+	font-size: 17px;
 }
 
 .itemLayout{
@@ -47,6 +49,8 @@ body {
 	height: 68px; 
 	width: auto; 
 	padding: 13px;
+	margin: 10px;
+	display: flex;
 }
 
 .itemLogo {
