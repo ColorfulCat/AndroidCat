@@ -8,7 +8,7 @@ var analytics = AV.analytics({
     // 设置 AppKey
     appKey: appKey,
     // 你当前应用或者想要指定的版本号（自定义）
-    version: '3.0.0',
+    version: '4.0.0',
     // 你当前应用的渠道或者你想指定的渠道（自定义）
     channel: 'develop'
 });

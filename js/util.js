@@ -8,7 +8,7 @@ function checkVersion() {
 	var oldVersion = localStorage.getItem("version");
 	var oldVersionName = localStorage.getItem("versionName");
 	log("当前版本：" + oldVersionName);
-	if(oldVersion != currentVersion) {
+	if(oldVersion !== currentVersion) {
 		log("发现更新版本：" + currentVersionName);
 		localStorage.setItem("version", currentVersion);
 		localStorage.setItem("versionName", currentVersionName);
