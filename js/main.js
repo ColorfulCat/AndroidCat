@@ -12,7 +12,8 @@ $(document).ready(function() {
 	initCatMenus();
 	queryCats("AndroidCat","recommend");
 	updateCatMenus(0);
-	snackbar("欢迎光临~");
+	
+	checkVersion();
 });
 
 function initCatMenus() {
@@ -99,12 +100,9 @@ function queryCats(title, tag) {
 		query.equalTo('tag', tag);
 	}
 	query.addDescending('grade');
-	log("query.find()");
 	query.find().then(function(results) {
-		
-		log("callback");
 		if(results != null && results.length > 0) {
-			log("size = " + results.length);
+			log("cat size = " + results.length);
 			contentDiv.html("");
 			for(var i = 0; i < results.length; i++) {
 				var catItem = {};
