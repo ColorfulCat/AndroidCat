@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang='cn'>
-	<!--请注意，manifest 文件需要配置正确的 MIME-type，即 "text/cache-manifest"。必须在 web 服务器上进行配置。-->
+<html lang="cn">
 
-	<head lang="en">
+	<head>
 		<meta charset="UTF-8" />
 		<title>AndroidCat</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="HandheldFriendly" content="true">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="full-screen" content="yes" />
@@ -15,192 +14,168 @@
 		<meta name="x5-fullscreen" content="true" />
 		<meta name="format-detection" content="email=no" />
 		<meta name="format-detection" content="telephone=no" />
-		
-		<link rel="icon" href="img/cat_icon1.png" />
-		<link rel="shortcut icon" href="img/cat_icon1.png" />
-		<link rel="Bookmark" href="img/cat_icon1.png">
-		<link rel="apple-touch-icon-precomposed" href="img/androidcat192.png">
-			
+
+		<link rel="icon" href="images/cat_icon1.png" />
+		<link rel="shortcut icon" href="images/cat_icon1.png" />
+		<link rel="Bookmark" href="images/cat_icon1.png">
+		<link rel="apple-touch-icon-precomposed" href="images/androidcat192.png">
+
 		<meta name="author" content="大花猫" />
 		<meta name="description" content="AndroidCat安卓书签网，旨在为广大安卓开发者提供更多更全的安卓开发资源导航。 Android开发者的一站导航。">
 		<meta name="keywords" content="Android 书签 导航 网址大全 开源">
 
-		<!-- Jndroid libraries -->
-		<script src="js/jndroid/jndroid.core.js"></script>
-		<script src="js/jndroid/jndroid.animation.js"></script>
-		<script src="js/jndroid/jndroid.widget.js"></script>
-		<script src="js/jndroid/jndroid.layout.js"></script>
-		<script src="js/jndroid/jndroid.mwidget.js"></script>
-		<!--<script src="js/jndroid/ListView.js"></script>-->
-
-		<!-- LeanCloud -->
-		<script src="https://cdn1.lncld.net/static/js/av-mini-0.6.4.js"></script>
-		<script type="text/javascript" src="js/AV.analytics.js" ></script>
-
-		<!--<script src="http://file.gtbrowser.cn/jndroid/jndroid.min.js"></script>-->
+		<link href="css/base.min.css" rel="stylesheet">
+		<link href="css/project.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
 
 	</head>
 
-	<body>
-		<script>
-			var isFirfox = false;
+	<body class="page-brand">
+		<nav class="menu menu-left nav-drawer nav-drawer-md" id="ui_menu">
+			<div class="menu-scroll">
+				<div class="menu-content">
+					<a class="menu-logo themeColor" href="index.html">Android书签网</a>
+					<div class="" id="catMenus">
 
-			function myBrowser() {
-				var userAgent = navigator.userAgent; 
-				var isOpera = userAgent.indexOf("Opera") > -1; 
-				var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera; 
-				var isFF = userAgent.indexOf("Firefox") > -1; 
-				var isSafari = userAgent.indexOf("Safari") > -1; 
-				var isChrome = userAgent.indexOf("Chrome") > -1;
-				if (isIE) {
-					var IE5 = IE55 = IE6 = IE7 = IE8 = false;
-					var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
-					reIE.test(userAgent);
-					var fIEVersion = parseFloat(RegExp["$1"]);
-					IE55 = fIEVersion == 5.5;
-					IE6 = fIEVersion == 6.0;
-					IE7 = fIEVersion == 7.0;
-					IE8 = fIEVersion == 8.0;
-					if (IE55) {
-						return "IE55";
-					}
-					if (IE6) {
-						return "IE6";
-					}
-					if (IE7) {
-						return "IE7";
-					}
-					if (IE8) {
-						return "IE8";
-					}
-				} //isIE end
-				if (isFF) {
-					return "FF";
-				}
-				if (isOpera) {
-					return "Opera";
-				}
-				if (isChrome) {
-					return "Chrome";
-				}
-			} 
-			var oldVersion = "http://www.colorfulcat.xyz/AndroidCat2/";
-			
-			var mb = myBrowser();
-			if (mb == "Chrome") {
-				console.log("我是 Chrome");
-			}
-			if (mb == "FF") {
-				console.log("我是 Firefox");
-				isFirfox = true;
-			}
-			if (mb == "Opera") {
-				console.log("我是 Opera");
-			}
-			if (mb == "Safari") {
-				console.log("我是 Safari");
-			}
-			if (mb == "IE55") {
-				console.log("我是 IE5.5");
-			}
-			if (mb == "IE6") {
-				console.log("我是 IE6");
-			}
-			if (mb == "IE7") {
-				console.log("我是 IE7");
-			}
-			if (mb == "IE8") {
-				console.log("我是 IE8");
-			}
+					</div>
+				</div>
+			</div>
+		</nav>
+		<header class="header header-transparent header-waterfall ui-header">
+			<ul class="nav nav-list pull-left hidden-md hidden-lg">
+				<li>
+					<a data-toggle="menu" href="#ui_menu">
+						<span class="icon icon-lg">menu</span>
+					</a>
+				</li>
+			</ul>
+			<a class="header-logo header-affix-hide margin-left-no margin-right-no hidden-md hidden-lg" data-offset-top="213" data-toggle="menu" data-spy="affix" href="#ui_menu">AndroidCat</a>
+			<a class="header-logo header-affix hidden-md hidden-lg margin-left-no margin-right-no" data-offset-top="213" data-spy="affix">AndroidCat</a>
+			<a class="header-logo header-affix visible-md-block visible-lg-block margin-right-no" data-offset-top="213" data-spy="affix" style="background-color: blue; text-align: center; vertical-align:middle;"></a>
+			<ul class="nav nav-list pull-right">
+				<li class="dropdown margin-right">
+					<a class="dropdown-toggle padding-left-no padding-right-no" data-toggle="dropdown">
+						<span class="avatar avatar-sm"><img alt="alt text for John Smith avatar" src="images/cat_icon.png"></span>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-right">
+						<li>
+							<a class="padding-right-lg waves-attach" onclick="snackbar('暂未开通~')"><span class="icon icon-lg margin-right">account_box</span>个人设置</a>
+						</li>
+						<li>
+							<a class="padding-right-lg waves-attach" onclick="snackbar('暂未开通~~')"><span class="icon icon-lg margin-right">add_to_photos</span>关于我们</a>
+						</li>
+						<li>
+							<a class="padding-right-lg waves-attach" data-toggle="modal" href="#ui_modal_example_default"><span class="icon icon-lg margin-right">exit_to_app</span>退出登录</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</header>
+		<main class="content">
+			<div class="content-header ui-content-header">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1">
+							<h1 class="content-heading" id="contentTitle"></h1>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+						<section class="content-inner margin-top-no" id="mainSection">
 
-			function Splash() {
-				FrameLayout.apply(this);
-				this.setBg(0xfff3f3f3);
-				var group = new ViewGroup();
-				var track = new View();
-				track.setBg(0x33000000);
-				group.addView(track);
-				var bar = new View();
-				bar.setBg(0xff00bb9c);
-				group.addView(bar);
-				var text = new View();
-				text.setText("0%");
-				text.setTextSize(20);
-				text.setTextColor(0xff00bb9c);
-				text.setStyle("textAlign", "center");
-				group.addView(text);
-				group.onMeasure = function() {
-					track.measure(100, 2);
-					bar.measure(0, 2);
-					text.measure(100, 20);
-					this.setMeasuredDimension(100, 32);
-				};
-				group.onLayout = function() {
-					track.layout(0, 30);
-					bar.layout(0, 30);
-					text.layout(0, 0);
-				};
-				var lp = new LayoutParams(100, 32);
-				lp.gravity = Gravity.CENTER;
-				this.addView(group, lp);
-				this.setProgress = function(p) {
-					bar.measure(100 * p, 2);
-					text.setText(Math.floor(100 * p) + "%");
-				}
-			}
-			var mSplash = new Splash();
-			setContentView(mSplash);
-		</script>
-		<script>
-			includeJs("main/MyView.js");
-			includeJs("main/AVManager.js");
-			includeJs("main/CatItem.js");
-			includeJs("main/GanHuoItem.js");
-			includeJs("main/CatMenuItem.js");
-			includeJs("main/LibItem.js");
-			includeJs("main/HomeFragment.js");
-			includeJs("main/CatFragment.js");
-			includeJs("main/LibFragment.js");
-//			includeJs("main/ForumFragment.js");
-			includeJs("main/AboutFragment.js");
-			includeJs("main/configs.js");
-			includeJs("main/main.js");
-			includeJs("main/StateFrameLayout.js");
-			includeJs("main/Theme.js");
-			includeJs("main/Tab.js");
-			includeJs("main/Menu.js");
-			includeJs("main/Titlebar.js");
-			includeJs("main/SettingView.js");
-			window.onJSProgressChanged = function(p) {
-				requestAnimationFrame(function() {
-					mSplash.setProgress(p);
-				});
-			};
-			window.onCreate = function() {
-				mSplash.setProgress(1);
-				Manifest.setIsPhone(window.innerWidth < 720);
-				setTimeout(function() {
-					var rootview = new FrameLayout();
-					setContentView(rootview);
-					var mainView = new MainView();
-					mainView.div.style.fontWeight = "300";
-					try {
-						getRootView().setFontFamily("微软雅黑");
-					} catch (e) {
-						console.log(e);
-					}
-					rootview.addView(mainView);
-				}, 0);
-			};
-		</script>
-		<!-- CNZZ统计 -->
-		<div style="display: none;">
-			<script type="text/javascript">
-				var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-				document.write(unescape("%3Cspan id='cnzz_stat_icon_1256153205'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1256153205%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
-			</script>
+						</section>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="ui-footer">
+			<div class="container">
+				<p>AndroidCat 2016</p>
+			</div>
+		</footer>
+		<div class="fbtn-container">
+			<div class="fbtn-inner">
+				<a class="fbtn fbtn-lg fbtn-brand-accent waves-attach waves-circle waves-light" data-toggle="dropdown"><span class="fbtn-text fbtn-text-left">嗨</span><span class="fbtn-ori icon">apps</span><span class="fbtn-sub icon">close</span></a>
+				<div class="fbtn-dropup">
+					<a class="fbtn waves-attach waves-circle" href="https://github.com/ColorfulCat/AndroidGuide" target="_blank"><span class="fbtn-text fbtn-text-left">GitHub</span><span class="icon">code</span></a>
+					<a class="fbtn fbtn-brand waves-attach waves-circle waves-light" href="http://daemonite.github.io/material/" target="_blank"><span class="fbtn-text fbtn-text-left">分享一下吧</span><span class="icon">share</span></a>
+					<a class="fbtn fbtn-green waves-attach waves-circle" onclick="snackbar('暂未开通~~')"><span class="fbtn-text fbtn-text-left">提交网址链接</span><span class="icon">add</span></a>
+				</div>
+			</div>
 		</div>
 
+		<div aria-hidden="true" class="modal fade" id="ui_modal_example_default" role="dialog" tabindex="-1">
+			<div class="modal-dialog" style="max-width:500px;">
+				<div class="modal-content">
+					<div class="card-main">
+						<div class="card-header">
+							<div class="card-inner">
+								<h1 class="card-heading">Login</h1>
+							</div>
+						</div>
+						<div class="card-inner">
+							<p class="text-center">
+								<span class="avatar avatar-inline avatar-lg">
+											<img alt="Login" src="images/cat_icon.png">
+										</span>
+							</p>
+							<form class="form" action="index.html">
+								<div class="form-group form-group-label">
+									<div class="row">
+										<div class="col-md-10 col-md-push-1">
+											<label class="floating-label" for="ui_login_username">Username</label>
+											<input class="form-control" id="ui_login_username" type="text">
+										</div>
+									</div>
+								</div>
+								<div class="form-group form-group-label">
+									<div class="row">
+										<div class="col-md-10 col-md-push-1">
+											<label class="floating-label" for="ui_login_password">Password</label>
+											<input class="form-control" id="ui_login_password" type="password">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-md-10 col-md-push-1">
+											<button class="btn btn-block btn-brand waves-attach waves-light">登录</button>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-md-10 col-md-push-1">
+											<div class="checkbox checkbox-adv">
+												<label for="ui_login_remember">
+															<input class="access-hide" id="ui_login_remember" name="ui_login_remember" type="checkbox">保持登录
+															<span class="checkbox-circle"></span><span class="checkbox-circle-check"></span><span class="checkbox-circle-icon icon">done</span>
+														</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<!-- js -->
+		<script src="https://cdn1.lncld.net/static/js/av-mini-0.6.4.js"></script>
+		<script type="text/javascript" src="js/AV.analytics.js"></script>
+
+		<script src="js/jquery-3.1.0.min.js"></script>
+		<script src="js/base.min.js"></script>
+		<script src="js/project.min.js"></script>
+		<script type="text/javascript" src="js/util.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/request.js"></script>
 	</body>
 
 </html>
