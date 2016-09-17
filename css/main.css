@@ -49,6 +49,7 @@ body {
 	padding: 13px;
 	margin: 10px;
 	display: flex;
+	box-sizing: border-box;
 }
 
 .itemLogo {

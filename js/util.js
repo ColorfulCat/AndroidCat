@@ -35,9 +35,3 @@ function snackbar(text, duration) {
 		content: text
 	});
 }
-
-//database
-//添加key-value 数据到 sessionStorage
-//      localStorage.setItem("demokey", "http://blog.itjeek.com");
-//      //通过key来获取value
-//      var dt = localStorage.getItem("demokey");
