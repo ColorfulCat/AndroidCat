@@ -33,6 +33,7 @@ body {
 	color: black;
 	padding: 10px;
 	font-size: 15px;
+	cursor: pointer;
 }
 
 .subMenuItem:hover {
@@ -43,6 +44,7 @@ body {
 }
 
 .itemLayout {
+	cursor: pointer;
 	background-color: white;
 	height: 68px;
 	width: auto;

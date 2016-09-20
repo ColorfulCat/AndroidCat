@@ -65,7 +65,7 @@
 							<a class="padding-right-lg waves-attach" onclick="snackbar('暂未开通~~')"><span class="icon icon-lg margin-right">face</span>关于我们</a>
 						</li>
 						<li>
-							<a class="padding-right-lg waves-attach" data-toggle="modal" href="#ui_modal_example_default"><span class="icon icon-lg margin-right">exit_to_app</span>退出登录</a>
+							<a class="padding-right-lg waves-attach" data-toggle="modal" href="#ui_modal_login"><span class="icon icon-lg margin-right">exit_to_app</span>退出登录</a>
 						</li>
 					</ul>
 				</li>
@@ -93,7 +93,7 @@
 		</main>
 		<footer class="ui-footer">
 			<div class="container">
-				<p>AndroidCat 2016 -- Android开发 一站导航  Thanks to 
+				<p>AndroidCat 2016 -- Android开发 一站导航 Thanks to
 					<a href="https://github.com/Daemonite/material" target="_blank">Material</a>
 				</p>
 			</div>
@@ -105,12 +105,12 @@
 					<a class="fbtn waves-attach waves-circle" href="https://github.com/ColorfulCat/AndroidGuide" target="_blank"><span class="fbtn-text fbtn-text-left">GitHub</span><span class="icon">code</span></a>
 					<a class="fbtn fbtn-brand waves-attach waves-circle waves-light" href="http://daemonite.github.io/material/" target="_blank"><span class="fbtn-text fbtn-text-left">分享一下吧</span><span class="icon">share</span></a>
 					<a class="fbtn fbtn-green waves-attach waves-circle waves-light" onclick="snackbar('暂未开通~~')"><span class="fbtn-text fbtn-text-left">提交网址链接</span><span class="icon">add</span></a>
-					<a class="fbtn fbtn-orange waves-attach waves-circle" data-toggle="modal" href="#ui_modal_example_iframe"><span class="fbtn-text fbtn-text-left">评论一下吧</span><span class="icon">comment</span></a>
+					<a class="fbtn fbtn-orange waves-attach waves-circle" data-toggle="modal" href="#ui_modal_comment"><span class="fbtn-text fbtn-text-left">评论一下吧</span><span class="icon">comment</span></a>
 				</div>
 			</div>
 		</div>
 
-		<div aria-hidden="true" class="modal fade" id="ui_modal_example_default" role="dialog" tabindex="-1">
+		<div aria-hidden="true" class="modal fade" id="ui_modal_login" role="dialog" tabindex="-1">
 			<div class="modal-dialog" style="max-width:500px;">
 				<div class="modal-content">
 					<div class="card-main">
@@ -168,10 +168,33 @@
 			</div>
 		</div>
 
-		<div aria-hidden="true" class="modal fade" id="ui_modal_example_iframe" role="dialog" tabindex="-1">
-			<div class="modal-dialog modal-full">
+		<div aria-hidden="true" class="modal fade" id="ui_modal_comment" role="dialog" tabindex="-1">
+			<div class="modal-dialog" style="max-width:1024px;">
 				<div class="modal-content">
-					<iframe class="iframe-seamless" src="comment.html" title="Comment"></iframe>
+					<div class="container">
+						<img src="images/androidcat.png" style="padding-left: 30px;padding-top: 20px;" />
+						</br>
+						<h3 style="padding-left: 30px;">网站全新改版，希望有任何意见或者建议都能提出来~ \(^o^)/~</h3>
+						<!-- 多说评论框 start -->
+						<div style="padding-left: 30px;padding-right: 30px;" class="ds-thread" data-thread-key="about" data-title="关于AndroidCat" data-url="http://www.androidcat.com/"></div>
+						<!-- 多说评论框 end -->
+
+						<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+						<script type="text/javascript">
+							var duoshuoQuery = {
+								short_name: "androidcat"
+							};
+							(function() {
+								var ds = document.createElement('script');
+								ds.type = 'text/javascript';
+								ds.async = true;
+								ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+								ds.charset = 'UTF-8';
+								(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+							})();
+						</script>
+						<!-- 多说公共JS代码 end -->
+					</div>
 				</div>
 			</div>
 		</div>
