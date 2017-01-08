@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cn">
+<html>
 
 	<head>
 		<meta charset="UTF-8" />
@@ -24,202 +24,126 @@
 		<meta name="description" content="AndroidCat安卓书签网，旨在为广大安卓开发者提供更多更全的安卓开发资源导航。 Android开发者的一站导航。">
 		<meta name="keywords" content="Android 书签 导航 网址大全 开源">
 
-		<link href="css/base.min.css" rel="stylesheet">
-		<link href="css/project.min.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/main.css" />
-
+		<link href="css/mdui.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/main.css" />
+		<script type="text/javascript" src="js/mdui.min.js"></script>
 	</head>
 
-	<body class="page-brand">
-		<nav class="menu menu-left nav-drawer nav-drawer-md" id="ui_menu">
-			<div class="menu-scroll">
-				<div class="menu-content">
-					<a class="menu-logo themeColor waves-attach" href="index.html"><span class="icon icon-lg margin-right">android</span>Android书签网</a>
-					<div class="" id="catMenus">
-
-					</div>
-				</div>
+	<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
+		<header id="header" class="mdui-appbar mdui-appbar-fixed">
+			<div class="mdui-toolbar mdui-color-theme">
+				<span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></span>
+				<a href="./" class="mdui-typo-headline mdui-hidden-xs">AndroidCat</a>
+				<a href="" class="mdui-typo-title">杭州 <span><font size="3" face="Times">10℃ 小雨</font></span></a>
+				<div class="mdui-toolbar-spacer"></div>
+				<a class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" href="./"><i class="mdui-icon material-icons">&#xe5d5;</i></a>
+				<span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-menu="{target: '#header-menu', fixed: true}"><i class="mdui-icon material-icons">&#xe5d4;</i></span>
+				<ul class="mdui-menu" id="header-menu">
+					<li class="mdui-menu-item">
+						<a href="#" class="mdui-ripple">设置</a>
+					</li>
+					<li class="mdui-menu-item">
+						<a href="https://github.com/ColorfulCat" target="_blank" class="mdui-ripple">Github</a>
+					</li>
+				</ul>
 			</div>
-		</nav>
-		<header class="header header-transparent header-waterfall ui-header">
-			<ul class="nav nav-list pull-left hidden-md hidden-lg">
-				<li>
-					<a data-toggle="menu" href="#ui_menu">
-						<span class="icon icon-lg">menu</span>
-					</a>
-				</li>
-			</ul>
-			<a class="header-logo header-affix-hide margin-left-no margin-right-no hidden-md hidden-lg" data-offset-top="213" data-toggle="menu" data-spy="affix" href="#ui_menu">AndroidCat</a>
-			<a class="header-logo header-affix hidden-md hidden-lg margin-left-no margin-right-no" data-offset-top="213" data-spy="affix">AndroidCat</a>
-			<a class="header-logo header-affix visible-md-block visible-lg-block margin-right-no" data-offset-top="213" data-spy="affix" style="background-color: blue; text-align: center; vertical-align:middle;"></a>
-			<ul class="nav nav-list pull-right">
-				<li class="dropdown margin-right">
-					<a class="dropdown-toggle padding-left-no padding-right-no" data-toggle="dropdown">
-						<span class="avatar avatar-sm"><img alt="alt text for John Smith avatar" src="images/cat_icon.png"></span>
-					</a>
-					<ul class="dropdown-menu dropdown-menu-right">
-						<li>
-							<a class="padding-right-lg waves-attach" onclick="snackbar('暂未开通~')"><span class="icon icon-lg margin-right">turned_in</span>个人设置</a>
-						</li>
-						<li>
-							<a class="padding-right-lg waves-attach" onclick="snackbar('暂未开通~~')"><span class="icon icon-lg margin-right">face</span>关于我们</a>
-						</li>
-						<li>
-							<a class="padding-right-lg waves-attach" data-toggle="modal" href="#ui_modal_login"><span class="icon icon-lg margin-right">exit_to_app</span>退出登录</a>
-						</li>
-					</ul>
-				</li>
-			</ul>
 		</header>
-		<main class="content">
-			<div class="content-header ui-content-header">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1">
-							<h1 class="content-heading" id="contentTitle"></h1>
-						</div>
+
+		<!-- Side Nav-->
+		<div class="mdui-drawer mdui-shadow-6" id="main-drawer">
+			<div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 8px;">
+				<div class=""  id="homepageMenu">
+					<div class="mdui-list-item mdui-ripple">
+						<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">&#xe88a;</i>
+						<div class="mdui-list-item-content">首页</div>
 					</div>
 				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-						<section class="content-inner margin-top-no" id="mainSection">
 
-						</section>
+				<div class="mdui-collapse-item mdui-collapse-item-open" id="bookmarkMenu">
+					<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+						<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">&#xe53b;</i>
+						<div class="mdui-list-item-content">书签</div>
+						<i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
+					</div>
+					<div class="mdui-collapse-item-body mdui-list" id="bookmarkMenuLayout">
+						<a href="#" class="mdui-list-item mdui-ripple mdui-list-item-active">精品推荐</a>
+						<a href="#" class="mdui-list-item mdui-ripple ">资源文档</a>
+						<a href="#" class="mdui-list-item mdui-ripple ">技术社区</a>
+						<a href="#" class="mdui-list-item mdui-ripple ">开源项目</a>
+						<a href="#" class="mdui-list-item mdui-ripple ">开发工具</a>
+						<a href="#" class="mdui-list-item mdui-ripple ">前沿资讯</a>
+						<a href="#" class="mdui-list-item mdui-ripple ">优秀博客</a>
+						<a href="#" class="mdui-list-item mdui-ripple ">乱七八糟</a>
 					</div>
 				</div>
-			</div>
-		</main>
-		<footer class="ui-footer">
-			<div class="container">
-				<p>AndroidCat 2016 -- Android开发 一站导航 Thanks to
-					<a href="https://github.com/Daemonite/material" target="_blank">Material</a>
-				</p>
-			</div>
-		</footer>
-		<div class="fbtn-container">
-			<div class="fbtn-inner">
-				<a class="fbtn fbtn-lg fbtn-brand-accent waves-attach waves-circle waves-light" data-toggle="dropdown"><span class="fbtn-text fbtn-text-left">嗨</span><span class="fbtn-ori icon">apps</span><span class="fbtn-sub icon">close</span></a>
-				<div class="fbtn-dropup">
-					<a class="fbtn waves-attach waves-circle" href="https://github.com/ColorfulCat/AndroidGuide" target="_blank"><span class="fbtn-text fbtn-text-left">GitHub</span><span class="icon">code</span></a>
-					<a class="fbtn fbtn-brand waves-attach waves-circle waves-light" href="http://daemonite.github.io/material/" target="_blank"><span class="fbtn-text fbtn-text-left">分享一下吧</span><span class="icon">share</span></a>
-					<a class="fbtn fbtn-green waves-attach waves-circle waves-light" onclick="snackbar('暂未开通~~')"><span class="fbtn-text fbtn-text-left">提交网址链接</span><span class="icon">add</span></a>
-					<a class="fbtn fbtn-orange waves-attach waves-circle" data-toggle="modal" href="#ui_modal_comment"><span class="fbtn-text fbtn-text-left">评论一下吧</span><span class="icon">comment</span></a>
-				</div>
-			</div>
-		</div>
-
-		<div aria-hidden="true" class="modal fade" id="ui_modal_login" role="dialog" tabindex="-1">
-			<div class="modal-dialog" style="max-width:500px;">
-				<div class="modal-content">
-					<div class="card-main">
-						<div class="card-header">
-							<div class="card-inner">
-								<h1 class="card-heading">Login</h1>
-							</div>
-						</div>
-						<div class="card-inner">
-							<p class="text-center">
-								<span class="avatar avatar-inline avatar-lg">
-											<img alt="Login" src="images/cat_icon.png">
-										</span>
-							</p>
-							<form class="form" action="index.html">
-								<div class="form-group form-group-label">
-									<div class="row">
-										<div class="col-md-10 col-md-push-1">
-											<label class="floating-label" for="ui_login_username">Username</label>
-											<input class="form-control" id="ui_login_username" type="text">
-										</div>
-									</div>
-								</div>
-								<div class="form-group form-group-label">
-									<div class="row">
-										<div class="col-md-10 col-md-push-1">
-											<label class="floating-label" for="ui_login_password">Password</label>
-											<input class="form-control" id="ui_login_password" type="password">
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="row">
-										<div class="col-md-10 col-md-push-1">
-											<button class="btn btn-block btn-brand waves-attach waves-light">登录</button>
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="row">
-										<div class="col-md-10 col-md-push-1">
-											<div class="checkbox checkbox-adv">
-												<label for="ui_login_remember">
-															<input class="access-hide" id="ui_login_remember" name="ui_login_remember" type="checkbox">保持登录
-															<span class="checkbox-circle"></span><span class="checkbox-circle-check"></span><span class="checkbox-circle-icon icon">done</span>
-														</label>
-											</div>
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>
+				<div class="" id="aboutMenu">
+					<div class="mdui-list-item mdui-ripple">
+						<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">&#xe87c;</i>
+						<div class="mdui-list-item-content">关于我们</div>
 					</div>
 				</div>
+
 			</div>
 		</div>
-
-		<div aria-hidden="true" class="modal fade" id="ui_modal_comment" role="dialog" tabindex="-1">
-			<div class="modal-dialog" style="max-width:1024px;">
-				<div class="modal-content">
-					<div class="container">
-						<img src="images/androidcat.png" style="padding-left: 30px;padding-top: 20px;" />
-						</br>
-						<h3 style="padding-left: 30px;">网站全新改版，希望有任何意见或者建议都能提出来~ \(^o^)/~</h3>
-						<!-- 多说评论框 start -->
-						<div style="padding-left: 30px;padding-right: 30px;" class="ds-thread" data-thread-key="about" data-title="关于AndroidCat" data-url="http://www.androidcat.com/"></div>
-						<!-- 多说评论框 end -->
-
-						<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-						<script type="text/javascript">
-							var duoshuoQuery = {
-								short_name: "androidcat"
-							};
-							(function() {
-								var ds = document.createElement('script');
-								ds.type = 'text/javascript';
-								ds.async = true;
-								ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-								ds.charset = 'UTF-8';
-								(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-							})();
-						</script>
-						<!-- 多说公共JS代码 end -->
-					</div>
-				</div>
-			</div>
+		<!-- Container -->
+		<div class="mdui-container">
+			<p>11111</p>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			<p>22222</p>
+		</div>
+		<div class="mdui-fab-wrapper">
+			<button class="mdui-fab mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">&#xe145;</i></button>
 		</div>
 
-		</div>
-
-		<!-- js -->
-		<script src="https://cdn1.lncld.net/static/js/av-mini-0.6.4.js"></script>
-		<script type="text/javascript" src="js/AV.analytics.js"></script>
-
-		<script src="js/jquery-3.1.0.min.js"></script>
-		<script src="js/base.min.js"></script>
-		<script src="js/project.min.js"></script>
-		<script type="text/javascript" src="js/util.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
-		<script type="text/javascript" src="js/request.js"></script>
-
-		<!-- CNZZ统计 -->
-		<div style="display: none;">
-			<script type="text/javascript">
-				var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-				document.write(unescape("%3Cspan id='cnzz_stat_icon_1256153205'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1256153205%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
-			</script>
-		</div>
-
+		<!-- JS -->
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
 	</body>
 
 </html>

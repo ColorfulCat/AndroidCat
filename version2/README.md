@@ -1,1 +1,0 @@
-This repo is used for my website : [http://www.androidcat.com/](http://www.androidcat.com/) 
