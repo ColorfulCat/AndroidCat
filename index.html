@@ -50,7 +50,7 @@
 		</header>
 
 		<!-- Side Nav-->
-		<div class="mdui-drawer mdui-shadow-6" id="main-drawer">
+		<div class="mdui-drawer mdui-shadow-5" id="main-drawer">
 			<div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 8px;">
 				<div class="mdui-list-item-active" id="homepageMenu">
 					<div class="mdui-list-item mdui-ripple">
@@ -66,14 +66,7 @@
 						<i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe313;</i>
 					</div>
 					<div class="mdui-collapse-item-body mdui-list" id="bookmarkMenuLayout">
-						<div class="mdui-list-item mdui-ripple">精品推荐</div>
-						<div class="mdui-list-item mdui-ripple">资源文档</div>
-						<div class="mdui-list-item mdui-ripple  mdui-list-item-active">技术社区</div>
-						<div class="mdui-list-item mdui-ripple ">开源项目</div>
-						<div class="mdui-list-item mdui-ripple ">开发工具</div>
-						<div class="mdui-list-item mdui-ripple ">前沿资讯</div>
-						<div class="mdui-list-item mdui-ripple ">优秀博客</div>
-						<div class="mdui-list-item mdui-ripple ">乱七八糟</div>
+						<div class="mdui-list-item mdui-ripple  mdui-list-item-active">test</div>
 					</div>
 				</div>
 				<div class="" id="aboutMenu">
@@ -86,21 +79,35 @@
 			</div>
 		</div>
 		<!-- Container -->
-		<div class="mdui-container mdui-center">
-			<p>测试页面</p>
-
-			<div class="mdui-col-sm-12 mdui-col-md-8 mdui-col-offset-md-2">
+		<div class="mdui-container">
+			<!--<p>测试页面</p>-->
+			<!-- 搜索栏 -->
+			<!--<div class="mdui-col-sm-12 mdui-col-md-8 mdui-col-offset-md-2">
 				<div class="mdui-tab" mdui-tab>
 					<a href="#example2-tab1" class="mdui-ripple">Google</a>
 					<a href="#example2-tab2" class="mdui-ripple">Baidu</a>
-					<a href="#example2-tab4" class="mdui-ripple">图片</a>
 					<a href="#example2-tab5" class="mdui-ripple">Github</a>
 				</div>
 				<div class="mdui-divider"></div>
 				<div class="mdui-textfield">
-					<input class="mdui-textfield-input" type="text" placeholder="请输入搜索内容" />
+					<input id="searchInput" class="mdui-textfield-input" type="text" placeholder="请输入搜索内容" />
 				</div>
-			</div>
+			</div>-->
+
+			<!-- 列表页面 -->
+			<h3 id="listTitle">啦啦啦</h3>
+			<ul id="listLayout" class="mdui-list mdui-row mdui-center">
+				<div class="mdui-col-sm-12 mdui-col-md-6 mdui-col-lg-4">
+					<li class="mdui-list-item mdui-ripple bookMarkItem">
+						<img class="avatar" src="images/androidcat192.png" />
+						<div class="content">稀土掘金 </div>
+						<!--<i class="icon mdui-icon material-icons mdui-text-color-blue">&#xe866;</i>-->
+					</li>
+				</div>
+				 
+				
+
+			</ul>
 
 			</br>
 			</br>
@@ -159,9 +166,11 @@
 		<!-- JS -->
 		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
 		<!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
+		<script type="text/javascript" src="js/AV.analytics.js" ></script>
+		<script type="text/javascript" src="js/request.js" ></script>
 		<script type="text/javascript" src="js/util.js"></script>
-		<script type="text/javascript" src="js/main.js" ></script>
-		
+		<script type="text/javascript" src="js/main.js"></script>
+	
 	</body>
 
 </html>

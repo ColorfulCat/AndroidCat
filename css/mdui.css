@@ -9623,9 +9623,9 @@ body:not(.mdui-support-touch).mdui-theme-layout-dark .mdui-tab::-webkit-scrollba
   -ms-flex-align: center;
           align-items: center;
 }
-.mdui-list-item:hover {
+/*.mdui-list-item:hover {
   background-color: rgba(0, 0, 0, .08);
-}
+}*/
 .mdui-list-item:after {
   height: 48px;
   visibility: hidden;

@@ -5,14 +5,15 @@ var currentSelection = 0;
 var lastId = -1;
 var idOffset = 0;
 var catMenusDiv = $("#bookmarkMenuLayout");
-
+var listLayout = $("#listLayout");
 var mCats = [];
 
 // all start here 
 $(document).ready(function() {
 	log("document.ready");
-	
 	initSideMenu();
+	queryCats("AndroidCat","recommend");
+	updateMenus(-1)
 	
 });
 
@@ -30,10 +31,10 @@ function initSideMenu(){
 	catMenusDiv.append(createBookmarkMenu("前沿资讯", "news"));
 	catMenusDiv.append(createBookmarkMenu("服务集成", "service"));
 	catMenusDiv.append(createBookmarkMenu("设计资源", "image"));
-	catMenusDiv.append(createBookmarkMenu("求职招聘", "job"));
-	catMenusDiv.append(createBookmarkMenu("私活兼职", "money"));
-	catMenusDiv.append(createBookmarkMenu("平台市场", "channel"));
-	catMenusDiv.append(createBookmarkMenu("广告服务", "ad"));
+//	catMenusDiv.append(createBookmarkMenu("求职招聘", "job"));
+//	catMenusDiv.append(createBookmarkMenu("私活兼职", "money"));
+//	catMenusDiv.append(createBookmarkMenu("平台市场", "channel"));
+//	catMenusDiv.append(createBookmarkMenu("广告服务", "ad"));
 	
 	var homepageMenu = $("#homepageMenu");
 	var aboutMenu = $("#aboutMenu");
@@ -46,17 +47,15 @@ function initSideMenu(){
 	});
 	
 }
-
-
 function createBookmarkMenu(title, tag) {
 	var currentId = idOffset;
-	var parentLi = $('<div class="mdui-list-item mdui-ripple">' + title + '</div>');
+	var parentLi = $('<div class="mdui-list-item mdui-ripple myHover">' + title + '</div>');
 	parentLi.attr("id","menuId"+currentId);
 	parentLi.click(function() {
 		log("idOffset = " +currentId);
 		log("lastId = " +lastId);
 		if(currentId != lastId){
-//			queryCats(title, tag);
+			queryCats(title, tag);
 			updateMenus(currentId);
 		}else{
 			//返回滚动到顶部
@@ -86,4 +85,80 @@ function updateMenus(id) {
 		$("#menuId"+lastId).removeClass("mdui-list-item-active"); //移除样式
 	}
 	lastId = id;
+}
+
+function createBookmarks(item){
+	var divP = $('<div class="mdui-col-sm-12 mdui-col-md-6 mdui-col-lg-4"></div>');
+	var liP = $('<li class="mdui-list-item mdui-ripple bookMarkItem"></li>');
+	var imgC = $('<img class="avatar" src="'+item.icon+'" />')
+	var divC = $('<div class="content">'+item.title+'</div>')
+	divP.append(liP);
+	liP.append(imgC); 
+	liP.append(divC);
+	liP.click(function() {
+		setTimeout(function() {
+			window.open(item.url, '', '');
+		}, 300);
+	});
+	return divP;
+}
+
+function clearCatItem() {
+	listLayout.fadeOut(300);
+}
+
+function queryCats(title, tag) {
+	mCats = [];
+	clearCatItem();
+	
+	$("#listTitle").text(title);
+
+	var query = new AV.Query('Cat');
+	if(tag == "recommend" || tag == "" || tag == "undefined") {
+		query.limit(30);
+	} else {
+		query.equalTo('tag', tag);
+	}
+	query.addDescending('grade');
+	query.find().then(function(results) {
+		if(results != null && results.length > 0) {
+			log("cat size = " + results.length);
+			listLayout.html("");
+			for(var i = 0; i < results.length; i++) {
+				var catItem = {};
+				catItem.index = i;
+				catItem.id = results[i].id;
+				catItem.createdAt = results[i].get("createdAt");
+				catItem.updatedAt = results[i].get("updatedAt");
+				catItem.icon = results[i].get("icon");
+				if(catItem.icon == null || catItem.icon.length == 0) {
+					catItem.icon = "images/cat_foot.png";
+				}
+				catItem.title = results[i].get("title");
+				catItem.tag = results[i].get("tag");
+				catItem.hit = results[i].get("hit");
+				catItem.url = results[i].get("url");
+				if(catItem.url == null || catItem.url.length == 0) {
+					catItem.url = "www.androidcat.com?error=" + catItem.title;
+				} else {
+					if(catItem.url.indexOf("?") >= 0) {
+						catItem.url = catItem.url + "&from=www_androidcat_com";
+					} else {
+						catItem.url = catItem.url + "?from=www_androidcat_com";
+					}
+				}
+				catItem.desc = results[i].get("desc");
+				mCats.push(catItem);
+				listLayout.append(createBookmarks(catItem));
+			}
+			//返回顶部
+			$(document.body).animate({'scrollTop':0},500);
+			//展示
+			contentDiv.fadeIn(300);
+		} else {
+			log("000");
+		}
+	}, function(error) {
+		log('Error: ' + error.code + ' ' + error.message);
+	});
 }

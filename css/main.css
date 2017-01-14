@@ -1,7 +1,61 @@
 
-
-smallText {
-	font-size: 10px;
+.myHover{
+}
+.myHover:hover{
 	
 }
 
+.bookMarkItem {
+	width: 100%;
+	height: 60px;
+	color: black;
+	margin: 6px;
+	border-radius: 3px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px 0px;
+	cursor: pointer;
+	overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
+}
+
+.bookMarkItem:hover {
+	color: #3F51B5;
+	/*background-color: rgba(0, 0, 0, .08);*/
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 5px 0px;
+}
+/* 列表项头像 */
+
+.bookMarkItem .avatar {
+	min-width: 50px;
+	max-width: 50px;
+	height: 50px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px; 
+	color: #fff;
+	text-align: center; 
+	border-radius: 3%;
+}
+/* 列表项内容 */
+.mdui-list-item .content {
+  text-align: center;
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 16px;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.mdui-list-item .content:hover {
+	
+ }
+ 
+.mdui-list-item .icon {
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  color: rgba(0, 0, 0, .54);
+}
+.mdui-list-item .icon:hover {
+	 
+ }
