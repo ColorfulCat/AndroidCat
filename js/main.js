@@ -16,13 +16,23 @@ $(document).ready(function() {
 	updateMenus(-1)
 
 	$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function() {
-		if(remote_ip_info != null){
+		if(remote_ip_info != null) {
 			console.log(remote_ip_info);
-			$("#cityLabel").html(remote_ip_info.city);
-		}else{
+			var url = "http://www.tuling123.com/openapi/api?key=b073898069f9d162bff92779730a32cb&info=" + remote_ip_info.city + "天气";
+			$(function() {
+				$.getJSON(url, function(data) {
+					if(data != null && data.text != null) {
+						var tempString = data.text;
+						console.log("data =  " + tempString);
+
+						$("#cityLabel").html(remote_ip_info.city + "  " + tempString.substring(tempString.indexOf(',') + 1, tempString.indexOf('°') + 1));
+					}
+				})
+			});
+		} else {
 			console.log("remote_ip_info is null");
 		}
-		
+
 	});
 
 });
