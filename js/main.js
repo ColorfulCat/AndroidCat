@@ -4,13 +4,29 @@
 var currentSelection = 0;
 var lastId = -1;
 var idOffset = 0;
+var containerLayout = $("");
 var catMenusDiv = $("#bookmarkMenuLayout");
 var listLayout = $("#listLayout");
 var mCats = [];
 
+var needRefresh = true;
+
 // all start here 
 $(document).ready(function() {
 	log("document.ready");
+	var lastRefreshTimeItem = localStorage.getItem("lastRefreshTime");
+	var lastRefreshTime = 0;
+	if(lastRefreshTimeItem != null) {
+		lastRefreshTime = parseInt(lastRefreshTimeItem);
+	}
+	var timestamp = new Date().getTime();
+	if((timestamp - lastRefreshTime) > 3600000) {
+		localStorage.setItem("lastRefreshTime", timestamp);
+		needRefresh = true;
+	} else {
+		needRefresh = false;
+	}
+
 	initSideMenu();
 	queryCats("AndroidCat", "recommend");
 	updateMenus(-1)
@@ -20,14 +36,7 @@ $(document).ready(function() {
 function initWeather() {
 	var city = localStorage.getItem("city");
 	var weatherString = localStorage.getItem("weatherString");
-	var lastWeatherTimeItem = localStorage.getItem("lastWeatherTime");
-	var lastWeatherTime = 0;
-	if(lastWeatherTimeItem != null) {
-		lastWeatherTime = parseInt(lastWeatherTimeItem);
-	}
-	var timestamp = new Date().getTime();
-	if((timestamp - lastWeatherTime) > 3600000) {
-		localStorage.setItem("lastWeatherTime", timestamp);
+	if(needRefresh && weatherString != null) {
 		$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function() {
 			if(remote_ip_info != null) {
 				log(remote_ip_info);
@@ -150,7 +159,25 @@ function queryCats(title, tag) {
 	clearCatItem();
 
 	$("#listTitle").text(title);
+//	if(needRefresh) {
+		queryResults(tag);
+//	} else {
+//		var dataTemp = localStorage.getItem("tag_" + tag);
+//		var dataObj = null;
+//		if(dataTemp != null){
+//			dataObj = JSON.parse(dataTemp);
+//		}
+//		
+//		if(dataObj != null) {
+//			setResults(dataObj);
+//		} else {
+//			queryResults(tag);
+//		}
+//	}
 
+}
+
+function queryResults(tag) {
 	var query = new AV.Query('Cat');
 	if(tag == "recommend" || tag == "" || tag == "undefined") {
 		query.limit(30);
@@ -159,49 +186,52 @@ function queryCats(title, tag) {
 	}
 	query.addDescending('grade');
 	query.find().then(function(results) {
-		if(results != null && results.length > 0) {
-			log("cat size = " + results.length);
-			listLayout.html("");
-			for(var i = 0; i < results.length; i++) {
-				var catItem = {};
-				catItem.index = i;
-				catItem.id = results[i].id;
-				catItem.createdAt = results[i].get("createdAt");
-				catItem.updatedAt = results[i].get("updatedAt");
-				catItem.icon = results[i].get("icon");
-				if(catItem.icon == null || catItem.icon.length == 0) {
-					catItem.icon = "images/cat_foot.png";
-				}
-				catItem.title = results[i].get("title");
-				catItem.tag = results[i].get("tag");
-				catItem.hit = results[i].get("hit");
-				catItem.url = results[i].get("url");
-				if(catItem.url == null || catItem.url.length == 0) {
-					catItem.url = "www.androidcat.com?error=" + catItem.title;
-				} else {
-					if(catItem.url.indexOf("?") >= 0) {
-						catItem.url = catItem.url + "&from=www_androidcat_com";
-					} else {
-						catItem.url = catItem.url + "?from=www_androidcat_com";
-					}
-				}
-				catItem.desc = results[i].get("desc");
-				mCats.push(catItem);
-				listLayout.append(createBookmarks(catItem));
-			}
-			if(results.length > 0) {
-				listLayout.append('<p style="text-align: center; margin-top: 20px">更多精彩内容，敬请期待~ </p>');
-			}
-			//返回顶部
-			$(document.body).animate({
-				'scrollTop': 0
-			}, 500);
-			//展示
-			contentDiv.fadeIn(300);
-		} else {
-			log("000");
-		}
+		localStorage.setItem("tag_" + tag, JSON.stringify(results));
+		setResults(results);
 	}, function(error) {
 		log('Error: ' + error.code + ' ' + error.message);
 	});
+}
+
+function setResults(results) {
+	if(results != null && results.length > 0) {
+		log("cat size = " + results.length);
+		listLayout.html("");
+		for(var i = 0; i < results.length; i++) {
+			var catItem = {};
+			catItem.index = i;
+			catItem.id = results[i].id;
+			catItem.createdAt = results[i].get("createdAt");
+			catItem.updatedAt = results[i].get("updatedAt");
+			catItem.icon = results[i].get("icon");
+			if(catItem.icon == null || catItem.icon.length == 0) {
+				catItem.icon = "images/cat_foot.png";
+			}
+			catItem.title = results[i].get("title");
+			catItem.tag = results[i].get("tag");
+			catItem.hit = results[i].get("hit");
+			catItem.url = results[i].get("url");
+			if(catItem.url == null || catItem.url.length == 0) {
+				catItem.url = "www.androidcat.com?error=" + catItem.title;
+			} else {
+				if(catItem.url.indexOf("?") >= 0) {
+					catItem.url = catItem.url + "&from=www_androidcat_com";
+				} else {
+					catItem.url = catItem.url + "?from=www_androidcat_com";
+				}
+			}
+			catItem.desc = results[i].get("desc");
+			mCats.push(catItem);
+			listLayout.append(createBookmarks(catItem));
+		}
+
+		//返回顶部
+		$(document.body).animate({
+			'scrollTop': 0
+		}, 500);
+		//展示
+		contentDiv.fadeIn(300);
+	} else {
+		log("000");
+	}
 }
