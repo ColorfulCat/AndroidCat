@@ -12,13 +12,22 @@ var mCats = [];
 $(document).ready(function() {
 	log("document.ready");
 	initSideMenu();
-	queryCats("AndroidCat","recommend");
+	queryCats("AndroidCat", "recommend");
 	updateMenus(-1)
-	
+
+	$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function() {
+		if(remote_ip_info != null){
+			console.log(remote_ip_info);
+			$("#cityLabel").html(remote_ip_info.city);
+		}else{
+			console.log("remote_ip_info is null");
+		}
+		
+	});
+
 });
 
-
-function initSideMenu(){
+function initSideMenu() {
 	catMenusDiv.html("");
 	catMenusDiv.append(createBookmarkMenu("精品推荐", "recommend"));
 	catMenusDiv.append(createBookmarkMenu("技术社区", "community"));
@@ -31,69 +40,71 @@ function initSideMenu(){
 	catMenusDiv.append(createBookmarkMenu("前沿资讯", "news"));
 	catMenusDiv.append(createBookmarkMenu("服务集成", "service"));
 	catMenusDiv.append(createBookmarkMenu("设计资源", "image"));
-//	catMenusDiv.append(createBookmarkMenu("求职招聘", "job"));
-//	catMenusDiv.append(createBookmarkMenu("私活兼职", "money"));
-//	catMenusDiv.append(createBookmarkMenu("平台市场", "channel"));
-//	catMenusDiv.append(createBookmarkMenu("广告服务", "ad"));
-	
+	//	catMenusDiv.append(createBookmarkMenu("求职招聘", "job"));
+	//	catMenusDiv.append(createBookmarkMenu("私活兼职", "money"));
+	//	catMenusDiv.append(createBookmarkMenu("平台市场", "channel"));
+	//	catMenusDiv.append(createBookmarkMenu("广告服务", "ad"));
+
 	var homepageMenu = $("#homepageMenu");
 	var aboutMenu = $("#aboutMenu");
-	
+
 	homepageMenu.click(function() {
-			updateMenus(-1);
+		updateMenus(-1);
 	});
 	aboutMenu.click(function() {
-			updateMenus(-2);
+		updateMenus(-2);
 	});
-	
+
 }
+
 function createBookmarkMenu(title, tag) {
 	var currentId = idOffset;
 	var parentLi = $('<div class="mdui-list-item mdui-ripple myHover">' + title + '</div>');
-	parentLi.attr("id","menuId"+currentId);
+	parentLi.attr("id", "menuId" + currentId);
 	parentLi.click(function() {
-		log("idOffset = " +currentId);
-		log("lastId = " +lastId);
-		if(currentId != lastId){
+		log("idOffset = " + currentId);
+		log("lastId = " + lastId);
+		if(currentId != lastId) {
 			queryCats(title, tag);
 			updateMenus(currentId);
-		}else{
+		} else {
 			//返回滚动到顶部
-			$(document.body).animate({'scrollTop':0},500);
+			$(document.body).animate({
+				'scrollTop': 0
+			}, 500);
 		}
 	});
-	idOffset = idOffset +1;
+	idOffset = idOffset + 1;
 
 	return parentLi;
 }
 
-
 function updateMenus(id) {
-	if(id >= 0){
-		$("#menuId"+id).addClass("mdui-list-item-active"); //添加样式
-		$("#menuId"+lastId).removeClass("mdui-list-item-active"); //移除样式
+	if(id >= 0) {
+		$("#menuId" + id).addClass("mdui-list-item-active"); //添加样式
+		$("#menuId" + lastId).removeClass("mdui-list-item-active"); //移除样式
 		$("#aboutMenu").removeClass("mdui-list-item-active"); //移除样式
 		$("#homepageMenu").removeClass("mdui-list-item-active"); //移除样式
-	}else{
-		if(id == -1){ // 首页
+	} else {
+		if(id == -1) { // 首页
 			$("#homepageMenu").addClass("mdui-list-item-active"); //添加样式
 			$("#aboutMenu").removeClass("mdui-list-item-active"); //移除样式
-		}else if(id == -2){//关于
+		} else if(id == -2) { //关于
 			$("#aboutMenu").addClass("mdui-list-item-active"); //添加样式
 			$("#homepageMenu").removeClass("mdui-list-item-active"); //移除样式
 		}
-		$("#menuId"+lastId).removeClass("mdui-list-item-active"); //移除样式
+		$("#menuId" + lastId).removeClass("mdui-list-item-active"); //移除样式
 	}
 	lastId = id;
 }
 
-function createBookmarks(item){
+function createBookmarks(item) {
 	var divP = $('<div class="mdui-col-sm-12 mdui-col-md-6 mdui-col-lg-4"></div>');
 	var liP = $('<li class="mdui-list-item mdui-ripple bookMarkItem"></li>');
-	var imgC = $('<img class="avatar" src="'+item.icon+'" />')
-	var divC = $('<div class="content">'+item.title+'</div>')
+	var imgC = $('<img class="avatar" src="' + item.icon + '" />')
+	var divC = $('<div class="content">' + item.title + '</div>')
 	divP.append(liP);
-	liP.append(imgC); 
+	liP.append(imgC);
 	liP.append(divC);
 	liP.click(function() {
 		setTimeout(function() {
@@ -110,7 +121,7 @@ function clearCatItem() {
 function queryCats(title, tag) {
 	mCats = [];
 	clearCatItem();
-	
+
 	$("#listTitle").text(title);
 
 	var query = new AV.Query('Cat');
@@ -151,8 +162,13 @@ function queryCats(title, tag) {
 				mCats.push(catItem);
 				listLayout.append(createBookmarks(catItem));
 			}
+			if(results.length > 0) {
+				listLayout.append('<p style="text-align: center; margin-top: 20px">更多精彩内容，敬请期待~ </p>');
+			}
 			//返回顶部
-			$(document.body).animate({'scrollTop':0},500);
+			$(document.body).animate({
+				'scrollTop': 0
+			}, 500);
 			//展示
 			contentDiv.fadeIn(300);
 		} else {
