@@ -24,14 +24,4 @@ function checkVersion() {
 function log(str) {
 	console.log(str);
 }
-
-function snackbar(text) {
-	snackbar(text, 2000);
-}
-
-function snackbar(text, duration) {
-	$(document.body).snackbar({
-		alive: duration,
-		content: text
-	});
-}
+ 

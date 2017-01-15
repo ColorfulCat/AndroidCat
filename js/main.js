@@ -14,28 +14,45 @@ $(document).ready(function() {
 	initSideMenu();
 	queryCats("AndroidCat", "recommend");
 	updateMenus(-1)
-
-	$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function() {
-		if(remote_ip_info != null) {
-			console.log(remote_ip_info);
-			var url = "http://www.tuling123.com/openapi/api?key=b073898069f9d162bff92779730a32cb&info=" + remote_ip_info.city + "天气";
-			$(function() {
-				$.getJSON(url, function(data) {
-					if(data != null && data.text != null) {
-						var tempString = data.text;
-						console.log("data =  " + tempString);
-
-						$("#cityLabel").html(remote_ip_info.city + "  " + tempString.substring(tempString.indexOf(',') + 1, tempString.indexOf('°') + 1));
-					}
-				})
-			});
-		} else {
-			console.log("remote_ip_info is null");
-		}
-
-	});
-
+	initWeather();
 });
+
+function initWeather() {
+	var city = localStorage.getItem("city");
+	var weatherString = localStorage.getItem("weatherString");
+	var lastWeatherTimeItem = localStorage.getItem("lastWeatherTime");
+	var lastWeatherTime = 0;
+	if(lastWeatherTimeItem != null) {
+		lastWeatherTime = parseInt(lastWeatherTimeItem);
+	}
+	var timestamp = new Date().getTime();
+	if((timestamp - lastWeatherTime) > 3600000) {
+		localStorage.setItem("lastWeatherTime", timestamp);
+		$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function() {
+			if(remote_ip_info != null) {
+				log(remote_ip_info);
+				localStorage.setItem("city", remote_ip_info.city);
+				var url = "http://www.tuling123.com/openapi/api?key=b073898069f9d162bff92779730a32cb&info=" + remote_ip_info.city + "天气";
+				$(function() {
+					$.getJSON(url, function(data) {
+						if(data != null && data.text != null) {
+							var tempString = data.text;
+							console.log("data =  " + tempString);
+							var weatherStringTemp = remote_ip_info.city + "  " + tempString.substring(tempString.indexOf(',') + 1, tempString.indexOf('°') + 1);
+							localStorage.setItem("weatherString", weatherStringTemp);
+							$("#cityLabel").html(weatherStringTemp);
+						}
+					})
+				});
+			} else {
+				console.log("remote_ip_info is null");
+			}
+		});
+	} else {
+		log("time is not enough to refresh weather");
+		$("#cityLabel").html(weatherString);
+	}
+}
 
 function initSideMenu() {
 	catMenusDiv.html("");
