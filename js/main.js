@@ -36,8 +36,8 @@ $(document).ready(function() {
 function initWeather() {
 	var city = localStorage.getItem("city");
 	var weatherString = localStorage.getItem("weatherString");
-	log("needRefresh = " + needRefresh);
 	log("weatherString = " + weatherString);
+	log("needRefresh = " + needRefresh);
 	if(needRefresh) {
 		$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function() {
 			if(remote_ip_info != null) {
