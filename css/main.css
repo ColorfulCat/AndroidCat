@@ -5,6 +5,12 @@
 	
 }
 
+#listTitle {
+	width: 100%;
+	color: #3F51B5;
+	text-align:center;
+}
+
 .bookMarkItem {
 	width: 100%;
 	height: 60px;
