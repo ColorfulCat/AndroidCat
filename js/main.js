@@ -21,8 +21,8 @@ $(document).ready(function() {
 	}
 	var timestamp = new Date().getTime();
 	if(true){//(timestamp - lastRefreshTime) > 3600000) {
-		localStorage.setItem("lastRefreshTime", timestamp);
 		needRefresh = true;
+		localStorage.setItem("lastRefreshTime", timestamp);
 	} else {
 		needRefresh = false;
 	}
@@ -36,6 +36,8 @@ $(document).ready(function() {
 function initWeather() {
 	var city = localStorage.getItem("city");
 	var weatherString = localStorage.getItem("weatherString");
+	log("needRefresh = " + needRefresh);
+	log("weatherString = " + weatherString);
 	if(needRefresh) {
 		$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function() {
 			if(remote_ip_info != null) {
