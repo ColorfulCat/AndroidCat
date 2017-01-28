@@ -171,7 +171,7 @@ function queryCats(title, tag) {
 //		}
 //		
 //		if(dataObj != null) {
-//			setResults(dataObj);
+//			setResults(dataObj.data);
 //		} else {
 //			queryResults(tag);
 //		}
@@ -188,7 +188,10 @@ function queryResults(tag) {
 	}
 	query.addDescending('grade');
 	query.find().then(function(results) {
-		localStorage.setItem("tag_" + tag, JSON.stringify(results));
+//		var jsonData = {};
+//		jsonData.data = JSON.stringify(results);
+//		log("jsondata = " + jsonData)
+//		localStorage.setItem("tag_" + tag, JSON.stringify(jsonData));
 		setResults(results);
 	}, function(error) {
 		log('Error: ' + error.code + ' ' + error.message);
@@ -236,4 +239,11 @@ function setResults(results) {
 	} else {
 		log("000");
 	}
+}
+
+function refresh(){
+	localStorage.setItem("city", "");
+	localStorage.setItem("weatherString", "");
+	localStorage.setItem("lastRefreshTime", 0);
+	window.location.reload();
 }
