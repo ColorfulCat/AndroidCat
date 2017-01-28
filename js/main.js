@@ -20,7 +20,7 @@ $(document).ready(function() {
 		lastRefreshTime = parseInt(lastRefreshTimeItem);
 	}
 	var timestamp = new Date().getTime();
-	if((timestamp - lastRefreshTime) > 3600000) {
+	if(true){//(timestamp - lastRefreshTime) > 3600000) {
 		localStorage.setItem("lastRefreshTime", timestamp);
 		needRefresh = true;
 	} else {
