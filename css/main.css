@@ -8,7 +8,9 @@
 #listTitle {
 	width: 100%;
 	color: #3F51B5;
-	text-align:center;
+	text-align:left;
+	margin-left: 16px;
+	padding-left: 16px;
 }
 
 .bookMarkItem {
@@ -65,3 +67,12 @@
 .mdui-list-item .icon:hover {
 	 
  }
+ 
+#searchInput {
+	width: 78%;
+	
+}
+#searchButton {
+	width: 21%;
+	
+}

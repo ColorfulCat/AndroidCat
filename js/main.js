@@ -1,11 +1,14 @@
 //var header = new mdui.Headroom('#header');
 //var mTab = new mdui.Tab('#tab');
+var drawer = new mdui.Drawer('#main-drawer');
 
+var searchIndex = 0;
 var currentSelection = 0;
 var lastId = -1;
 var idOffset = 0;
 var containerLayout = $("");
 var catMenusDiv = $("#bookmarkMenuLayout");
+var searchLayout = $("#searchLayout")
 var listLayout = $("#listLayout");
 var mCats = [];
 
@@ -28,7 +31,7 @@ $(document).ready(function() {
 	}
 
 	initSideMenu();
-	queryCats("AndroidCat", "recommend");
+//	queryCats("AndroidCat", "recommend");
 	updateMenus(-1)
 	initWeather();
 });
@@ -105,6 +108,16 @@ function createBookmarkMenu(title, tag) {
 		if(currentId != lastId) {
 			queryCats(title, tag);
 			updateMenus(currentId);
+			log("screen.width = " + document.documentElement.clientWidth);
+			if(document.documentElement.clientWidth <= 800){
+				if(drawer){
+					log("close1")
+					drawer.close();
+					log("close2")
+				}else{
+					log("open")
+				}
+			}
 		} else {
 			//返回滚动到顶部
 			$(document.body).animate({
@@ -123,13 +136,20 @@ function updateMenus(id) {
 		$("#menuId" + lastId).removeClass("mdui-list-item-active"); //移除样式
 		$("#aboutMenu").removeClass("mdui-list-item-active"); //移除样式
 		$("#homepageMenu").removeClass("mdui-list-item-active"); //移除样式
+		searchLayout.hide();//移除搜索
+		listLayout.show();//展示列表
+		log("click list")
 	} else {
 		if(id == -1) { // 首页
 			$("#homepageMenu").addClass("mdui-list-item-active"); //添加样式
 			$("#aboutMenu").removeClass("mdui-list-item-active"); //移除样式
+			searchLayout.show();//移除搜索
+			listLayout.hide();//展示列表
+			log("click -1")
 		} else if(id == -2) { //关于
 			$("#aboutMenu").addClass("mdui-list-item-active"); //添加样式
 			$("#homepageMenu").removeClass("mdui-list-item-active"); //移除样式
+			log("click -2")
 		}
 		$("#menuId" + lastId).removeClass("mdui-list-item-active"); //移除样式
 	}
@@ -235,7 +255,7 @@ function setResults(results) {
 			'scrollTop': 0
 		}, 500);
 		//展示
-		contentDiv.fadeIn(300);
+		listLayout.fadeIn(300);
 	} else {
 		log("000");
 	}
@@ -246,4 +266,11 @@ function refresh(){
 	localStorage.setItem("weatherString", "");
 	localStorage.setItem("lastRefreshTime", 0);
 	window.location.reload();
+}
+
+function selectSearch(index){
+	if(searchIndex != index){
+		searchIndex = index;
+		log("selectSearch index = " + index);
+	}
 }
