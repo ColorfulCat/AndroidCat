@@ -1,21 +1,43 @@
-
+body{
+	background-color: #fafafa;
+}
 .myHover{
 }
 .myHover:hover{
 	
 }
+#main-drawer {
+	background-color: white;
+}
 
-#listTitle {
+#searchContent{
+	background-color: white;
+	margin-top: 32px;
+	margin-left: 16px;
+	/*margin-right: 16px;*/
+	border-radius: 3px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px 0px;
+}
+#searchInput {
+	width: 78%;
+}
+#searchButton {
+	width: 21%;
+}
+
+.layoutTitle {
 	width: 100%;
 	color: #3F51B5;
-	text-align:left;
+	text-align: left;
 	margin-left: 16px;
 	padding-left: 16px;
+	/*margin-right: 16px;*/
 }
 
 .bookMarkItem {
 	width: 100%;
 	height: 60px;
+	background-color: white;
 	color: black;
 	margin: 6px;
 	border-radius: 3px;
@@ -32,12 +54,12 @@
 /* 列表项头像 */
 
 .bookMarkItem .avatar {
-	min-width: 50px;
-	max-width: 50px;
-	height: 50px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	margin-left: 5px; 
+	min-width: 38px;
+	max-width: 38px;
+	height: 38px;
+	margin-top: 11px;
+	margin-bottom: 11px;
+	margin-left: 11px; 
 	color: #fff;
 	text-align: center; 
 	border-radius: 3%;
@@ -68,11 +90,3 @@
 	 
  }
  
-#searchInput {
-	width: 78%;
-	
-}
-#searchButton {
-	width: 21%;
-	
-}

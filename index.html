@@ -79,52 +79,55 @@
 			</div>
 		</div>
 		<!-- Container -->
-		<div class="mdui-container">
+		<div id="content" class="mdui-container">
 			<!--<p>测试页面</p>-->
 			<!-- 搜索栏 -->
-			<!--<div id="searchLayout" class="mdui-valign" style="height: 300px;">
-				<div class="mdui-col-sm-12 mdui-col-md-8 mdui-col-offset-md-2" >
-					<div class="mdui-tab" mdui-tab>
-						<a href="#tab0" onclick="selectSearch(0)" class="mdui-ripple">Google</a>
-						<a href="#tab1" onclick="selectSearch(1)" class="mdui-ripple">Baidu</a>
-						<a href="#tab2" onclick="selectSearch(2)" class="mdui-ripple">Github</a>
-					</div>
-					<div class="mdui-divider"></div>
-					<div class="mdui-textfield mdui-clearfix">
-						<input id="searchInput" class="mdui-float-left mdui-textfield-input" type="text" placeholder="请输入搜索内容" />
-						<button class="mdui-float-right mdui-btn mdui-ripple mdui-color-blue">搜索</button>
+			<div id="searchLayout">
+				<h3 id="searchTitle" class="layoutTitle mdui-center">首页导航</h3>
+				<div id="searchContent" class="mdui-valign" style="height: 300px;">
+					<div class="mdui-col-sm-12 mdui-col-md-8 mdui-col-offset-md-2">
+						<div class="mdui-tab" mdui-tab>
+							<a href="#tab0" onclick="selectSearch(0)" class="mdui-ripple">Google</a>
+							<a href="#tab1" onclick="selectSearch(1)" class="mdui-ripple">Baidu</a>
+							<a href="#tab2" onclick="selectSearch(2)" class="mdui-ripple">Github</a>
+						</div>
+						<div class="mdui-divider"></div>
+						<div class="mdui-textfield mdui-clearfix">
+							<input id="searchInput" class="mdui-float-left mdui-textfield-input" type="text" placeholder="请输入搜索内容" />
+							<button class="mdui-float-right mdui-btn mdui-ripple mdui-color-blue" onclick="search()">搜索</button>
+						</div>
 					</div>
 				</div>
-			</div>-->
-			</br>
-			</br>
-			</br>
+			</div>
 			<!-- 列表页面 -->
-			<h3 id="listTitle" class="mdui-center"></h3>
-			<ul id="listLayout" class="mdui-list mdui-row mdui-center">
-				<!-- <div class="mdui-col-sm-12 mdui-col-md-6 mdui-col-lg-4">
+			<div id="bookmarkLayout">
+				<h3 id="listTitle" class="layoutTitle mdui-center"></h3>
+				<ul id="listLayout" class="mdui-list mdui-row mdui-center">
+					<!-- <div class="mdui-col-sm-12 mdui-col-md-6 mdui-col-lg-4">
 					<li class="mdui-list-item mdui-ripple bookMarkItem">
 						<img class="avatar" src="images/androidcat192.png" />
 						<div class="content">稀土掘金 </div>
 					</li>
 				</div> -->
-			</ul>
-			<!--<div id="bottomTip" style="text-align: center; padding:20px; margin-top: 20px">
+				</ul>
+				<div>
+					<!--<div id="bottomTip" style="text-align: center; padding:20px; margin-top: 20px">
 				更多精彩内容，敬请期待哦！
 			</div>-->
-		</div>
-		<div class="mdui-fab-wrapper">
-			<button class="mdui-fab mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">&#xe145;</i></button>
-		</div>
+				</div>
+			</div>
+			<div class="mdui-fab-wrapper">
+				<button class="mdui-fab mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">&#xe145;</i></button>
+			</div>
 
-		<!-- JS -->
-		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
-		<!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
-		<script src="//cdn1.lncld.net/static/js/2.0.1/av-min.js"></script>
-		<!--<script type="text/javascript" src="js/AV.analytics.js" ></script>-->
-		<script type="text/javascript" src="js/request.js"></script>
-		<script type="text/javascript" src="js/util.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
+			<!-- JS -->
+			<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+			<!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
+			<script src="//cdn1.lncld.net/static/js/2.0.1/av-min.js"></script>
+			<!--<script type="text/javascript" src="js/AV.analytics.js" ></script>-->
+			<script type="text/javascript" src="js/request.js"></script>
+			<script type="text/javascript" src="js/util.js"></script>
+			<script type="text/javascript" src="js/main.js"></script>
 
 	</body>
 
