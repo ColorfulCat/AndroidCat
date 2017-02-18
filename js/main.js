@@ -43,6 +43,26 @@ $(document).ready(function() {
 	initWeather();
 	show(searchLayout);
 	hide(bookmarkLayout);
+	var url = "http://138.197.211.95:8080/api/v1/bookmark?category=community";
+	$(function() {
+//		$.ajaxSetup({
+//			headers: {
+//				'MIME': 'application/json'
+//			}
+//		});
+
+		$.getJSON(url, function(data) {
+			if(data != null) {
+				console.log(data);
+//				var jsonarray = $.parseJSON(data);
+//				alert(jsonarray);
+//				$.each(jsonarray, function(i, n) {
+//					Console.log(jsonarray.name);
+//				});
+
+			}
+		})
+	});
 
 });
 
