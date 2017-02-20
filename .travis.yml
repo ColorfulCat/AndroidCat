@@ -1,0 +1,39 @@
+es:
+  only:
+    - develop
+
+language: node_js
+
+sudo: false
+
+node_js: stable
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install
+
+before_script:
+  - git config --global user.name "Devis"
+  - git config --global user.email "598252892@qq.com"
+  - git clone --branch gh-pages https://github.com/ColorfulCat/AndroidCat.git dist
+
+script:
+  - npm test
+  - npm run build
+
+after_success:
+  - cd dist
+  - echo "" > CNAME
+  - cp index.html 404.html
+  - git add --all .
+  - git commit --message "Automatically update from travis-ci"
+  - git push --quiet "https://${GH_TOKEN}@${GH_REF}" gh-pages:gh-pages
+
+env:
+  global:
+    - GH_REF: github.com/ColorfulCat/AndroidCat.git
+    - secure: ""
+
