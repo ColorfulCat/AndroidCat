@@ -1,12 +1,13 @@
 <template>
 	<div class="home">
+    <mu-refresh-control :refreshing="refreshing" :trigger="trigger" @refresh="refresh"/>
 		<div class="title">这是首页</div>
 		<h5>{{msg}}</h5>
 		<p>111111</p>
 		<div>
 			<mu-flexbox>
 				<mu-flexbox-item class="flex-demo">
-					1
+
 				</mu-flexbox-item>
 				<mu-flexbox-item class="flex-demo">
 					2
@@ -36,11 +37,26 @@
 			</mu-flexbox>
 			<mu-flexbox class="mt8" orient="vertical">
 				<mu-flexbox-item order="0" class="flex-demo">
-					9
+          <CatItem :cat_item_title="msg"></CatItem>
 				</mu-flexbox-item>
 				<mu-flexbox-item order="2" class="flex-demo">
 					10
 				</mu-flexbox-item>
+        <mu-flexbox-item order="2" class="flex-demo">
+          10
+        </mu-flexbox-item>
+        <mu-flexbox-item order="2" class="flex-demo">
+          10
+        </mu-flexbox-item>
+        <mu-flexbox-item order="2" class="flex-demo">
+          10
+        </mu-flexbox-item>
+        <mu-flexbox-item order="2" class="flex-demo">
+          10
+        </mu-flexbox-item>
+        <mu-flexbox-item order="2" class="flex-demo">
+          10
+        </mu-flexbox-item>
 			</mu-flexbox>
 		</div>
 
@@ -48,13 +64,30 @@
 </template>
 
 <script>
+  import CatItem from 'components/CatItem'
 	export default {
 		name: 'home',
 		data() {
 			return {
-				msg: 'Welcome to Your Vue.js App'
+				msg: 'Welcome to Your Vue.js App',
+        refreshing: false,
+        trigger: null
 			}
-		}
+		},
+    components: {
+      CatItem
+    },
+    mounted () {
+      this.trigger = this.$el
+    },
+    methods: {
+      refresh () {
+        this.refreshing = true
+        setTimeout(() => {
+          this.refreshing = false
+        }, 2000)
+      }
+    }
 	}
 </script>
 <style scoped>
@@ -62,17 +95,17 @@
 		text-align: center;
 		font-size: 2rem;
 	}
-	
+
 	.title {
 		font-size: 3rem;
 		margin: 16px;
 		text-align: center;
 	}
-	
+
 	.mt8 {
 		margin-top: 8px;
 	}
-	
+
 	.flex-demo {
 		height: 48px;
 		background-color: #e0e0e0;

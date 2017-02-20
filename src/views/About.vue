@@ -18,12 +18,12 @@
 <style scoped>
 	h5 {
 		text-align: center;
-		font-size: 2rem;
+		font-size: 1.5rem;
 	}
 
 	.title {
-		font-size: 3rem;
-		margin: 16px;
+		font-size: 2rem;
 		text-align: center;
+    padding-top: 18px;
 	}
 </style>

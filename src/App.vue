@@ -3,7 +3,7 @@
 		<app-bar></app-bar>
 		<keep-alive>
 			<transition name="fade" mode="out-in">
-				<router-view></router-view>
+				<router-view id="content-view"></router-view>
 			</transition>
 		</keep-alive>
 		<mu-float-button icon="add" secondary class="float-button" @click="fabClick" />
@@ -24,7 +24,8 @@
 				<!--<mu-list-item v-if="docked" @click.native="open = false" title="Close" />-->
 			</mu-list>
 		</mu-drawer>
-		<mu-toast v-if="toast" :message="toastText" @close="hideToast" />
+		<mu-snackbar v-if="snackbar" :message="sncakText" action="关闭" @actionClick="hideSnackbar" @close="hideSnackbar" />
+
 	</div>
 </template>
 
@@ -38,8 +39,8 @@
 			return {
 				open: false,
 				docked: true,
-				toast: false,
-				toastText: "╮(╯▽╰)╭ 功能正在开发中……"
+				snackbar: false,
+				sncakText: " 功能正在开发中……"
 			}
 		},
 		created() {
@@ -67,18 +68,18 @@
 				}
 			},
 			fabClick() {
-				this.showToast()
+				this.showSnackbar()
 			},
-			showToast() {
-				this.toast = true
-				if(this.toastTimer) clearTimeout(this.toastTimer)
-				this.toastTimer = setTimeout(() => {
-					this.toast = false
+			showSnackbar() {
+				this.snackbar = true
+				if(this.snackTimer) clearTimeout(this.snackTimer)
+				this.snackTimer = setTimeout(() => {
+					this.snackbar = false
 				}, 2000)
 			},
-			hideToast() {
-				this.toast = false
-				if(this.toastTimer) clearTimeout(this.toastTimer)
+			hideSnackbar() {
+				this.snackbar = false
+				if(this.snackTimer) clearTimeout(this.snackTimer)
 			},
 			handleMenuSelect(val) {
 				this.activeTab = val
@@ -109,17 +110,29 @@
 		/*color: lightBlue500;*/
 		margin-top: 0px;
 	}
-
+	
+	@media screen and (max-width: 480px) {
+		#content-view {
+			margin-top: 54px;
+		}
+	}
+	
+	@media screen and (min-width: 480px) {
+		#content-view {
+			margin-top: 62px;
+		}
+	}
+	
 	.drawer-menu-header {
 		color: #03a9f4;
 		text-align: center;
 		cursor: pointer;
 	}
-
+	
 	.drawer-menu-item {
 		text-align: left;
 	}
-
+	
 	.float-button {
 		position: fixed !important;
 		/* 手机平板上距离屏幕右下角 16px */

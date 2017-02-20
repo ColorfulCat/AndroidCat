@@ -8,11 +8,9 @@ zDepth	Number	 1 阴影等级,设置为 0就没有阴影效果-->
       <mu-icon-button icon='menu' slot="left" @click="leftMenuClick"/>
       <mu-icon-menu icon="more_vert" slot="right" @click="rightMenuClick" :anchorOrigin="leftTop"
                     :targetOrigin="leftTop">
-        <mu-menu-item title="Menu1"/>
-        <mu-menu-item title="Menu2"/>
-        <mu-menu-item title="Menu3"/>
-        <mu-menu-item title="Menu4"/>
-        <mu-menu-item title="Menu5"/>
+        <mu-menu-item title="修改主题"/>
+        <mu-menu-item title="系统设置"/>
+        <mu-menu-item title="退出登录"/>
       </mu-icon-menu>
     </mu-appbar>
   </div>
@@ -51,6 +49,11 @@ zDepth	Number	 1 阴影等级,设置为 0就没有阴影效果-->
     top: 0;
     left: 0;
     right: 0;
+  }
+
+  .left-icon-class {
+    width: 18px;
+    height: 18px;
   }
 
 </style>
