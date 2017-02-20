@@ -18,7 +18,7 @@
 				<mu-list-item class="drawer-menu-item" @click="toggle(false, 'hello')" title="开源大全">
 					<mu-icon slot="left" value="send" color="orange" />
 				</mu-list-item>
-				<mu-list-item class="drawer-menu-item" @click="toggle(false, 'todo')" title="关于我们">
+				<mu-list-item class="drawer-menu-item" @click="toggle(false, 'about')" title="关于我们">
 					<mu-icon slot="left" value="drafts" color="green" />
 				</mu-list-item>
 				<!--<mu-list-item v-if="docked" @click.native="open = false" title="Close" />-->
@@ -106,20 +106,20 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		text-align: left;
-		color: lightBlue500;
+		/*color: lightBlue500;*/
 		margin-top: 0px;
 	}
-	
+
 	.drawer-menu-header {
 		color: #03a9f4;
 		text-align: center;
 		cursor: pointer;
 	}
-	
+
 	.drawer-menu-item {
 		text-align: left;
 	}
-	
+
 	.float-button {
 		position: fixed !important;
 		/* 手机平板上距离屏幕右下角 16px */

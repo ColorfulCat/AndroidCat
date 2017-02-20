@@ -1,6 +1,6 @@
 <template>
 	<div class="about">
-		<div class="title">这是关于</div>
+		<div class="title">这是关于页面</div>
 		<h5>{{msg}}</h5>
 	</div>
 </template>
@@ -20,7 +20,7 @@
 		text-align: center;
 		font-size: 2rem;
 	}
-	
+
 	.title {
 		font-size: 3rem;
 		margin: 16px;
