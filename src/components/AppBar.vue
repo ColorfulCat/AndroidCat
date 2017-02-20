@@ -33,7 +33,7 @@ zDepth	Number	 1 阴影等级,设置为 0就没有阴影效果-->
 		methods: {
 			leftMenuClick: function() {
 				console.log("leftMenuClick")
-				Bus.$emit('openDrawer', true);   
+				Bus.$emit('openDrawer', true);
 			},
 			rightMenuClick: function() {
 				console.log("rightMenuClick")
@@ -44,5 +44,6 @@ zDepth	Number	 1 阴影等级,设置为 0就没有阴影效果-->
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 
 </style>
