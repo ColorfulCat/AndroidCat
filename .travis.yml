@@ -18,7 +18,7 @@ install:
 before_script:
   - git config --global user.name "Devis"
   - git config --global user.email "598252892@qq.com"
-  - git clone --branch gh-pages https://github.com/ColorfulCat/AndroidCat.git dist
+  - git clone --branch vue https://github.com/ColorfulCat/AndroidCat.git dist
 
 script:
   - npm test
