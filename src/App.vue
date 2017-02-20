@@ -11,15 +11,15 @@
 
 			<mu-list @itemClick="docked ? '' : toggle()">
 				<h1 class="drawer-menu-header" @click="toggle(false, 'home')"> AndroidCat </h1>
-				<mu-divider />
+				<mu-divider/>
 				<mu-list-item class="drawer-menu-item" @click="toggle(false, 'home')" title="书签导航">
-					<mu-icon slot="left" value="grade" />
+					<mu-icon slot="left" value="grade" color="blue" />
 				</mu-list-item>
 				<mu-list-item class="drawer-menu-item" @click="toggle(false, 'hello')" title="开源大全">
-					<mu-icon slot="left" value="send" />
+					<mu-icon slot="left" value="send" color="orange" />
 				</mu-list-item>
 				<mu-list-item class="drawer-menu-item" @click="toggle(false, 'todo')" title="关于我们">
-					<mu-icon slot="left" value="drafts" />
+					<mu-icon slot="left" value="drafts" color="green" />
 				</mu-list-item>
 				<!--<mu-list-item v-if="docked" @click.native="open = false" title="Close" />-->
 			</mu-list>
@@ -118,7 +118,7 @@
 	
 	.drawer-menu-item {
 		text-align: left;
-	} 
+	}
 	
 	.float-button {
 		position: fixed !important;

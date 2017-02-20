@@ -74,9 +74,9 @@
 	}
 	
 	.flex-demo {
-		height: 32px;
+		height: 48px;
 		background-color: #e0e0e0;
 		text-align: center;
-		line-height: 32px;
+		line-height: 48px;
 	}
 </style>
