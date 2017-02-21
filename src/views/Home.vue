@@ -1,6 +1,5 @@
 <template>
 	<div class="home">
-    <mu-refresh-control :refreshing="refreshing" :trigger="trigger" @refresh="refresh"/>
 		<div class="title">这是首页</div>
 		<h5>{{msg}}</h5>
 		<p>111111</p>
@@ -69,24 +68,11 @@
 		name: 'home',
 		data() {
 			return {
-				msg: 'Welcome to Your Vue.js App',
-        refreshing: false,
-        trigger: null
+				msg: 'Welcome to Your Vue.js App'
 			}
 		},
     components: {
       CatItem
-    },
-    mounted () {
-      this.trigger = this.$el
-    },
-    methods: {
-      refresh () {
-        this.refreshing = true
-        setTimeout(() => {
-          this.refreshing = false
-        }, 2000)
-      }
     }
 	}
 </script>

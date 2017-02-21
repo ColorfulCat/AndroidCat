@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<app-bar></app-bar>
+    <app-bar id="appbar"></app-bar>
 		<keep-alive>
 			<transition name="fade" mode="out-in">
 				<router-view id="content-view"></router-view>
@@ -15,7 +15,7 @@
 				<mu-list-item class="drawer-menu-item" @click="toggle(false, 'home')" title="书签导航">
 					<mu-icon slot="left" value="grade" color="blue" />
 				</mu-list-item>
-				<mu-list-item class="drawer-menu-item" @click="toggle(false, 'hello')" title="开源大全">
+				<mu-list-item class="drawer-menu-item" @click="toggle(false, 'markdown')" title="开源大全">
 					<mu-icon slot="left" value="send" color="orange" />
 				</mu-list-item>
 				<mu-list-item class="drawer-menu-item" @click="toggle(false, 'about')" title="关于我们">
@@ -99,6 +99,14 @@
 			//			}
 		}
 	}
+
+	var screenWidth = window.width
+
+	//监听屏幕变化
+  window.onresize = function(){
+    console.log("window.onresize " + 111)
+
+  }
 </script>
 
 <style>
@@ -110,33 +118,36 @@
 		/*color: lightBlue500;*/
 		margin-top: 0px;
 	}
-	
+
 	@media screen and (max-width: 480px) {
 		#content-view {
 			margin-top: 54px;
 		}
 	}
-	
+
 	@media screen and (min-width: 480px) {
 		#content-view {
 			margin-top: 62px;
 		}
 	}
-	
+
 	.drawer-menu-header {
 		color: #03a9f4;
 		text-align: center;
 		cursor: pointer;
 	}
-	
+
 	.drawer-menu-item {
 		text-align: left;
 	}
-	
+
 	.float-button {
 		position: fixed !important;
 		/* 手机平板上距离屏幕右下角 16px */
 		right: 16px;
 		bottom: 16px;
 	}
+  #appbar{
+    z-index: 9999;
+  }
 </style>
