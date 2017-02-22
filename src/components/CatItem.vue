@@ -24,14 +24,15 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .cat-item {
-    padding:10px;
+    /*padding:10px;*/
     margin:0;
-    background: white;
+    background: #fff;
   }
 
   .cat-item-button {
     width: 100%;
     height:100%;
+    margin:3px;
   }
 
   h1, h2 {

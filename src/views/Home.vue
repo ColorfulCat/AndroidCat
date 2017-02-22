@@ -6,34 +6,14 @@
       <mu-row gutter>
         <mu-col width="20" tablet="20" desktop="20">
           <div id="markMenuLayout">
-            <CatMenuItem :cat_menu_item_title="menu"></CatMenuItem>
-            <CatMenuItem :cat_menu_item_title="menu"></CatMenuItem>
-            <CatMenuItem :cat_menu_item_title="menu"></CatMenuItem>
-            <CatMenuItem :cat_menu_item_title="menu"></CatMenuItem>
-            <CatMenuItem :cat_menu_item_title="menu"></CatMenuItem>
+            <CatMenuItem v-for="menu in menus" :cat_menu_item_title="menu"></CatMenuItem>
           </div>
         </mu-col>
         <mu-col width="80" tablet="80" desktop="80">
           <mu-row gutter id="markListLayout">
-            <mu-col width="100" tablet="50" desktop="33">
+            <mu-col v-for="item in items" width="100" tablet="50" desktop="33">
               <CatItem :cat_item_title="item"></CatItem>
             </mu-col>
-            <mu-col width="100" tablet="50" desktop="33">
-              <CatItem :cat_item_title="item"></CatItem>
-            </mu-col>
-            <mu-col width="100" tablet="50" desktop="33">
-              <CatItem :cat_item_title="item"></CatItem>
-            </mu-col>
-            <mu-col width="100" tablet="50" desktop="33">
-              <CatItem :cat_item_title="item"></CatItem>
-            </mu-col>
-            <mu-col width="100" tablet="50" desktop="33">
-              <CatItem :cat_item_title="item"></CatItem>
-            </mu-col>
-            <mu-col width="100" tablet="50" desktop="33">
-              <CatItem :cat_item_title="item"></CatItem>
-            </mu-col>
-
           </mu-row>
         </mu-col>
       </mu-row>
@@ -48,8 +28,12 @@
     name: 'home',
     data() {
       return {
-        menu: '精品推荐',
-        item: '稀土掘金'
+        menus: [
+          "精品推荐", "技术社区", "开源大全", "文档资料", "前沿资讯", "服务集成"
+        ],
+        items: [
+            "稀土掘金","Gank","云栖社区","Android中文网","23code","LeanCloud","Nexus中文网"
+        ]
       }
     },
     components: {
@@ -82,5 +66,13 @@
 
   .contentLayout {
     text-align: center;
+  }
+
+  #markMenuLayout {
+    background-color: white;
+  }
+
+  #markListLayout {
+
   }
 </style>
