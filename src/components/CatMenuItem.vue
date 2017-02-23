@@ -1,21 +1,21 @@
 <template>
-  <div class="cat-item">
-    <mu-flat-button class="cat-item-button" v-on:click="onClickMe">{{cat_item_title}}</mu-flat-button>
+  <div class="cat-menu-item">
+    <mu-flat-button class="cat-item-button" v-on:click="onClickMe">{{cat_menu_item_title}}</mu-flat-button>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'cat-item',
+    name: 'cat-menu-item',
     data () {
       return {
         msg: 'Hello'
       }
     },
-    props: ["cat_item_title"],
+    props: ["cat_menu_item_title"],
     methods: {
       onClickMe: function () {
-        console.log("onClickMe " + this.cat_item_title || "")
+        console.log("onClickMe " + this.cat_menu_item_title || "")
       }
     }
   }
@@ -23,16 +23,14 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .cat-item {
-    /*padding:10px;*/
+  .cat-menu-item {
+    padding:0;
     margin:0;
-    background: #fff;
   }
 
   .cat-item-button {
     width: 100%;
     height:100%;
-    margin:3px;
   }
 
   h1, h2 {

@@ -1,16 +1,16 @@
 <!-- 页面标题栏 -->
 <template>
   <div class="appbar">
-    <mu-appbar v-bind:title="appBarTitle">
+    <mu-appbar>
       <!--title	String	 标题, 显示在中间
 titleClass	String,Object,Array	 标题样式，同 class 绑定方式一致
 zDepth	Number	 1 阴影等级,设置为 0就没有阴影效果-->
       <mu-icon-button icon='menu' slot="left" @click="leftMenuClick"/>
       <p class="title" slot="left">{{appBarTitle}}</p>
-      <form class="searchDiv" slot="right">
-        <mu-text-field hintText="提示文字"/>
-        <mu-raised-button id="searchButton" label="搜索" class="demo-raised-button" secondary/>
-      </form>
+      <!--<form class="searchDiv" slot="right">-->
+        <!--<mu-text-field hintText="提示文字"/>-->
+        <!--<mu-raised-button id="searchButton" label="搜索" class="demo-raised-button" secondary/>-->
+      <!--</form>-->
       <mu-icon-menu icon="more_vert" slot="right" @click="rightMenuClick" :anchorOrigin="leftTop"
                     :targetOrigin="leftTop">
         <mu-menu-item title="修改主题"/>
