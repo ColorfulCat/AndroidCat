@@ -1,11 +1,11 @@
 <template>
 	<div id="app">
     <app-bar id="appbar"></app-bar>
-		<keep-alive>
+		
 			<transition name="fade" mode="out-in">
 				<router-view id="content-view"></router-view>
 			</transition>
-		</keep-alive>
+		
 		<mu-float-button icon="add" secondary class="float-button" @click="fabClick" />
 		<mu-drawer :open="open" :docked="docked" @close="toggle()">
 

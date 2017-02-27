@@ -8,6 +8,9 @@ import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 Vue.use(MuseUI)
 
+Vue.config.devtools = true
+Vue.config.silent = false
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
