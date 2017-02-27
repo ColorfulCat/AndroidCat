@@ -1,7 +1,7 @@
 <template>
-  <div class="cat-menu-item">
-    <mu-flat-button class="cat-item-button" v-on:click="onClickMe">{{cat_menu_item_title}}</mu-flat-button>
-  </div>
+  <mu-list-item class="cat-menu-item">
+    <h4 class="cat-item-button" v-on:click="onClickMe">{{cat_menu_item_title}}</h4>
+  </mu-list-item>
 </template>
 
 <script>
@@ -33,9 +33,10 @@
     height:100%;
   }
 
-  h1, h2 {
+  h1, h2 ,h4{
     font-weight: normal;
     font-size: 1rem;
+    color: white;
   }
 
   ul {

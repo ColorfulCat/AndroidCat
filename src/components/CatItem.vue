@@ -1,7 +1,7 @@
 <template>
-  <div class="cat-item">
-    <mu-flat-button class="cat-item-button" v-on:click="onClickMe">{{cat_item_title}}</mu-flat-button>
-  </div>
+  <mu-list-item class="cat-item">
+    <h5 class="cat-item-button" v-on:click="onClickMe">{{cat_item_title}}</h5>
+  </mu-list-item>
 </template>
 
 <script>
@@ -33,6 +33,18 @@
     width: 100%;
     height:100%;
     margin:3px;
+  }
+
+  .cat-item {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: black;
+    margin: 6px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px 0px;
+    cursor: pointer;
+    overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
   }
 
   h1, h2 {

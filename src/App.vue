@@ -38,7 +38,7 @@
 		data() {
 			return {
 				open: false,
-				docked: true,
+				docked: false,
 				snackbar: false,
 				sncakText: " 功能正在开发中……"
 			}
