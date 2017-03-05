@@ -5,6 +5,7 @@
 </template>
 
 <script>
+  import Bus from '../bus'
   export default {
     name: 'cat-item',
     data () {
@@ -16,6 +17,7 @@
     methods: {
       onClickMe: function () {
         console.log("onClickMe " + this.cat_item_title || "")
+        Bus.$emit('showSnackbar', "");
       }
     }
   }
@@ -45,6 +47,10 @@
     box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px 0px;
     cursor: pointer;
     overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
+  }
+
+  .cat-item:hover{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 6px 0px;
   }
 
   h1, h2 {

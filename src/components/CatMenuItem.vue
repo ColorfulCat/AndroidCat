@@ -5,6 +5,7 @@
 </template>
 
 <script>
+  import Bus from '../bus'
   export default {
     name: 'cat-menu-item',
     data () {
@@ -16,6 +17,7 @@
     methods: {
       onClickMe: function () {
         console.log("onClickMe " + this.cat_menu_item_title || "")
+        Bus.$emit('showSnackbar', "");
       }
     }
   }

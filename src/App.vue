@@ -1,11 +1,11 @@
 <template>
 	<div id="app">
     <app-bar id="appbar"></app-bar>
-		
+
 			<transition name="fade" mode="out-in">
 				<router-view id="content-view"></router-view>
 			</transition>
-		
+
 		<mu-float-button icon="add" secondary class="float-button" @click="fabClick" />
 		<mu-drawer :open="open" :docked="docked" @close="toggle()">
 
@@ -48,6 +48,12 @@
 				this.toggle(true)
 				console.log("openDrawer " + target);
 			});
+
+      Bus.$on('showSnackbar', target => {
+        this.showSnackbar()
+        console.log("showSnackbar " + target);
+      });
+
 			// 当created函数时监测路由信息,防止页面刷新tab高亮错误
 			var tmpArr = this.$route.path.split('/')
 			if(tmpArr[1]) {
