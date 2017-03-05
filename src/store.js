@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'todos-vuejs'
+const STORAGE_KEY = 'androidcat-vuejs'
 export default {
 	fetch() {
 			console.log("fetch")
