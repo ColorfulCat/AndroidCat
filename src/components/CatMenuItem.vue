@@ -38,7 +38,7 @@
   h1, h2 ,h4{
     font-weight: normal;
     font-size: 1rem;
-    color: white;
+    color: black;
   }
 
   ul {
