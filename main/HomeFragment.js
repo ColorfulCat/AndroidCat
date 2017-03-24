@@ -184,7 +184,7 @@ function HomeFragment() {
 		progress.setProgressColor(R.color.theme);
 		progress.setStyle(MProgressBar.Small); //Small
 		ganhuoLayout.addView(progress, lpProgress);
-		var url = "http://api.xitu.io/resources/gold/android?order=time&offset=0&limit=8";
+		var url = "http://api.xitu.io/resources/gold/android?order=time&offset=0&limit=5";
 		liteAjax(url, function(data) {
 			var dataArray = eval(data);
 			if (dataArray.length > 0) {
