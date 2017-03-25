@@ -28,11 +28,12 @@
   .cat-menu-item {
     padding:0;
     margin:0;
+    height: 50px;
   }
 
   .cat-item-button {
     width: 100%;
-    height:100%;
+    height: 0px;
   }
 
   h1, h2 ,h4{

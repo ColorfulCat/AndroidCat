@@ -6,7 +6,7 @@
       </mu-col>
       <mu-col id="menuLayout" width="80" tablet="80" desktop="80">
         <h4 class="cat-item-button" v-on:click="onClickMe">{{cat_item_title}}</h4>
-        <h5 class="cat-item-button" v-on:click="onClickMe">{{cat_item_title}}</h5>
+        <h5 class="cat-item-button" v-on:click="onClickMe">{{cat_item_desc}}</h5>
       </mu-col>
     </mu-row>
 
@@ -23,7 +23,7 @@
         msg: 'Hello'
       }
     },
-    props: ["cat_item_title"],
+    props: ["cat_item_title", "cat_item_desc"],
     methods: {
       onClickMe: function () {
         console.log("onClickMe " + this.cat_item_title || "")
